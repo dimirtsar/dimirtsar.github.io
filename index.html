@@ -147,31 +147,66 @@
       margin-top: 24px;
     }
     .article {
-      padding: 20px;
-      border: 1px solid #e0e0e0;
-      border-radius: 6px;
-      transition: all 0.3s ease;
+      padding: 24px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .article::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb, #3b82f6);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+    .article:hover::before {
+      transform: scaleX(1);
     }
     .article:hover {
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
-      border-color: #2563eb;
-      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+      border-color: #3b82f6;
+      transform: translateY(-4px);
     }
     .article h3 {
-      font-size: 18px;
-      font-weight: 600;
+      font-size: 20px;
+      font-weight: 700;
       color: #1a1a1a;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
+      line-height: 1.4;
     }
     .article p {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 12px;
+      font-size: 15px;
+      color: #6b7280;
+      margin-bottom: 16px;
+      line-height: 1.6;
     }
     .article-date {
-      font-size: 12px;
-      color: #999;
+      font-size: 13px;
+      color: #9ca3af;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    .article-image {
+      width: 100%;
+      height: 300px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .article-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     footer {
       background: #1a1a1a;
@@ -340,6 +375,9 @@
             <p>Розбираємося, які чинники формують сприйняття вартості та як ціна стає інструментом позиціювання</p>
             <span class="article-date">січень 2026</span>
             <div id="article1" class="article-content" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+              <div class="article-image">
+                <img src="https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Luxury pricing and premium products">
+              </div>
               <p style="line-height: 1.8; margin-bottom: 16px;">Ціна продукту або послуги — це не просто цифра в розрахунковій таблиці. Це потужний маркетинговий інструмент, сигнал якості, засіб позиціювання та відображення цінності для клієнта. Але чому деякі продукти коштують значно дорожче за свої аналоги, навіть якщо функціонально вони майже ідентичні?</p>
 
               <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Бренд як гарантія якості та статусу</h4>
@@ -367,6 +405,9 @@
             <p>Стратегії комунікації вартості від провідних світових брендів та експертів</p>
             <span class="article-date">січень 2026</span>
             <div id="article2" class="article-content" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+              <div class="article-image">
+                <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Business presentation and value communication">
+              </div>
               <p style="line-height: 1.8; margin-bottom: 16px;">Коли продукт або послуга коштує дорожче за ринкову середню, компанія повинна вміти пояснити це покупцю. Неправильна аргументація ціни може призвести до втрати продажів, тоді як вдала — навпаки, посилити бажання придбати товар. Як саме успішні компанії обґрунтовують високу вартість?</p>
 
               <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Інвестиція, а не витрата</h4>
@@ -404,6 +445,9 @@
             <p>Справжня вартість економії та приховані витрати дешевих рішень</p>
             <span class="article-date">січень 2026</span>
             <div id="article3" class="article-content" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+              <div class="article-image">
+                <img src="https://images.pexels.com/photos/4386464/pexels-photo-4386464.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Quality products versus cheap alternatives">
+              </div>
               <p style="line-height: 1.8; margin-bottom: 16px;">У сучасному світі, де конкуренція змушує постачальників знижувати ціни, спокуса придбати найдешевший варіант стає все більшою. Але чи справді низька ціна означає вигідну покупку? Досвід провідних компаній та експертів показує, що економія на етапі покупки часто призводить до значно більших витрат у майбутньому.</p>
 
               <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Принцип "дешево виходить дорого"</h4>
@@ -446,6 +490,9 @@
             <p>Чому повний цикл послуг коштує дорожче, але виявляється вигіднішим</p>
             <span class="article-date">січень 2026</span>
             <div id="article4" class="article-content" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+              <div class="article-image">
+                <img src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Project management and team collaboration">
+              </div>
               <p style="line-height: 1.8; margin-bottom: 16px;">Коли клієнт стикається з вибором між комплексним рішенням "під ключ" та зібранням проекту з окремих компонентів, часто виникає питання: чому варіант "під ключ" коштує набагато дорожче? Відповідь криється не лише в сумі вартості окремих етапів, а в тій додатковій цінності, яку створює інтеграція, координація та відповідальність одного виконавця.</p>
 
               <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Що таке проект під ключ?</h4>
@@ -493,6 +540,9 @@
             <p>Як правильний підбір людей визначає успіх компанії та чому інвестиція в команду окупається найкраще</p>
             <span class="article-date">січень 2026</span>
             <div id="article5" class="article-content" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+              <div class="article-image">
+                <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Team collaboration and people working together">
+              </div>
               <p style="line-height: 1.8; margin-bottom: 16px;">У світі бізнесу існує безліч стратегій, методологій та інструментів, але є один універсальний закон, який діє незалежно від галузі: успіх компанії визначають люди. Найкраща ідея, найбільший капітал, найсучасніші технології нічого не варті без правильної команди, яка втілить їх у життя.</p>
 
               <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Команда важливіша за ідею</h4>
@@ -547,6 +597,9 @@
             <p>Переваги та виклики різних шляхів у бізнес, досвід успішних підприємців та критерії прийняття рішення</p>
             <span class="article-date">січень 2026</span>
             <div id="article6" class="article-content" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+              <div class="article-image">
+                <img src="https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Startup and entrepreneurship journey">
+              </div>
               <p style="line-height: 1.8; margin-bottom: 16px;">Перед кожним, хто хоче стати підприємцем, виникає фундаментальне питання: краще створити бізнес з нуля чи знайти партнера з готовим бізнесом і приєднатися до нього? Обидва шляхи мають свої переваги та ризики, і вибір залежить від безлічі факторів: досвіду, ресурсів, цілей, особистих якостей та ринкової ситуації.</p>
 
               <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Створення бізнесу з нуля: контроль і свобода</h4>
@@ -618,6 +671,9 @@
             <p>Стратегічний підхід до вибору напрямку бізнесу та пошуку партнерів на різних етапах розвитку</p>
             <span class="article-date">січень 2026</span>
             <div id="article7" class="article-content" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+              <div class="article-image">
+                <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Business strategy and planning">
+              </div>
               <p style="line-height: 1.8; margin-bottom: 16px;">Одне з найважливіших питань для початківця підприємця: що робити першим — визначитися з напрямком бізнесу чи знайти партнера? Обидва фактори критично важливі для успіху, але послідовність їх вибору може суттєво вплинути на результат. Розглянемо різні сценарії та досвід успішних бізнесменів.</p>
 
               <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Сценарій 1: Спочатку напрямок, потім партнер</h4>
