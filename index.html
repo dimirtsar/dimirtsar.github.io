@@ -752,10 +752,31 @@
       const article = document.getElementById(articleId);
       if (article.style.display === 'none') {
         article.style.display = 'block';
+        window.location.hash = articleId;
       } else {
         article.style.display = 'none';
+        if (window.location.hash === '#' + articleId) {
+          history.pushState("", document.title, window.location.pathname + window.location.search);
+        }
       }
     }
+
+    function openArticleFromHash() {
+      const hash = window.location.hash.substring(1);
+      if (hash && hash.startsWith('article')) {
+        const article = document.getElementById(hash);
+        if (article) {
+          article.style.display = 'block';
+          setTimeout(() => {
+            const articleWrapper = article.parentElement;
+            articleWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }
+      }
+    }
+
+    window.addEventListener('load', openArticleFromHash);
+    window.addEventListener('hashchange', openArticleFromHash);
   </script>
 </body>
 </html>
