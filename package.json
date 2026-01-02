@@ -1,0 +1,9 @@
+{
+  "name": "dtsarenko-site",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Static site - no build needed'"
+  }
+}
