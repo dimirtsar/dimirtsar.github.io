@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Dtsarenko</title>
+  <title>Dtsarenko - Блог і статті</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * {
@@ -11,67 +11,239 @@
       box-sizing: border-box;
     }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: white;
+      border-bottom: 1px solid #e0e0e0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 20px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      padding: 24px;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+    nav {
+      display: flex;
+      gap: 32px;
+    }
+    nav a {
+      color: #666;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #1a1a1a;
     }
     .container {
-      max-width: 900px;
-      width: 100%;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      overflow: hidden;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 20px;
     }
-    .header {
-      padding: 32px;
+    .hero {
       text-align: center;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
+      margin-bottom: 64px;
     }
-    .header h1 {
-      font-size: 32px;
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #1a1a1a;
+    }
+    .hero p {
+      font-size: 18px;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .hero img {
+      max-width: 200px;
+      height: auto;
+      border-radius: 8px;
+      margin-top: 32px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .sections {
+      display: grid;
+      gap: 48px;
+    }
+    .section {
+      background: white;
+      border-radius: 8px;
+      padding: 32px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    .section h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #1a1a1a;
+      padding-bottom: 12px;
+      border-bottom: 3px solid #2563eb;
+      display: inline-block;
+    }
+    .articles {
+      display: grid;
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .article {
+      padding: 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .article:hover {
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+      border-color: #2563eb;
+      transform: translateY(-2px);
+    }
+    .article h3 {
+      font-size: 18px;
       font-weight: 600;
+      color: #1a1a1a;
       margin-bottom: 8px;
     }
-    .header p {
-      font-size: 16px;
-      opacity: 0.9;
+    .article p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 12px;
     }
-    .photo-container {
-      padding: 32px;
-      display: flex;
-      justify-content: center;
+    .article-date {
+      font-size: 12px;
+      color: #999;
     }
-    .photo-container img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    footer {
+      background: #1a1a1a;
+      color: white;
+      padding: 32px 20px;
+      text-align: center;
+      margin-top: 64px;
     }
     @media (max-width: 768px) {
-      .header h1 {
-        font-size: 24px;
+      nav {
+        gap: 16px;
       }
-      .photo-container {
-        padding: 16px;
+      nav a {
+        font-size: 12px;
+      }
+      .hero h1 {
+        font-size: 28px;
+      }
+      .section h2 {
+        font-size: 22px;
+      }
+      .article h3 {
+        font-size: 16px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>Dtsarenko</h1>
-      <p>dtsarenko.live</p>
+  <header>
+    <div class="header-content">
+      <a href="#" class="logo">Dtsarenko</a>
+      <nav>
+        <a href="#про">Про себе</a>
+        <a href="#статті">Статті</a>
+        <a href="#проекти">Проекти</a>
+        <a href="#контакти">Контакти</a>
+      </nav>
     </div>
-    <div class="photo-container">
-      <img src="2026-01-02_15.35.18.jpg" alt="Фото">
+  </header>
+
+  <div class="container">
+    <div class="hero">
+      <h1>Ласкаво просимо</h1>
+      <p>Ділюся знаннями, ідеями та проектами про технології та розвиток</p>
+      <img src="2026-01-02_15.35.18.jpg" alt="Фото профілю">
+    </div>
+
+    <div class="sections">
+      <section id="про" class="section">
+        <h2>Про себе</h2>
+        <p>Я розробник, який захоплюється створенням сучасних веб-застосунків та рішень. Маю багаторічний досвід у розробці і постійно вчусь новому.</p>
+      </section>
+
+      <section id="статті" class="section">
+        <h2>Останні статті</h2>
+        <div class="articles">
+          <article class="article">
+            <h3>Введення до сучасної веб-розробки</h3>
+            <p>Розглянемо основні технології та інструменти, які використовуються в сучасній веб-розробці в 2026 році.</p>
+            <span class="article-date">2 січня 2026</span>
+          </article>
+          <article class="article">
+            <h3>Оптимізація продуктивності React додатків</h3>
+            <p>Практичні поради та стратегії для прискорення ваших React додатків та покращення користувацького досвіду.</p>
+            <span class="article-date">28 грудня 2025</span>
+          </article>
+          <article class="article">
+            <h3>Безпека в веб-розробці: практичний посібник</h3>
+            <p>Найважливіші практики безпеки, які кожний розробник повинен знати для захисту своїх додатків.</p>
+            <span class="article-date">20 грудня 2025</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="проекти" class="section">
+        <h2>Мої проекти</h2>
+        <div class="articles">
+          <article class="article">
+            <h3>Веб-платформа для управління завданнями</h3>
+            <p>Повнофункціональна платформа з аутентифікацією, базою даних та современним UI.</p>
+            <span class="article-date">Завершено: 2025</span>
+          </article>
+          <article class="article">
+            <h3>Мобільний додаток для відстеження здоров'я</h3>
+            <p>React Native додаток з інтеграцією API та графіками даних для моніторингу показників здоров'я.</p>
+            <span class="article-date">Завершено: 2025</span>
+          </article>
+          <article class="article">
+            <h3>API сервіс для обробки даних</h3>
+            <p>Scalable REST API з кешуванням, аутентифікацією та обробкою великих обсягів даних.</p>
+            <span class="article-date">Завершено: 2024</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="контакти" class="section">
+        <h2>Контакти</h2>
+        <p>Я завжди відкритий до спілкування та співпраці. Напишіть мені через:</p>
+        <div class="articles" style="margin-top: 24px;">
+          <article class="article" style="cursor: text;">
+            <h3>Email</h3>
+            <p>contact@dtsarenko.live</p>
+          </article>
+          <article class="article" style="cursor: text;">
+            <h3>Соціальні мережі</h3>
+            <p>GitHub • LinkedIn • Twitter</p>
+          </article>
+        </div>
+      </section>
     </div>
   </div>
+
+  <footer>
+    <p>&copy; 2026 Dtsarenko. Всі права захищені.</p>
+  </footer>
 </body>
 </html>
