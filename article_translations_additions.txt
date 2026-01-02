@@ -1,0 +1,16 @@
+Ukrainian article contents (to add before UK closing brace):
+
+'art3-content': (content from art3),
+'art4-content': (content from art4),
+'art5-content': (content from art5),
+'art6-content': (content from art6),
+'art7-content': (content from art7)
+
+English article contents (to add before EN closing brace):
+
+'art2-content': (English content from art2),
+'art3-content': (English content from art3),
+'art4-content': (English content from art4),
+'art5-content': (English content from art5),
+'art6-content': (English content from art6),
+'art7-content': (English content from art7)

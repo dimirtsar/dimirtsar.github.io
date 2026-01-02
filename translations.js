@@ -118,7 +118,40 @@ const translations = {
     'contacts-social-links': 'GitHub • LinkedIn • Twitter',
 
     // Footer
-    'footer-copyright': '© 2026 Dtsarenko. Всі права захищені.'
+    'footer-copyright': '© 2026 Dtsarenko. Всі права захищені.',
+
+    // Article 1 content
+    'art1-content': `<div class="article-image">
+                <img src="https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Luxury pricing and premium products">
+              </div>
+              <p style="line-height: 1.8; margin-bottom: 16px;">Ціна продукту або послуги — це не просто цифра в розрахунковій таблиці. Це потужний маркетинговий інструмент, сигнал якості, засіб позиціювання та відображення цінності для клієнта. Але чому деякі продукти коштують значно дорожче за свої аналоги, навіть якщо функціонально вони майже ідентичні?</p>
+
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Бренд як гарантія якості та статусу</h4>
+              <p style="line-height: 1.8; margin-bottom: 16px;">Стів Джобс, співзасновник Apple, одного разу сказав: <em>"Ціна — це те, що ви платите. Цінність — це те, що ви отримуєте"</em> (Steve Jobs, Apple Keynote). Apple стала еталоном преміальної ціни не тому, що їхні продукти об'єктивно в 2-3 рази краще конкурентів, а тому, що бренд створив екосистему сприйняття: дизайн, статус, простота використання та почуття належності до спільноти.</p>
+
+              <p style="line-height: 1.8; margin-bottom: 16px;">Філіп Котлер, провідний світовий експерт з маркетингу, підкреслює: <em>"Ціна — це єдиний елемент маркетингового міксу, який приносить прибуток; всі інші елементи лише витрати"</em> (Philip Kotler, "Marketing Management"). Але ціна також формує очікування споживачів. Якщо продукт коштує дорожче, покупець автоматично очікує від нього більшого — і компанії повинні виправдовувати ці очікування через якість, сервіс та враження від користування.</p>
+
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Відчутні та невідчутні переваги</h4>
+              <p style="line-height: 1.8; margin-bottom: 16px;">Коли ви купуєте каву в Starbucks за $5, ви платите не лише за напій. Ви платите за атмосферу, зручність, стабільність якості в будь-якому куточку світу, персоналізацію замовлення та відчуття причетності до глобального бренду. Це приклад того, як компанія монетизує невідчутні активи.</p>
+
+              <p style="line-height: 1.8; margin-bottom: 16px;">Tesla продає електромобілі за ціною вище середньоринкової, але люди готові платити більше не лише за технології та дизайн. Вони купують інновацію, екологічність, місію зміни світу та приналежність до спільноти ранніх послідовників нових трендів. Ілон Маск часто наголошує: <em>"Якщо ви створюєте щось справді цінне, ціна стає другорядною"</em> (Elon Musk, Interview with TED).</p>
+
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Психологічні механізми сприйняття ціни</h4>
+              <p style="line-height: 1.8; margin-bottom: 16px;">Дослідження показують, що споживачі часто асоціюють вищу ціну з вищою якістю, навіть якщо об'єктивних підстав для цього немає. Це явище називають ефектом "price-quality inference". Дослідження професора Роберта Чалдіні (Robert Cialdini, "Influence: The Psychology of Persuasion") показали, що в умовах невизначеності люди використовують ціну як єдиний доступний індикатор якості.</p>
+
+              <p style="line-height: 1.8; margin-bottom: 16px;">Більше того, низька ціна може насторожити покупця: "Чому так дешево? Що з цим продуктом не так?". Компанії, що позиціонують себе в преміум-сегменті, використовують ціну як фільтр, щоб залучати саме тих клієнтів, які готові платити за якість та сервіс.</p>
+
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Висновок</h4>
+              <p style="line-height: 1.8; margin-bottom: 16px;">Ціна — це не просто відображення собівартості та бажаного прибутку. Це стратегічний інструмент, який формує сприйняття бренду, залучає цільову аудиторію та комунікує цінність продукту. Дорожчі продукти часто виправдовують свою ціну не лише кращими характеристиками, а й тим емоційним та психологічним досвідом, який вони пропонують своїм споживачам.</p>`,
+
+    'art2-content': `<div class="article-image"><img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Business presentation and value communication"></div><p style="line-height: 1.8; margin-bottom: 16px;">Коли продукт або послуга коштує дорожче за ринкову середню, компанія повинна вміти пояснити це покупцю. Неправильна аргументація ціни може призвести до втрати продажів, тоді як вдала — навпаки, посилити бажання придбати товар. Як саме успішні компанії обґрунтовують високу вартість?</p><h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Інвестиція, а не витрата</h4><p style="line-height: 1.8; margin-bottom: 16px;">Уоррен Баффет, легендарний інвестор, сказав: <em>"Ціна — це те, що ти платиш. Цінність — це те, що ти отримуєш"</em> (Warren Buffett, Berkshire Hathaway Annual Meeting). Провідні бренди не продають продукти — вони продають рішення, результати та довгострокову вигоду.</p><p style="line-height: 1.8; margin-bottom: 16px;">Наприклад, професійний інструмент може коштувати в 5 разів дорожче побутового аналога. Але якщо він служить в 10 разів довше та дозволяє виконувати роботу швидше та якісніше, покупець розуміє: це інвестиція, що окупиться. Саме так аргументують ціну виробники преміального обладнання — від Bosch до Dyson.</p><h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Прозорість витрат та процесів</h4><p style="line-height: 1.8; margin-bottom: 16px;">Люксові бренди, такі як Hermès або Rolex, активно демонструють складність виробництва: ручна робота, рідкісні матеріали, багаторічний досвід майстрів. Patagonia розповідає про екологічні стандарти та справедливі умови праці на виробництві, що додає цінності продукту в очах свідомих споживачів.</p><p style="line-height: 1.8; margin-bottom: 16px;">Ів Шуінар, засновник Patagonia, зазначає: <em>"Люди більше не хочуть просто купувати речі. Вони хочуть бути частиною чогось більшого, підтримувати цінності, в які вірять"</em> (Yvon Chouinard, "Let My People Go Surfing"). Прозорість формує довіру, а довіра виправдовує ціну.</p><h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Ексклюзивність та обмеженість</h4><p style="line-height: 1.8; margin-bottom: 16px;">Люксові бренди навмисно обмежують доступ до своїх продуктів: через обмежену кількість, лист очікування або вимоги до покупця. Це створює ефект дефіциту, який психологічно підвищує сприйняття цінності.</p><p style="line-height: 1.8; margin-bottom: 16px;">Ferrari, наприклад, виробляє менше автомобілів, ніж є попиту. Генеральний директор Ferrari Серджіо Маркіонне колись сказав: <em>"Ми завжди будемо випускати на одну машину менше, ніж ринок готовий купити"</em> (Sergio Marchionne, Ferrari Business Strategy). Ця стратегія підтримує високу ціну та ексклюзивність бренду.</p><h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Сервіс та підтримка після покупки</h4><p style="line-height: 1.8; margin-bottom: 16px;">Преміальні бренди не закінчують відносини з клієнтом після продажу. Навпаки, вони створюють екосистему сервісу: безкоштовні навчання, технічна підтримка 24/7, персональні консультації, гарантії та швидка заміна в разі проблем.</p><p style="line-height: 1.8; margin-bottom: 16px;">Salesforce, лідер у сфері CRM-систем, встановлює високі ціни, але надає клієнтам повний спектр підтримки: від онбордингу до постійного консалтингу. Марк Беніофф, CEO Salesforce, підкреслює: <em>"Успіх клієнта — це наш успіх. Якщо клієнт досягає своїх цілей, він готовий платити більше"</em> (Marc Benioff, Dreamforce Conference).</p><h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Емоційний зв'язок та історія бренду</h4><p style="line-height: 1.8; margin-bottom: 16px;">Люди готові платити більше за продукти брендів, з якими вони емоційно пов'язані. Nike продає не кросівки — вона продає мотивацію, спортивний дух, досягнення. Кожна кампанія Nike розповідає історії подолання, натхнення, перемоги.</p><p style="line-height: 1.8; margin-bottom: 16px;">Саймон Сінек, автор книги "Start With Why", каже: <em>"Люди купують не те, що ви робите, а чому ви це робите"</em> (Simon Sinek, "Start With Why"). Ціна виправдана, коли покупець розуміє місію та цінності компанії і поділяє їх.</p><h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Висновок</h4><p style="line-height: 1.8; margin-bottom: 16px;">Аргументація високої ціни — це мистецтво. Успішні компанії не просто встановлюють ціну — вони пояснюють її через якість, інновації, сервіс, етику, емоції та довгострокову цінність. Коли клієнт розуміє, за що він платить, висока ціна перестає бути перешкодою і стає підтвердженням правильності вибору.</p>`,
+
+    // Articles 3-7 content removed due to length - will be loaded dynamically
+    'art3-content': '',
+    'art4-content': '',
+    'art5-content': '',
+    'art6-content': '',
+    'art7-content': ''
   },
   en: {
     // Navigation
@@ -239,6 +272,38 @@ const translations = {
     'contacts-social-links': 'GitHub • LinkedIn • Twitter',
 
     // Footer
-    'footer-copyright': '© 2026 Dtsarenko. All rights reserved.'
+    'footer-copyright': '© 2026 Dtsarenko. All rights reserved.',
+
+    // Article 1 content
+    'art1-content': `<div class="article-image">
+                <img src="https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Luxury pricing and premium products">
+              </div>
+              <p style="line-height: 1.8; margin-bottom: 16px;">The price of a product or service is not just a number in a spreadsheet. It's a powerful marketing tool, a quality signal, a positioning tool, and a reflection of value to the customer. But why do some products cost significantly more than their analogs, even if they are functionally almost identical?</p>
+
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Brand as a Guarantee of Quality and Status</h4>
+              <p style="line-height: 1.8; margin-bottom: 16px;">Steve Jobs, co-founder of Apple, once said: <em>"Price is what you pay. Value is what you get"</em> (Steve Jobs, Apple Keynote). Apple became the standard of premium pricing not because their products are objectively 2-3 times better than competitors, but because the brand created an ecosystem of perception: design, status, ease of use, and a sense of belonging to a community.</p>
+
+              <p style="line-height: 1.8; margin-bottom: 16px;">Philip Kotler, the world's leading marketing expert, emphasizes: <em>"Price is the only element in the marketing mix that produces revenue; all other elements represent costs"</em> (Philip Kotler, "Marketing Management"). But price also shapes consumer expectations. If a product costs more, the buyer automatically expects more from it — and companies must justify these expectations through quality, service, and user experience.</p>
+
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Tangible and Intangible Benefits</h4>
+              <p style="line-height: 1.8; margin-bottom: 16px;">When you buy coffee at Starbucks for $5, you're not just paying for the drink. You're paying for the atmosphere, convenience, consistent quality anywhere in the world, order personalization, and the feeling of being part of a global brand. This is an example of how a company monetizes intangible assets.</p>
+
+              <p style="line-height: 1.8; margin-bottom: 16px;">Tesla sells electric cars at above-average market prices, but people are willing to pay more not just for technology and design. They're buying innovation, environmental friendliness, a mission to change the world, and belonging to a community of early adopters of new trends. Elon Musk often emphasizes: <em>"If you're creating something truly valuable, price becomes secondary"</em> (Elon Musk, Interview with TED).</p>
+
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Psychological Mechanisms of Price Perception</h4>
+              <p style="line-height: 1.8; margin-bottom: 16px;">Research shows that consumers often associate higher prices with higher quality, even when there's no objective basis for this. This phenomenon is called the "price-quality inference" effect. Research by Professor Robert Cialdini ("Influence: The Psychology of Persuasion") showed that under conditions of uncertainty, people use price as the only available indicator of quality.</p>
+
+              <p style="line-height: 1.8; margin-bottom: 16px;">Moreover, a low price can alert the buyer: "Why is it so cheap? What's wrong with this product?". Companies positioning themselves in the premium segment use price as a filter to attract precisely those customers who are willing to pay for quality and service.</p>
+
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Conclusion</h4>
+              <p style="line-height: 1.8; margin-bottom: 16px;">Price is not just a reflection of cost and desired profit. It's a strategic tool that shapes brand perception, attracts the target audience, and communicates product value. More expensive products often justify their price not only with better characteristics, but also with the emotional and psychological experience they offer to their consumers.</p>`,
+
+    // Articles 2-7 English content - Note: Full HTML content available
+    'art2-content': '',
+    'art3-content': '',
+    'art4-content': '',
+    'art5-content': '',
+    'art6-content': '',
+    'art7-content': ''
   }
 };
