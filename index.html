@@ -750,7 +750,7 @@
   <script>
     function toggleArticle(articleId) {
       const article = document.getElementById(articleId);
-      if (article.style.display === 'none') {
+      if (article.style.display === 'none' || article.style.display === '') {
         article.style.display = 'block';
         window.location.hash = articleId;
       } else {
