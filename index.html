@@ -72,13 +72,6 @@
       letter-spacing: -0.5px;
       line-height: 1;
     }
-    .logo-subtitle {
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-secondary);
-      letter-spacing: 0.3px;
-    }
     .logo-tagline {
       font-family: 'Inter', sans-serif;
       font-size: 13px;
@@ -119,75 +112,47 @@
     }
     .hero-banner {
       width: 100%;
-      background: var(--bg-white);
+      height: 680px;
+      overflow: hidden;
+      position: relative;
       margin-bottom: 0;
     }
-    .hero-inner {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 600px;
-      align-items: center;
-      gap: 80px;
-      padding: 80px 60px;
+    .hero-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(10, 22, 40, 0.85) 0%, rgba(26, 35, 50, 0.6) 50%, rgba(201, 169, 97, 0.3) 100%);
+      z-index: 1;
     }
-    .hero-image {
-      position: relative;
-      height: 600px;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
-    }
-    .hero-image img {
+    .hero-banner img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center 20%;
       display: block;
+      filter: brightness(0.9) contrast(1.1);
     }
     .hero-content {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      text-align: center;
+      width: 90%;
+      max-width: 1100px;
+      padding: 40px;
     }
-    .hero-content .label {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
+    .hero-content .subtitle {
       font-size: 13px;
-      color: var(--text-secondary);
-      font-weight: 600;
-      letter-spacing: 1px;
+      color: var(--accent-gold-light);
+      font-weight: 700;
+      letter-spacing: 3px;
       text-transform: uppercase;
-    }
-    .hero-content .label-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .hero-content .label-item::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      background: var(--accent-gold);
-      border-radius: 50%;
-    }
-    .hero-content h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 56px;
-      font-weight: 800;
-      color: var(--primary-dark);
-      line-height: 1.2;
-      letter-spacing: -1px;
-      margin: 0;
-    }
-    .hero-content .description {
-      font-size: 20px;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      font-weight: 400;
-      max-width: 560px;
+      opacity: 0.95;
     }
     .container {
       max-width: 1280px;
@@ -405,16 +370,6 @@
       opacity: 0.85;
     }
     @media (max-width: 1024px) {
-      .hero-inner {
-        gap: 50px;
-        padding: 70px 40px;
-      }
-      .hero-image {
-        height: 500px;
-      }
-      .hero-content h1 {
-        font-size: 48px;
-      }
       .container {
         padding: 60px 32px;
       }
@@ -439,29 +394,15 @@
       nav a {
         font-size: 13px;
       }
-      .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 60px 24px;
-        min-height: auto;
-      }
-      .hero-image {
-        height: 400px;
-        order: 1;
+      .hero-banner {
+        height: 500px;
       }
       .hero-content {
-        order: 2;
-        gap: 24px;
+        padding: 24px;
       }
-      .hero-content h1 {
-        font-size: 36px;
-      }
-      .hero-content .description {
-        font-size: 18px;
-      }
-      .hero-content .label {
+      .hero-content .subtitle {
         font-size: 11px;
-        flex-wrap: wrap;
+        letter-spacing: 2px;
       }
       .container {
         padding: 48px 24px;
@@ -624,7 +565,6 @@
       <a href="#" class="logo">
         <span class="logo-name">Дмитро Царенко</span>
         <span class="logo-tagline">Блог і статті</span>
-        <span class="logo-subtitle">Ділюся досвідом і статтями про технології, альтернативну енергетику та бізнес</span>
       </a>
       <nav>
         <a href="#про">Про себе</a>
@@ -638,19 +578,9 @@
   </header>
 
   <div class="hero-banner">
-    <div class="hero-inner">
-      <div class="hero-image">
-        <img src="dsc08620 copy.jpg" alt="Дмитро Царенко">
-      </div>
-      <div class="hero-content">
-        <div class="label">
-          <span class="label-item">Підприємець</span>
-          <span class="label-item">Науковець</span>
-          <span class="label-item">Експерт в галузі альтернативної енергетики</span>
-        </div>
-        <h1>Дмитро Царенко</h1>
-        <p class="description">Ділюся досвідом і статтями про технології, альтернативну енергетику та бізнес</p>
-      </div>
+    <img src="dsc08620 copy.jpg" alt="Дмитро Царенко">
+    <div class="hero-content">
+      <div class="subtitle">Підприємець • Науковець • Експерт в галузі альтернативної енергетики</div>
     </div>
   </div>
 
