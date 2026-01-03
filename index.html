@@ -119,67 +119,75 @@
     }
     .hero-banner {
       width: 100%;
-      height: 680px;
-      overflow: hidden;
-      position: relative;
+      background: var(--bg-white);
       margin-bottom: 0;
     }
-    .hero-banner::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(10, 22, 40, 0.85) 0%, rgba(26, 35, 50, 0.6) 50%, rgba(201, 169, 97, 0.3) 100%);
-      z-index: 1;
+    .hero-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 600px;
+      align-items: center;
+      gap: 80px;
+      padding: 80px 60px;
     }
-    .hero-banner img {
+    .hero-image {
+      position: relative;
+      height: 600px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    }
+    .hero-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center 20%;
       display: block;
-      filter: brightness(0.9) contrast(1.1);
     }
     .hero-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-      text-align: center;
-      width: 90%;
-      max-width: 1100px;
-      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
     }
-    .hero-content .subtitle {
+    .hero-content .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
       font-size: 13px;
-      color: var(--accent-gold-light);
-      margin-bottom: 28px;
-      font-weight: 700;
-      letter-spacing: 3px;
+      color: var(--text-secondary);
+      font-weight: 600;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      opacity: 0.95;
+    }
+    .hero-content .label-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero-content .label-item::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--accent-gold);
+      border-radius: 50%;
     }
     .hero-content h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 72px;
+      font-size: 56px;
       font-weight: 800;
-      margin-bottom: 24px;
-      color: #ffffff;
-      line-height: 1.15;
+      color: var(--primary-dark);
+      line-height: 1.2;
       letter-spacing: -1px;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      margin: 0;
     }
-    .hero-content p {
-      font-size: 22px;
-      color: rgba(255, 255, 255, 0.92);
-      max-width: 750px;
-      margin: 0 auto;
+    .hero-content .description {
+      font-size: 20px;
+      color: var(--text-secondary);
       line-height: 1.7;
       font-weight: 400;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      max-width: 560px;
     }
     .container {
       max-width: 1280px;
@@ -397,6 +405,16 @@
       opacity: 0.85;
     }
     @media (max-width: 1024px) {
+      .hero-inner {
+        gap: 50px;
+        padding: 70px 40px;
+      }
+      .hero-image {
+        height: 500px;
+      }
+      .hero-content h1 {
+        font-size: 48px;
+      }
       .container {
         padding: 60px 32px;
       }
@@ -421,22 +439,29 @@
       nav a {
         font-size: 13px;
       }
-      .hero-banner {
-        height: 500px;
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 60px 24px;
+        min-height: auto;
+      }
+      .hero-image {
+        height: 400px;
+        order: 1;
       }
       .hero-content {
-        padding: 24px;
+        order: 2;
+        gap: 24px;
       }
       .hero-content h1 {
-        font-size: 42px;
-        margin-bottom: 20px;
+        font-size: 36px;
       }
-      .hero-content p {
+      .hero-content .description {
         font-size: 18px;
       }
-      .hero-content .subtitle {
+      .hero-content .label {
         font-size: 11px;
-        letter-spacing: 2px;
+        flex-wrap: wrap;
       }
       .container {
         padding: 48px 24px;
@@ -613,10 +638,19 @@
   </header>
 
   <div class="hero-banner">
-    <img src="dsc08620 copy.jpg" alt="Дмитро Царенко">
-    <div class="hero-content">
-      <div class="subtitle">Підприємець • Науковець • Експерт в галузі альтернативної енергетики</div>
-      <p>Ділюся досвідом і статтями про технології, альтернативну енергетику та бізнес</p>
+    <div class="hero-inner">
+      <div class="hero-image">
+        <img src="dsc08620 copy.jpg" alt="Дмитро Царенко">
+      </div>
+      <div class="hero-content">
+        <div class="label">
+          <span class="label-item">Підприємець</span>
+          <span class="label-item">Науковець</span>
+          <span class="label-item">Експерт в галузі альтернативної енергетики</span>
+        </div>
+        <h1>Дмитро Царенко</h1>
+        <p class="description">Ділюся досвідом і статтями про технології, альтернативну енергетику та бізнес</p>
+      </div>
     </div>
   </div>
 
