@@ -28,6 +28,7 @@
 
     html {
       scroll-behavior: smooth;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
@@ -36,6 +37,8 @@
       color: var(--text-primary);
       line-height: 1.7;
       font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     header {
       background: rgba(255, 255, 255, 0.98);
@@ -123,13 +126,16 @@
       cursor: pointer;
       padding: 8px;
       z-index: 1001;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
     }
     .mobile-menu-toggle span {
       width: 28px;
       height: 3px;
       background: var(--primary-dark);
       border-radius: 2px;
-      transition: all 0.3s ease;
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+      will-change: transform, opacity;
     }
     .mobile-menu-toggle.active span:nth-child(1) {
       transform: rotate(45deg) translate(8px, 8px);
@@ -139,6 +145,22 @@
     }
     .mobile-menu-toggle.active span:nth-child(3) {
       transform: rotate(-45deg) translate(8px, -8px);
+    }
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+      z-index: 999;
+    }
+    .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
     }
     .hero-banner {
       width: 100%;
@@ -442,20 +464,23 @@
       nav {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
         width: 280px;
         height: 100vh;
         background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(20px);
         flex-direction: column;
         gap: 0;
         padding: 80px 24px 24px;
         box-shadow: -4px 0 24px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s ease;
+        transform: translateX(100%);
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform;
         z-index: 1000;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
       }
       nav.active {
-        right: 0;
+        transform: translateX(0);
       }
       nav a {
         font-size: 16px;
@@ -649,6 +674,7 @@
   </style>
 </head>
 <body>
+  <div class="menu-overlay"></div>
   <header>
     <div class="header-content">
       <a href="#" class="logo">
@@ -672,7 +698,7 @@
   </header>
 
   <div class="hero-banner">
-    <img src="dsc08620 copy.jpg" alt="Дмитро Царенко">
+    <img src="dsc08620 copy.jpg" alt="Дмитро Царенко" loading="eager">
     <div class="hero-content">
       <div class="subtitle">Підприємець • Науковець • Експерт в галузі альтернативної енергетики</div>
       <div class="subtitle">Ділюся досвідом і статтями про технології, альтернативну енергетику та бізнес</div>
@@ -686,7 +712,7 @@
         <h2>Про себе</h2>
         <div class="about-author">
           <div class="about-author-image">
-            <img src="2026-01-02_15.35.18.jpg" alt="Дмитро Царенко">
+            <img src="2026-01-02_15.35.18.jpg" alt="Дмитро Царенко" loading="lazy">
           </div>
           <div class="about-author-text">
             <p style="font-size: 18px; color: #666; line-height: 1.8; margin-bottom: 24px;">
@@ -1626,29 +1652,29 @@
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('nav');
     const navLinks = document.querySelectorAll('nav a');
+    const menuOverlay = document.querySelector('.menu-overlay');
 
-    mobileMenuToggle.addEventListener('click', () => {
-      mobileMenuToggle.classList.toggle('active');
-      nav.classList.toggle('active');
-      document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-    });
+    function toggleMenu() {
+      const isActive = nav.classList.contains('active');
+      mobileMenuToggle.classList.toggle('active', !isActive);
+      nav.classList.toggle('active', !isActive);
+      menuOverlay.classList.toggle('active', !isActive);
+      document.body.style.overflow = !isActive ? 'hidden' : '';
+    }
+
+    mobileMenuToggle.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking on overlay
+    menuOverlay.addEventListener('click', toggleMenu);
 
     // Close menu when clicking on a link
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         mobileMenuToggle.classList.remove('active');
         nav.classList.remove('active');
+        menuOverlay.classList.remove('active');
         document.body.style.overflow = '';
       });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-        mobileMenuToggle.classList.remove('active');
-        nav.classList.remove('active');
-        document.body.style.overflow = '';
-      }
     });
   </script>
 </body>
