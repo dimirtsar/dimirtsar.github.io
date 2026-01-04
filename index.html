@@ -417,6 +417,21 @@
     .article-image:hover img {
       transform: scale(1.05);
     }
+    .article-image svg {
+      width: 100%;
+      height: auto;
+      max-height: none;
+    }
+    @media (max-width: 768px) {
+      .article-image svg {
+        min-height: 400px;
+      }
+    }
+    @media (max-width: 520px) {
+      .article-image svg {
+        min-height: 350px;
+      }
+    }
     footer {
       background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
       color: rgba(255, 255, 255, 0.9);
@@ -1531,7 +1546,7 @@
             <span class="article-date">січень 2026</span>
             <div id="tech2" class="article-content" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
               <div class="article-image">
-                <svg viewBox="0 0 1000 550" style="max-width: 100%; height: auto; display: block; margin: 0 auto; background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%); border-radius: 12px; padding: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <svg viewBox="0 0 1000 550" preserveAspectRatio="xMidYMid meet" style="max-width: 100%; height: auto; display: block; margin: 0 auto; background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%); border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
 
                   <!-- Визначення градієнтів та маркерів -->
                   <defs>
@@ -1569,22 +1584,22 @@
                   </defs>
 
                   <!-- Заголовок -->
-                  <text x="500" y="40" text-anchor="middle" font-size="28" font-weight="bold" fill="#2c3e50">ПРИНЦИП РОБОТИ: ХОЛОДИЛЬНИК vs ТЕПЛОВИЙ НАСОС</text>
+                  <text x="500" y="45" text-anchor="middle" font-size="32" font-weight="bold" fill="#2c3e50">ПРИНЦИП РОБОТИ: ХОЛОДИЛЬНИК vs ТЕПЛОВИЙ НАСОС</text>
 
                   <!-- ======= ХОЛОДИЛЬНИК (ЛІВОРУЧ) ======= -->
                   <g id="refrigerator">
                     <!-- Заголовок -->
-                    <text x="230" y="90" text-anchor="middle" font-size="20" font-weight="bold" fill="#34495e">ХОЛОДИЛЬНИК</text>
-                    <text x="230" y="112" text-anchor="middle" font-size="14" fill="#7f8c8d">стандартна робота</text>
+                    <text x="230" y="90" text-anchor="middle" font-size="24" font-weight="bold" fill="#34495e">ХОЛОДИЛЬНИК</text>
+                    <text x="230" y="115" text-anchor="middle" font-size="16" fill="#7f8c8d">стандартна робота</text>
 
                     <!-- Корпус холодильника -->
                     <rect x="130" y="140" width="200" height="280" fill="url(#coldGradient)" stroke="#34495e" stroke-width="4" rx="8"/>
 
                     <!-- Морозильна камера (випарник) -->
                     <rect x="150" y="165" width="160" height="100" fill="#b3d9ff" stroke="#2980b9" stroke-width="3" rx="6"/>
-                    <text x="230" y="205" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c3e50">МОРОЗИЛКА</text>
-                    <text x="230" y="228" text-anchor="middle" font-size="22" font-weight="bold" fill="#2980b9">-18°C</text>
-                    <text x="230" y="248" text-anchor="middle" font-size="13" fill="#546e7a">(випарник)</text>
+                    <text x="230" y="205" text-anchor="middle" font-size="18" font-weight="bold" fill="#2c3e50">МОРОЗИЛКА</text>
+                    <text x="230" y="230" text-anchor="middle" font-size="26" font-weight="bold" fill="#2980b9">-18°C</text>
+                    <text x="230" y="250" text-anchor="middle" font-size="14" fill="#546e7a">(випарник)</text>
 
                     <!-- Стрілка холоду всередині -->
                     <path d="M 180,190 L 165,190" stroke="#2980b9" stroke-width="3" marker-end="url(#arrowBlue)"/>
@@ -1623,8 +1638,8 @@
                     <text x="405" y="278" text-anchor="middle" font-size="12" fill="#c0392b">в кухню</text>
 
                     <!-- Підпис знизу -->
-                    <text x="230" y="450" text-anchor="middle" font-size="14" font-weight="600" fill="#34495e">Забирає холод з продуктів →</text>
-                    <text x="230" y="470" text-anchor="middle" font-size="14" font-weight="600" fill="#34495e">Викидає тепло в кімнату</text>
+                    <text x="230" y="450" text-anchor="middle" font-size="16" font-weight="600" fill="#34495e">Забирає холод з продуктів →</text>
+                    <text x="230" y="472" text-anchor="middle" font-size="16" font-weight="600" fill="#34495e">Викидає тепло в кімнату</text>
                   </g>
 
                   <!-- ======= СТРІЛКА ПЕРЕТВОРЕННЯ (ЦЕНТР) ======= -->
@@ -1638,8 +1653,8 @@
                   <!-- ======= ТЕПЛОВИЙ НАСОС (ПРАВОРУЧ) ======= -->
                   <g id="heatPump">
                     <!-- Заголовок -->
-                    <text x="730" y="90" text-anchor="middle" font-size="20" font-weight="bold" fill="#27ae60">ТЕПЛОВИЙ НАСОС</text>
-                    <text x="730" y="112" text-anchor="middle" font-size="14" fill="#7f8c8d">холодильник навпаки</text>
+                    <text x="730" y="90" text-anchor="middle" font-size="24" font-weight="bold" fill="#27ae60">ТЕПЛОВИЙ НАСОС</text>
+                    <text x="730" y="115" text-anchor="middle" font-size="16" fill="#7f8c8d">холодильник навпаки</text>
 
                     <!-- Будинок (конденсатор) -->
                     <rect x="630" y="140" width="200" height="110" fill="url(#warmGradient)" stroke="#e67e22" stroke-width="4" rx="8"/>
@@ -1647,9 +1662,9 @@
                     <!-- Іконка будинку -->
                     <path d="M 730,165 L 760,145 L 760,175 L 700,175 L 700,145 Z" fill="#d35400" stroke="#b8541e" stroke-width="2"/>
 
-                    <text x="730" y="195" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c3e50">ПРИМІЩЕННЯ</text>
-                    <text x="730" y="218" text-anchor="middle" font-size="22" font-weight="bold" fill="#e67e22">+22°C</text>
-                    <text x="730" y="238" text-anchor="middle" font-size="13" fill="#7f8c8d">(конденсатор)</text>
+                    <text x="730" y="195" text-anchor="middle" font-size="18" font-weight="bold" fill="#2c3e50">ПРИМІЩЕННЯ</text>
+                    <text x="730" y="222" text-anchor="middle" font-size="26" font-weight="bold" fill="#e67e22">+22°C</text>
+                    <text x="730" y="242" text-anchor="middle" font-size="14" fill="#7f8c8d">(конденсатор)</text>
 
                     <!-- Стрілка тепла в будинок -->
                     <path d="M 730,250 L 730,270" stroke="#e67e22" stroke-width="4" marker-end="url(#arrowOrange)"/>
@@ -1671,8 +1686,8 @@
                     <path d="M 640 400 Q 660 395, 680 400 T 720 400 T 760 400 T 800 400" stroke="#7f8c8d" stroke-width="2" fill="none"/>
                     <path d="M 640 415 Q 660 410, 680 415 T 720 415 T 760 415 T 800 415" stroke="#7f8c8d" stroke-width="2" fill="none"/>
 
-                    <text x="730" y="437" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c3e50">ҐРУНТ / ПОВІТРЯ</text>
-                    <text x="730" y="458" text-anchor="middle" font-size="22" font-weight="bold" fill="#2980b9">+5°C</text>
+                    <text x="730" y="437" text-anchor="middle" font-size="18" font-weight="bold" fill="#2c3e50">ҐРУНТ / ПОВІТРЯ</text>
+                    <text x="730" y="462" text-anchor="middle" font-size="26" font-weight="bold" fill="#2980b9">+5°C</text>
 
                     <!-- З'єднання компресор-випарник -->
                     <path d="M 730,345 L 730,360" stroke="#2980b9" stroke-width="4" stroke-dasharray="8,4" marker-end="url(#arrowBlue)"/>
@@ -1687,12 +1702,12 @@
                     <text x="600" y="426" text-anchor="middle" font-size="11" fill="#229954">з землі</text>
 
                     <!-- Підпис знизу -->
-                    <text x="730" y="500" text-anchor="middle" font-size="14" font-weight="600" fill="#27ae60">Забирає тепло з землі →</text>
-                    <text x="730" y="520" text-anchor="middle" font-size="14" font-weight="600" fill="#27ae60">Віддає його в будинок</text>
+                    <text x="730" y="500" text-anchor="middle" font-size="16" font-weight="600" fill="#27ae60">Забирає тепло з землі →</text>
+                    <text x="730" y="522" text-anchor="middle" font-size="16" font-weight="600" fill="#27ae60">Віддає його в будинок</text>
                   </g>
 
                   <!-- Підпис внизу -->
-                  <text x="500" y="555" text-anchor="middle" font-size="13" fill="#7f8c8d" font-style="italic">
+                  <text x="500" y="555" text-anchor="middle" font-size="15" fill="#7f8c8d" font-style="italic">
                     Той самий термодинамічний цикл, лише з протилежною метою
                   </text>
                 </svg>
@@ -1720,7 +1735,7 @@
             <span class="article-date">січень 2026</span>
             <div id="tech3" class="article-content" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
               <div class="article-image">
-                <svg viewBox="0 0 1200 700" style="max-width: 100%; height: auto; display: block; margin: 0 auto; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 12px; padding: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid meet" style="max-width: 100%; height: auto; display: block; margin: 0 auto; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
 
                   <!-- Визначення градієнтів, патернів та маркерів -->
                   <defs>
@@ -1768,8 +1783,8 @@
                   </defs>
 
                   <!-- Заголовок -->
-                  <text x="600" y="40" text-anchor="middle" font-size="32" font-weight="bold" fill="#212529">СИСТЕМА РЕКУПЕРАЦІЇ ТЕПЛА</text>
-                  <text x="600" y="70" text-anchor="middle" font-size="16" fill="#495057">Принцип роботи теплообмінника з протитечією (counter-flow heat exchanger)</text>
+                  <text x="600" y="45" text-anchor="middle" font-size="36" font-weight="bold" fill="#212529">СИСТЕМА РЕКУПЕРАЦІЇ ТЕПЛА</text>
+                  <text x="600" y="75" text-anchor="middle" font-size="18" fill="#495057">Принцип роботи теплообмінника з протитечією</text>
 
                   <!-- Будинок -->
                   <g id="house">
@@ -1789,9 +1804,9 @@
                     <rect x="160" y="430" width="50" height="70" fill="#e8590c" stroke="#d9480f" stroke-width="2" rx="4"/>
                     <circle cx="175" cy="465" r="3" fill="#f8f9fa"/>
 
-                    <text x="190" y="280" text-anchor="middle" font-size="20" font-weight="bold" fill="#d9480f">БУДИНОК</text>
-                    <text x="190" y="540" text-anchor="middle" font-size="16" font-weight="600" fill="#e03131">ВІДПРАЦЬОВАНЕ</text>
-                    <text x="190" y="560" text-anchor="middle" font-size="16" font-weight="600" fill="#e03131">ПОВІТРЯ +20°C</text>
+                    <text x="190" y="280" text-anchor="middle" font-size="22" font-weight="bold" fill="#d9480f">БУДИНОК</text>
+                    <text x="190" y="540" text-anchor="middle" font-size="18" font-weight="600" fill="#e03131">ВІДПРАЦЬОВАНЕ</text>
+                    <text x="190" y="560" text-anchor="middle" font-size="18" font-weight="600" fill="#e03131">ПОВІТРЯ +20°C</text>
                   </g>
 
                   <!-- Потік теплого повітря з будинку -->
@@ -1805,17 +1820,14 @@
 
                     <line x1="510" y1="385" x2="560" y2="385" stroke="#e03131" stroke-width="5" marker-end="url(#arrowWarm)"/>
 
-                    <text x="420" y="350" text-anchor="middle" font-size="14" font-weight="bold" fill="#c92a2a">Витяжка</text>
-                    <text x="420" y="430" text-anchor="middle" font-size="18" font-weight="bold" fill="#e03131">+20°C</text>
+                    <text x="420" y="350" text-anchor="middle" font-size="16" font-weight="bold" fill="#c92a2a">Витяжка</text>
+                    <text x="420" y="430" text-anchor="middle" font-size="22" font-weight="bold" fill="#e03131">+20°C</text>
                   </g>
 
                   <!-- Рекуператор (центральний блок) -->
                   <g id="recuperator">
                     <!-- Корпус -->
                     <rect x="560" y="200" width="280" height="320" fill="url(#deviceGradient)" stroke="#495057" stroke-width="4" rx="12"/>
-
-                    <!-- Логотип/бренд -->
-                    <text x="700" y="180" text-anchor="middle" font-size="14" font-weight="bold" fill="#495057">ZEHNDER / PAUL / M-WRG</text>
 
                     <!-- Теплообмінник -->
                     <rect x="620" y="240" width="160" height="240" fill="url(#heatExchangerPattern)" stroke="#343a40" stroke-width="3" rx="4"/>
@@ -1839,14 +1851,14 @@
                     <path d="M 760 420 L 745 405 L 760 390" stroke="none" fill="#4dabf7" opacity="0.6"/>
 
                     <!-- Текст всередині -->
-                    <text x="700" y="225" text-anchor="middle" font-size="16" font-weight="bold" fill="#212529">ТЕПЛООБМІННИК</text>
-                    <text x="700" y="245" text-anchor="middle" font-size="12" fill="#495057">(алюмінієві пластини)</text>
+                    <text x="700" y="225" text-anchor="middle" font-size="18" font-weight="bold" fill="#212529">ТЕПЛООБМІННИК</text>
+                    <text x="700" y="245" text-anchor="middle" font-size="14" fill="#495057">(алюмінієві пластини)</text>
 
                     <!-- Ефективність -->
                     <circle cx="700" cy="360" r="50" fill="#20c997" stroke="#12b886" stroke-width="3" opacity="0.9"/>
-                    <text x="700" y="350" text-anchor="middle" font-size="20" font-weight="bold" fill="white">90%</text>
-                    <text x="700" y="370" text-anchor="middle" font-size="11" font-weight="bold" fill="white">ПОВЕРНЕННЯ</text>
-                    <text x="700" y="383" text-anchor="middle" font-size="11" font-weight="bold" fill="white">ТЕПЛА</text>
+                    <text x="700" y="350" text-anchor="middle" font-size="24" font-weight="bold" fill="white">90%</text>
+                    <text x="700" y="370" text-anchor="middle" font-size="12" font-weight="bold" fill="white">ПОВЕРНЕННЯ</text>
+                    <text x="700" y="385" text-anchor="middle" font-size="12" font-weight="bold" fill="white">ТЕПЛА</text>
 
                     <!-- Вхід теплого повітря -->
                     <path d="M 560 365 L 575 385 L 560 405" stroke="none" fill="#e03131"/>
@@ -1880,8 +1892,8 @@
                     <path d="M 1000 370 L 1015 385 L 1000 400" stroke="none" fill="#228be6"/>
                     <path d="M 1030 370 L 1045 385 L 1030 400" stroke="none" fill="#228be6"/>
 
-                    <text x="980" y="350" text-anchor="middle" font-size="14" font-weight="bold" fill="#1971c2">Викид</text>
-                    <text x="980" y="430" text-anchor="middle" font-size="18" font-weight="bold" fill="#339af0">+8°C</text>
+                    <text x="980" y="350" text-anchor="middle" font-size="16" font-weight="bold" fill="#1971c2">Викид</text>
+                    <text x="980" y="430" text-anchor="middle" font-size="22" font-weight="bold" fill="#339af0">+8°C</text>
                   </g>
 
                   <!-- Зовнішнє середовище -->
@@ -1900,9 +1912,9 @@
                     <text x="1040" y="265" font-size="20" fill="#74c0fc">❄</text>
                     <text x="1080" y="250" font-size="24" fill="#74c0fc">❄</text>
 
-                    <text x="1010" y="155" text-anchor="middle" font-size="20" font-weight="bold" fill="#1971c2">ВУЛИЦЯ</text>
-                    <text x="1010" y="300" text-anchor="middle" font-size="16" font-weight="600" fill="#1971c2">СВІЖЕ ПОВІТРЯ</text>
-                    <text x="1010" y="320" text-anchor="middle" font-size="16" font-weight="600" fill="#1971c2">-5°C</text>
+                    <text x="1010" y="155" text-anchor="middle" font-size="22" font-weight="bold" fill="#1971c2">ВУЛИЦЯ</text>
+                    <text x="1010" y="300" text-anchor="middle" font-size="18" font-weight="600" fill="#1971c2">СВІЖЕ ПОВІТРЯ</text>
+                    <text x="1010" y="320" text-anchor="middle" font-size="18" font-weight="600" fill="#1971c2">-5°C</text>
                   </g>
 
                   <!-- Потік холодного повітря з вулиці -->
@@ -1916,8 +1928,8 @@
 
                     <line x1="840" y1="255" x2="890" y2="255" stroke="#1971c2" stroke-width="5" marker-end="url(#arrowCold)"/>
 
-                    <text x="980" y="220" text-anchor="middle" font-size="14" font-weight="bold" fill="#1864ab">Притік</text>
-                    <text x="980" y="300" text-anchor="middle" font-size="18" font-weight="bold" fill="#1971c2">-5°C</text>
+                    <text x="980" y="220" text-anchor="middle" font-size="16" font-weight="bold" fill="#1864ab">Притік</text>
+                    <text x="980" y="300" text-anchor="middle" font-size="22" font-weight="bold" fill="#1971c2">-5°C</text>
                   </g>
 
                   <!-- Потік підігрітого повітря в будинок -->
@@ -1931,17 +1943,17 @@
                     <path d="M 390 240 L 375 255 L 390 270" stroke="none" fill="#f76707"/>
                     <path d="M 360 240 L 345 255 L 360 270" stroke="none" fill="#f76707"/>
 
-                    <text x="420" y="220" text-anchor="middle" font-size="14" font-weight="bold" fill="#f76707">Приплив</text>
-                    <text x="420" y="300" text-anchor="middle" font-size="18" font-weight="bold" fill="#fd7e14">+17°C</text>
+                    <text x="420" y="220" text-anchor="middle" font-size="16" font-weight="bold" fill="#f76707">Приплив</text>
+                    <text x="420" y="300" text-anchor="middle" font-size="22" font-weight="bold" fill="#fd7e14">+17°C</text>
                   </g>
 
                   <!-- Легенда знизу -->
                   <g id="legend">
-                    <rect x="150" y="600" width="900" height="70" fill="white" stroke="#dee2e6" stroke-width="2" rx="8"/>
+                    <rect x="100" y="600" width="1000" height="75" fill="white" stroke="#dee2e6" stroke-width="2" rx="8"/>
 
-                    <text x="600" y="625" text-anchor="middle" font-size="16" font-weight="bold" fill="#212529">ЕФЕКТИВНІСТЬ: Свіже повітря -5°C підігрівається до +17°C без додаткових витрат енергії</text>
-                    <text x="600" y="648" text-anchor="middle" font-size="14" fill="#495057">Економія опалення: 90% тепла повертається назад • Витрати електроенергії: 50-80 Вт (вентилятори)</text>
-                    <text x="600" y="665" text-anchor="middle" font-size="12" fill="#868e96" font-style="italic">Технологія: протитечійний теплообмінник (counter-flow) • Стандарт: EN 13141-7, Passivhaus</text>
+                    <text x="600" y="628" text-anchor="middle" font-size="18" font-weight="bold" fill="#212529">ЕФЕКТИВНІСТЬ: Свіже повітря -5°C підігрівається до +17°C без додаткових витрат</text>
+                    <text x="600" y="651" text-anchor="middle" font-size="16" fill="#495057">Економія: 90% тепла повертається • Споживання: 50-80 Вт</text>
+                    <text x="600" y="670" text-anchor="middle" font-size="14" fill="#868e96" font-style="italic">Стандарт: EN 13141-7, Passivhaus</text>
                   </g>
                 </svg>
               </div>
