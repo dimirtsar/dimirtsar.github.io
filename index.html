@@ -389,14 +389,19 @@
     }
     .article-image {
       width: 100%;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 32px;
-      box-shadow: 0 8px 32px rgba(10, 22, 40, 0.15);
+      max-width: 1400px;
+      margin: 0 auto 32px;
       position: relative;
     }
     .article-image:not(:has(svg)) {
       height: 350px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(10, 22, 40, 0.15);
+    }
+    .article-image:has(svg) {
+      border-radius: 12px;
+      overflow: visible;
     }
     .article-image::after {
       content: '';
@@ -407,8 +412,12 @@
       bottom: 0;
       background: linear-gradient(135deg, rgba(201, 169, 97, 0.1) 0%, transparent 50%);
       pointer-events: none;
+      z-index: 1;
     }
-    .article-image img:not(.svg-img) {
+    .article-image:has(svg)::after {
+      display: none;
+    }
+    .article-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -416,7 +425,11 @@
       transition: transform 0.6s ease;
       filter: brightness(1.05) contrast(1.03);
     }
-    .article-image:hover img:not(.svg-img) {
+    .article-image:has(svg) img {
+      height: auto;
+      object-fit: contain;
+    }
+    .article-image:hover img {
       transform: scale(1.05);
     }
     .article-image svg {
@@ -424,18 +437,42 @@
       height: auto;
       max-height: none;
       display: block;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(10, 22, 40, 0.15);
+    }
+    @media (max-width: 1200px) {
+      .article-image svg text {
+        font-size: 90%;
+      }
+    }
+    @media (max-width: 1024px) {
+      .article-image svg {
+        border-radius: 8px;
+      }
+      .article-image svg text {
+        font-size: 80%;
+      }
     }
     @media (max-width: 768px) {
       .article-image svg text {
-        font-size: 85%;
+        font-size: 65%;
       }
       .article-image svg rect.svg-label-desktop {
-        width: 90%;
+        width: 85%;
       }
     }
     @media (max-width: 520px) {
       .article-image:not(:has(svg)) {
         height: 250px;
+      }
+      .article-image svg {
+        border-radius: 6px;
+      }
+      .article-image svg text {
+        font-size: 50%;
+      }
+      .article-image svg rect.svg-label-desktop {
+        width: 70%;
       }
     }
     footer {
@@ -563,12 +600,6 @@
       }
       .article p {
         font-size: 15px;
-      }
-      .article-image:not(:has(svg)) {
-        height: 250px;
-      }
-      .article-image svg {
-        height: auto !important;
       }
       footer {
         padding: 48px 24px;
@@ -1554,8 +1585,8 @@
             <p>Від принципу роботи до реальної ефективності: розбираємо інженерію сучасних систем опалення</p>
             <span class="article-date">січень 2026</span>
             <div id="tech2" class="article-content" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
-              <div class="article-image" style="position: relative; max-width: 100%; margin: 0 auto; overflow: hidden;">
-                <svg viewBox="0 0 2216 830" preserveAspectRatio="xMidYMid meet" style="max-width: 100%; height: auto; display: block;">
+              <div class="article-image">
+                <svg viewBox="0 0 2216 830" preserveAspectRatio="xMinYMin meet">
                   <image href="знімок_екрана_2026-01-04_о_20.10.02.png" width="2216" height="830"/>
 
                   <rect class="svg-label-desktop" x="0" y="0" width="510" height="60" fill="rgba(255,255,255,0.9)" rx="4"/>
@@ -1610,8 +1641,8 @@
             <p>Свіже повітря без втрат енергії — стандарт енергоефективного будинку</p>
             <span class="article-date">січень 2026</span>
             <div id="tech3" class="article-content" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
-              <div class="article-image" style="position: relative; max-width: 100%; margin: 0 auto; overflow: hidden;">
-                <img src="знімок_екрана_2026-01-04_о_20.03.38.png" alt="Схема роботи системи рекуперації тепла" style="width: 100%; height: auto; display: block; border-radius: 8px;">
+              <div class="article-image">
+                <img src="знімок_екрана_2026-01-04_о_20.03.38.png" alt="Схема роботи системи рекуперації тепла">
               </div>
 
               <p style="line-height: 1.8; margin-bottom: 16px;">Ви опалюєте будинок, а потім відкриваєте вікна, щоб впустити свіже повітря. Разом з відпрацьованим повітрям викидаєте назовні до 30% всього тепла. Для будинку 150 м² це близько €200-250 на рік, які просто вилітають у вікно. Система вентиляції з рекуперацією вирішує цю проблему елегантно.</p>
