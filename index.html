@@ -429,8 +429,20 @@
       height: auto;
       object-fit: contain;
     }
+    .article-image.contain-image {
+      height: auto;
+      max-height: 600px;
+    }
+    .article-image.contain-image img {
+      object-fit: contain;
+      height: auto;
+      max-height: 600px;
+    }
     .article-image:hover img {
-      transform: scale(1.05);
+      transform: scale(1.02);
+    }
+    .article-image.contain-image:hover img {
+      transform: none;
     }
     .article-image svg {
       width: 100%;
@@ -454,6 +466,12 @@
       }
     }
     @media (max-width: 768px) {
+      .article-image.contain-image {
+        max-height: 500px;
+      }
+      .article-image.contain-image img {
+        max-height: 500px;
+      }
       .article-image svg text {
         font-size: 65%;
       }
@@ -464,6 +482,13 @@
     @media (max-width: 520px) {
       .article-image:not(:has(svg)) {
         height: 250px;
+      }
+      .article-image.contain-image {
+        height: auto;
+        max-height: 400px;
+      }
+      .article-image.contain-image img {
+        max-height: 400px;
       }
       .article-image svg {
         border-radius: 6px;
@@ -1586,8 +1611,8 @@
             <span class="article-date">січень 2026</span>
             <div id="tech2" class="article-content" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
               <div class="article-image">
-                <svg viewBox="0 0 2216 830" preserveAspectRatio="xMinYMin meet">
-                  <image href="знімок_екрана_2026-01-04_о_20.10.02.png" width="2216" height="830"/>
+                <svg viewBox="0 0 2216 830" preserveAspectRatio="xMidYMid meet" style="background: #f8f9fa;">
+                  <image href="знімок_екрана_2026-01-04_о_20.10.02.png" x="0" y="0" width="2216" height="830"/>
 
                   <rect class="svg-label-desktop" x="0" y="0" width="510" height="60" fill="rgba(255,255,255,0.9)" rx="4"/>
                   <text class="svg-label-desktop" x="255" y="42" text-anchor="middle" font-size="32" font-weight="bold" fill="#1864ab">Джерело тепла</text>
@@ -1641,7 +1666,7 @@
             <p>Свіже повітря без втрат енергії — стандарт енергоефективного будинку</p>
             <span class="article-date">січень 2026</span>
             <div id="tech3" class="article-content" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
-              <div class="article-image">
+              <div class="article-image contain-image">
                 <img src="знімок_екрана_2026-01-04_о_20.03.38.png" alt="Схема роботи системи рекуперації тепла">
               </div>
 
