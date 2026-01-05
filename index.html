@@ -431,12 +431,14 @@
     }
     .article-image.contain-image {
       height: auto;
-      max-height: 600px;
+      max-height: 700px;
+      margin-bottom: 32px;
     }
     .article-image.contain-image img {
       object-fit: contain;
       height: auto;
-      max-height: 600px;
+      max-height: 700px;
+      width: 100%;
     }
     .article-image:hover img {
       transform: scale(1.02);
@@ -467,10 +469,12 @@
     }
     @media (max-width: 768px) {
       .article-image.contain-image {
-        max-height: 500px;
+        max-height: 550px;
+        margin-bottom: 28px;
       }
       .article-image.contain-image img {
-        max-height: 500px;
+        max-height: 550px;
+        width: 100%;
       }
       .article-image svg text {
         font-size: 65%;
@@ -485,10 +489,12 @@
       }
       .article-image.contain-image {
         height: auto;
-        max-height: 400px;
+        max-height: 450px;
+        margin-bottom: 24px;
       }
       .article-image.contain-image img {
-        max-height: 400px;
+        max-height: 450px;
+        width: 100%;
       }
       .article-image svg {
         border-radius: 6px;
@@ -1666,7 +1672,7 @@
             <p>Єдина в світі запатентована система, що нагріває воду не ТЕНом, а як побічний ефект опалення</p>
             <span class="article-date">січень 2026</span>
             <div id="hgl-tech" class="article-content" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
-              <div class="article-image">
+              <div class="article-image contain-image">
                 <img src="resized_ua_diagram_2400px.png" alt="Технологія HGL від IDM">
               </div>
 
