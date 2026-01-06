@@ -219,6 +219,72 @@
       text-transform: uppercase;
       margin-bottom: 16px;
     }
+
+    .metrics-section {
+      background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light) 100%);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 2px solid var(--border-color);
+      padding: 60px 40px;
+    }
+    .metrics-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+    .metric-item {
+      text-align: center;
+      padding: 32px 24px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 16px rgba(10, 22, 40, 0.04);
+    }
+    .metric-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(10, 22, 40, 0.12);
+      border-color: var(--accent-gold);
+    }
+    .metric-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .metric-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      letter-spacing: 0.5px;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+      .metrics-section {
+        padding: 48px 24px;
+      }
+      .metrics-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .metric-item {
+        padding: 24px 20px;
+      }
+      .metric-number {
+        font-size: 48px;
+      }
+      .metric-label {
+        font-size: 14px;
+      }
+    }
+
     .container {
       max-width: 1280px;
       margin: 0 auto;
@@ -925,6 +991,23 @@
     <div class="hero-content">
       <div class="subtitle">Підприємець • Науковець • Експерт в галузі альтернативної енергетики</div>
       <div class="subtitle">Ділюся досвідом і статтями про технології, альтернативну енергетику та бізнес</div>
+    </div>
+  </div>
+
+  <div class="metrics-section">
+    <div class="metrics-container">
+      <div class="metric-item">
+        <div class="metric-number" id="stat-expert" data-target="0">0</div>
+        <div class="metric-label">Експертних матеріалів</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-number" id="stat-heat-pumps" data-target="0">0</div>
+        <div class="metric-label">Статей про теплові насоси</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-number" id="stat-energy" data-target="0">0</div>
+        <div class="metric-label">Статті про енергоефективність</div>
+      </div>
     </div>
   </div>
 
