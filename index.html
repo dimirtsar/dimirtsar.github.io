@@ -239,6 +239,20 @@
       box-shadow: 0 12px 48px rgba(10, 22, 40, 0.15);
       position: relative;
     }
+    @media (min-width: 1024px) {
+      .about-author {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 48px;
+      }
+      .about-author-image {
+        width: 400px;
+        min-width: 400px;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 8px;
+      }
+    }
     .about-author-image::after {
       content: '';
       position: absolute;
@@ -250,6 +264,11 @@
       border-radius: 0;
       opacity: 0;
       transition: opacity 0.3s ease;
+    }
+    @media (min-width: 1024px) {
+      .about-author-image::after {
+        border-radius: 8px;
+      }
     }
     .about-author-image:hover::after {
       opacity: 1;
