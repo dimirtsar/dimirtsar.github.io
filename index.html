@@ -241,11 +241,19 @@
       border: 1px solid var(--border-color);
       transition: all 0.3s ease;
       box-shadow: 0 4px 16px rgba(10, 22, 40, 0.04);
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      color: inherit;
     }
     .metric-item:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 32px rgba(10, 22, 40, 0.12);
       border-color: var(--accent-gold);
+      background: rgba(255, 255, 255, 1);
+    }
+    .metric-item:active {
+      transform: translateY(-2px);
     }
     .metric-number {
       font-family: 'Playfair Display', serif;
@@ -996,18 +1004,18 @@
 
   <div class="metrics-section">
     <div class="metrics-container">
-      <div class="metric-item">
+      <a href="#heat-pumps" class="metric-item">
         <div class="metric-number" id="stat-expert" data-target="0">0</div>
         <div class="metric-label">Експертних матеріалів</div>
-      </div>
-      <div class="metric-item">
+      </a>
+      <a href="#heat-pumps" class="metric-item">
         <div class="metric-number" id="stat-heat-pumps" data-target="0">0</div>
         <div class="metric-label">Статей про теплові насоси</div>
-      </div>
-      <div class="metric-item">
+      </a>
+      <a href="#efficiency" class="metric-item">
         <div class="metric-number" id="stat-energy" data-target="0">0</div>
         <div class="metric-label">Статті про енергоефективність</div>
-      </div>
+      </a>
     </div>
   </div>
 
