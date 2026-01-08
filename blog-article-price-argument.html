@@ -1068,25 +1068,37 @@
     // Close menu when clicking on a link
     navLinks.forEach(link => {
       link.addEventListener('click', (e) => {
-        e.preventDefault();
         const targetId = link.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
 
-        if (targetSection) {
-          mobileMenuToggle.classList.remove('active');
-          nav.classList.remove('active');
-          menuOverlay.classList.remove('active');
-          document.body.style.overflow = '';
+        // Check if it's an anchor link (starts with #)
+        if (targetId && targetId.startsWith('#')) {
+          e.preventDefault();
+          const targetSection = document.querySelector(targetId);
 
-          setTimeout(() => {
-            const headerHeight = 88;
-            const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+          if (targetSection) {
+            mobileMenuToggle.classList.remove('active');
+            nav.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
 
-            window.scrollTo({
-              top: targetPosition,
-              behavior: 'smooth'
-            });
-          }, 300);
+            setTimeout(() => {
+              const headerHeight = 88;
+              const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+              window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+              });
+            }, 300);
+          }
+        } else {
+          // For regular links (.html) - just close mobile menu
+          if (mobileMenuToggle.classList.contains('active')) {
+            mobileMenuToggle.classList.remove('active');
+            nav.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+          }
         }
       });
     });
