@@ -152,12 +152,14 @@
     }
     .mobile-menu-toggle.active span:nth-child(1) {
       transform: rotate(45deg) translate(8px, 8px);
+      background: #000000;
     }
     .mobile-menu-toggle.active span:nth-child(2) {
       opacity: 0;
     }
     .mobile-menu-toggle.active span:nth-child(3) {
       transform: rotate(-45deg) translate(8px, -8px);
+      background: #000000;
     }
     .menu-overlay {
       position: fixed;
@@ -177,7 +179,7 @@
     }
     .hero-banner {
       width: 100%;
-      height: 680px;
+      height: 520px;
       overflow: hidden;
       position: relative;
       margin-bottom: 0;
@@ -189,7 +191,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(135deg, rgba(10, 22, 40, 0.85) 0%, rgba(26, 35, 50, 0.6) 50%, rgba(201, 169, 97, 0.3) 100%);
+      background: linear-gradient(135deg, rgba(10, 22, 40, 0.3) 0%, rgba(26, 35, 50, 0.2) 50%, rgba(201, 169, 97, 0.15) 100%);
       z-index: 1;
     }
     .hero-banner img {
@@ -200,34 +202,29 @@
       display: block;
       filter: brightness(1.05) contrast(1.03);
     }
-    .hero-content {
-      position: absolute;
-      bottom: 80px;
-      left: 0;
-      right: 0;
-      z-index: 2;
+    .hero-info {
+      background: var(--bg-white);
+      padding: 48px 40px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .hero-info-content {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 0 40px;
     }
-    .hero-content .subtitle {
-      font-size: 16px;
-      color: #ffffff;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      line-height: 1.6;
-      margin-bottom: 12px;
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-      max-width: 800px;
-    }
-    .hero-content .subtitle:first-child {
+    .hero-info .subtitle {
       font-size: 18px;
-      font-weight: 700;
-      color: var(--accent-gold);
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      color: var(--text-primary);
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      line-height: 1.7;
       margin-bottom: 16px;
-      text-shadow: 0 0 10px rgba(255, 214, 67, 0.5);
+    }
+    .hero-info .subtitle:first-child {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
     }
 
     .metrics-section {
@@ -819,17 +816,16 @@
         display: none;
       }
       .hero-banner {
-        height: 500px;
+        height: 450px;
       }
-      .hero-content {
-        bottom: 40px;
-        padding: 0 24px;
+      .hero-info {
+        padding: 32px 24px;
       }
-      .hero-content .subtitle:first-child {
-        font-size: 14px;
+      .hero-info .subtitle:first-child {
+        font-size: 16px;
       }
-      .hero-content .subtitle {
-        font-size: 14px;
+      .hero-info .subtitle {
+        font-size: 15px;
       }
       .container {
         padding: 48px 24px;
@@ -886,18 +882,16 @@
         width: 260px;
       }
       .hero-banner {
-        height: 400px;
+        height: 350px;
       }
-      .hero-content {
-        bottom: 24px;
-        padding: 0 20px;
+      .hero-info {
+        padding: 28px 20px;
       }
-      .hero-content .subtitle:first-child {
-        font-size: 12px;
-        letter-spacing: 1px;
+      .hero-info .subtitle:first-child {
+        font-size: 15px;
       }
-      .hero-content .subtitle {
-        font-size: 13px;
+      .hero-info .subtitle {
+        font-size: 14px;
       }
       .container {
         padding: 40px 20px;
@@ -1041,9 +1035,12 @@
 
   <div class="hero-banner">
     <img src="dsc08620 copy.jpg" alt="Дмитро Царенко" loading="eager">
-    <div class="hero-content">
+  </div>
+
+  <div class="hero-info">
+    <div class="hero-info-content">
       <div class="subtitle">Підприємець • Науковець • Експерт в галузі альтернативної енергетики</div>
-      <div class="subtitle">Ділюся досвідом і статтями про технології, альтернативну енергетику та бізнес</div>
+      <div class="subtitle">Ділюся досвідом і статтями про технології, енергоефективність, теплові насоси та бізнес</div>
     </div>
   </div>
 
@@ -2560,14 +2557,11 @@
     });
 
     // Stats counter with animation
-    function countArticlesInSection(sectionTitle) {
-      const sections = Array.from(document.querySelectorAll('section > h2'));
-      const targetSection = sections.find(h2 => h2.textContent.trim() === sectionTitle);
+    function countArticlesInSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (!section) return 0;
 
-      if (!targetSection) return 0;
-
-      const currentSection = targetSection.parentElement;
-      const articles = currentSection.querySelectorAll('article.article');
+      const articles = section.querySelectorAll('article.article');
       return articles.length;
     }
 
@@ -2588,10 +2582,10 @@
     }
 
     function initializeStats() {
-      const blogCount = countArticlesInSection('Блог');
-      const businessCount = countArticlesInSection('Бізнес');
-      const heatPumpsCount = countArticlesInSection('Теплові насоси');
-      const energyCount = countArticlesInSection('Енергоефективність');
+      const blogCount = countArticlesInSection('blog');
+      const businessCount = countArticlesInSection('business');
+      const heatPumpsCount = countArticlesInSection('heat-pumps');
+      const energyCount = countArticlesInSection('efficiency');
 
       const expertTotal = blogCount + businessCount + heatPumpsCount + energyCount;
 
