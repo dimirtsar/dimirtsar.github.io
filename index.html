@@ -632,98 +632,6 @@
       }
     }
 
-    .stats-section {
-      max-width: 1280px;
-      margin: 80px auto 0;
-      padding: 0 40px 60px;
-    }
-    .stats-container {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 251, 252, 0.98) 100%);
-      border-radius: 24px;
-      padding: 56px 48px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 48px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.04);
-      border: 1px solid var(--border-color);
-      position: relative;
-      overflow: hidden;
-    }
-    .stats-container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent-gold) 0%, var(--primary-dark) 50%, var(--accent-gold) 100%);
-      opacity: 0.8;
-    }
-    .stat-item {
-      text-align: center;
-      padding: 20px;
-      position: relative;
-    }
-    .stat-item:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      right: -24px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 1px;
-      height: 80px;
-      background: linear-gradient(to bottom, transparent, var(--border-color), transparent);
-    }
-    .stat-number {
-      font-family: 'Playfair Display', serif;
-      font-size: 56px;
-      font-weight: 800;
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent-gold) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1.2;
-      margin-bottom: 12px;
-      display: block;
-    }
-    .stat-label {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-top: 8px;
-    }
-
-    @media (max-width: 768px) {
-      .stats-section {
-        padding: 0 24px 40px;
-        margin-top: 60px;
-      }
-      .stats-container {
-        padding: 40px 28px;
-        gap: 36px;
-        grid-template-columns: 1fr;
-      }
-      .stat-item:not(:last-child)::after {
-        display: none;
-      }
-      .stat-item {
-        padding-bottom: 24px;
-        border-bottom: 1px solid var(--border-color);
-      }
-      .stat-item:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-      }
-      .stat-number {
-        font-size: 48px;
-      }
-      .stat-label {
-        font-size: 14px;
-      }
-    }
-
     footer {
       background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
       color: rgba(255, 255, 255, 0.9);
@@ -2468,23 +2376,6 @@
       </section>
     </div>
   </div>
-
-  <section class="stats-section">
-    <div class="stats-container">
-      <div class="stat-item">
-        <span class="stat-number" data-target="0" id="stat-expert">0</span>
-        <div class="stat-label">Експертних матеріалів</div>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number" data-target="0" id="stat-heat-pumps">0</span>
-        <div class="stat-label">Про теплові насоси</div>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number" data-target="0" id="stat-energy">0</span>
-        <div class="stat-label">Про енергоефективність</div>
-      </div>
-    </div>
-  </section>
 
   <footer>
     <p>&copy; 2026 Дмитро Царенко. Всі права захищені.</p>
