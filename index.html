@@ -202,36 +202,31 @@
       display: block;
       filter: brightness(1.05) contrast(1.03);
     }
-    .hero-info {
-      background: var(--bg-white);
-      padding: 48px 40px;
-      border-bottom: 1px solid var(--border-light);
+    .metrics-section {
+      background: var(--primary-dark);
+      border-top: 3px solid var(--accent-gold);
+      border-bottom: 3px solid var(--accent-gold);
+      padding: 60px 40px 80px;
     }
-    .hero-info-content {
+    .hero-subtitle-container {
       max-width: 1280px;
-      margin: 0 auto;
+      margin: 0 auto 50px;
+      text-align: center;
     }
-    .hero-info .subtitle {
-      font-size: 18px;
-      color: var(--text-primary);
+    .hero-subtitle {
+      font-size: 20px;
+      color: #ffffff;
       font-weight: 600;
       letter-spacing: 0.3px;
       line-height: 1.7;
       margin-bottom: 16px;
     }
-    .hero-info .subtitle:first-child {
-      font-size: 20px;
+    .hero-subtitle:first-child {
+      font-size: 22px;
       font-weight: 700;
-      color: var(--text-primary);
+      color: var(--accent-gold);
       letter-spacing: 0.5px;
       margin-bottom: 20px;
-    }
-
-    .metrics-section {
-      background: var(--primary-dark);
-      border-top: 3px solid var(--accent-gold);
-      border-bottom: 3px solid var(--accent-gold);
-      padding: 60px 40px;
     }
     .metrics-container {
       max-width: 1280px;
@@ -818,14 +813,17 @@
       .hero-banner {
         height: 450px;
       }
-      .hero-info {
-        padding: 32px 24px;
+      .metrics-section {
+        padding: 48px 24px 64px;
       }
-      .hero-info .subtitle:first-child {
+      .hero-subtitle-container {
+        margin-bottom: 40px;
+      }
+      .hero-subtitle:first-child {
+        font-size: 18px;
+      }
+      .hero-subtitle {
         font-size: 16px;
-      }
-      .hero-info .subtitle {
-        font-size: 15px;
       }
       .container {
         padding: 48px 24px;
@@ -884,14 +882,17 @@
       .hero-banner {
         height: 350px;
       }
-      .hero-info {
-        padding: 28px 20px;
+      .metrics-section {
+        padding: 40px 20px 56px;
       }
-      .hero-info .subtitle:first-child {
+      .hero-subtitle-container {
+        margin-bottom: 32px;
+      }
+      .hero-subtitle:first-child {
+        font-size: 17px;
+      }
+      .hero-subtitle {
         font-size: 15px;
-      }
-      .hero-info .subtitle {
-        font-size: 14px;
       }
       .container {
         padding: 40px 20px;
@@ -1037,14 +1038,11 @@
     <img src="dsc08620 copy.jpg" alt="Дмитро Царенко" loading="eager">
   </div>
 
-  <div class="hero-info">
-    <div class="hero-info-content">
-      <div class="subtitle">Підприємець • Науковець • Експерт в галузі альтернативної енергетики</div>
-      <div class="subtitle">Ділюся досвідом і статтями про технології, енергоефективність, теплові насоси та бізнес</div>
-    </div>
-  </div>
-
   <div class="metrics-section">
+    <div class="hero-subtitle-container">
+      <div class="hero-subtitle">Підприємець • Науковець • Експерт в галузі альтернативної енергетики</div>
+      <div class="hero-subtitle">Ділюся досвідом і статтями про технології, енергоефективність, теплові насоси та бізнес</div>
+    </div>
     <div class="metrics-container">
       <a href="#blog" class="metric-item">
         <div class="metric-number" id="stat-expert" data-target="0">0</div>
