@@ -1007,6 +1007,79 @@
                 <a href="index.html" class="read-more-btn" style="text-decoration: none; border: none; background: var(--primary-dark); color: #ffffff; padding: 12px 24px; border-radius: 8px; font-weight: 600; display: inline-block;">На головну</a>
               </div>
             </div>
+
+        <!-- Список інших статей розділу -->
+        <div id="articles-list" style="display: none; margin-top: 40px;">
+          <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 24px;">Інші статті блогу</h3>
+          <div class="articles">
+            <article class="article">
+              <h3>Чому одні продукти коштують дорожче за інших: психологія та економіка ціноутворення</h3>
+              <p>Розбираємося, які чинники формують сприйняття вартості та як ціна стає інструментом позиціювання</p>
+              <span class="article-date">січень 2026</span>
+              <a href="blog-article-pricing-psychology.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
+            </article>
+            <article class="article">
+              <h3>Аргументація високої ціни: як компанії пояснюють вартість своїх продуктів</h3>
+              <p>Стратегії комунікації вартості від провідних світових брендів та експертів</p>
+              <span class="article-date">січень 2026</span>
+              <a href="blog-article-price-argument.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
+            </article>
+            <article class="article">
+              <h3>Чому не варто купувати дешево: довгострокова перспектива вартості</h3>
+              <p>Справжня вартість економії та приховані витрати дешевих рішень</p>
+              <span class="article-date">січень 2026</span>
+              <a href="blog-article-cheap-risks.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
+            </article>
+            <article class="article">
+              <h3>Проекти під ключ: справжня вартість комплексних рішень</h3>
+              <p>Чому повний цикл послуг коштує дорожче, але виявляється вигіднішим</p>
+              <span class="article-date">січень 2026</span>
+              <a href="blog-article-turnkey.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
+            </article>
+            <article class="article">
+              <h3>Люди — головний актив бізнесу: чому команда важливіша за ідею</h3>
+              <p>Як правильний підбір людей визначає успіх компанії та чому інвестиція в команду окупається найкраще</p>
+              <span class="article-date">січень 2026</span>
+              <a href="blog-article-team-first.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
+            </article>
+            <article class="article">
+              <h3>Створити бізнес з нуля чи приєднатися до існуючого: вибір стратегії входження</h3>
+              <p>Переваги та виклики різних шляхів у бізнес, досвід успішних підприємців та критерії прийняття рішення</p>
+              <span class="article-date">січень 2026</span>
+              <a href="blog-article-start-or-join.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
+            </article>
+            <article class="article">
+              <h3>Партнер чи ніша: що обрати спочатку при створенні бізнесу</h3>
+              <p>Стратегічний підхід до вибору напрямку бізнесу та пошуку партнерів на різних етапах розвитку</p>
+              <span class="article-date">січень 2026</span>
+              <a href="blog-article-partner-or-niche.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
+            </article>
+            <article class="article">
+              <h3>Відповідальність та її роль у бізнесі та житті</h3>
+              <p>Чому одні люди приймають на себе відповідальність і досягають результатів, а інші уникають її будь-якою ціною?</p>
+              <span class="article-date">січень 2026</span>
+              <a href="blog-article-responsibility.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
+            </article>
+            <article class="article">
+              <h3>Як визначити ступінь відповідальності: практичні методи оцінки</h3>
+              <p>Вміння точно оцінити свій рівень відповідальності — це перший крок до реального зростання</p>
+              <span class="article-date">січень 2026</span>
+              <a href="blog-article-measure-responsibility.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
+            </article>
+            <article class="article">
+              <h3>Ціна відповідальності: як порахувати та чи варта гра свічок?</h3>
+              <p>Кожне "так" має свою ціну. Коли ви берете на себе відповідальність, ви платите час, енергію та ресурси</p>
+              <span class="article-date">січень 2026</span>
+              <a href="blog-article-price-of-responsibility.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
+            </article>
+            <article class="article">
+              <h3>Інтуїція в бізнесі: коли довіряти внутрішньому голосу</h3>
+              <p>Більшість успішних лідерів визнають: є моменти, коли всі показники кажуть "так", але інтуїція кричить "ні"</p>
+              <span class="article-date">січень 2026</span>
+              <a href="blog-article-intuition.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
+            </article>
+          </div>
+        </div>
       </section>
     </div>
   </div>
@@ -1018,14 +1091,19 @@
   <script>
     function toggleArticle(articleId) {
       const article = document.getElementById(articleId);
+      const articlesList = document.getElementById('articles-list');
+
       if (article.style.display === 'none' || article.style.display === '') {
         article.style.display = 'block';
+        if (articlesList) articlesList.style.display = 'none';
         window.location.hash = articleId;
       } else {
         article.style.display = 'none';
+        if (articlesList) articlesList.style.display = 'block';
         if (window.location.hash === '#' + articleId) {
           history.pushState("", document.title, window.location.pathname + window.location.search);
         }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
 
