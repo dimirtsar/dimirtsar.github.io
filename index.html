@@ -2551,7 +2551,7 @@
       if (!targetSection) return 0;
 
       const currentSection = targetSection.parentElement;
-      const articles = currentSection.querySelectorAll('.article .read-more-btn');
+      const articles = currentSection.querySelectorAll('article.article');
       return articles.length;
     }
 
