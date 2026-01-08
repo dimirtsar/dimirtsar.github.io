@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Дмитро Царенко - Блог і статті</title>
+  <title>Організація стратегічного планування як складової ризик-менеджменту аграрного бізнесу - Дмитро Царенко</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -958,27 +958,39 @@
     </div>
   </header>
 
-  <div class="hero-banner">
-    <img src="dsc08620 copy.jpg" alt="Дмитро Царенко" loading="eager">
-  </div>
-  <div class="metrics-section">
-    <div class="hero-subtitle-container">
-      <div class="hero-subtitle">Підприємець • Науковець • Експерт в галузі альтернативної енергетики</div>
-      <div class="hero-subtitle">Ділюся досвідом і статтями про технології, енергоефективність, теплові насоси та бізнес</div>
-    </div>
-    <div class="metrics-container">
-      <a href="blog.html" class="metric-item">
-        <div class="metric-number">23</div>
-        <div class="metric-label">Експертних матеріалів</div>
-      </a>
-      <a href="heat-pumps.html" class="metric-item">
-        <div class="metric-number">9</div>
-        <div class="metric-label">Статей про теплові насоси</div>
-      </a>
-      <a href="efficiency.html" class="metric-item">
-        <div class="metric-number">3</div>
-        <div class="metric-label">Статті про енергоефективність</div>
-      </a>
+  <div class="container">
+    <div class="sections">
+      <section class="section">
+        <h2>Організація стратегічного планування як складової ризик-менеджменту аграрного бізнесу</h2>
+        <p style="font-size: 18px; color: var(--text-secondary); margin-bottom: 20px;">ECONOMIC SCIENCES / «Colloquium-journal», 2025</p>
+        <span class="article-date" style="display: block; margin-bottom: 20px;">2025</span>
+        <div id="cascade" class="article-content" style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+              <div class="article-image contain-image">
+                <img src="images/heat_pump_cascade_2400px_optimized.jpg" alt="Каскадна система теплових насосів">
+              </div>
+
+              <p style="line-height: 1.8; margin-bottom: 16px;">Для комерційних об'єктів (готелі на 100+ номерів, офісні центри площею 3,000-10,000 м², виробничі цехи, багатоквартирні будинки на 50+ квартир) потужності одного теплового насоса 35-70 кВт недостатньо для покриття теплового навантаження 150-600 кВт. Класичне рішення — встановити 3-8 окремих агрегатів з незалежним керуванням. Критична проблема: відсутність балансування навантаження призводить до нерівномірного зносу (один насос працює 5,000 год/рік, інші — 2,000-3,000 год/рік), перевантаження окремих агрегатів на 20-30% в пікові години, простою частини обладнання при низькому навантаженні (втрати ефективності 15-25%).</p>
+
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Принцип інтелектуального каскадного керування</h4>
+              <p style="line-height: 1.8; margin-bottom: 16px;">IDM Navigator 2.0 підтримує каскадне керування від 2 до 10 теплових насосів як єдиною розподіленою системою з централізованою логікою. Головний (Master) контролер в режимі реального часу: розподіляє теплове навантаження між агрегатами з точністю ±2 кВт на основі даних 12 температурних датчиків та 6 витратомірів, врівноважує напрацювання годин (алгоритм Lead-Lag Rotation з циклом ротації 200-500 годин), запускає резервні (Standby) насоси при піковому попиті > 85% сумарної потужності з передстартовою підготовкою (прогрів компресора 3-5 хв), виводить один агрегат на планове техобслуговування без зупинки опалення (плавне перерозподілення навантаження на решту насосів за 15-20 хвилин). Комунікація між агрегатами: Modbus RTU/TCP з частотою опитування 1 Гц, резервний зв'язок через релейні входи/виходи.</p>
+
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Динамічна оптимізація по COP: максимум ефективності</h4>
+              <p style="line-height: 1.8; margin-bottom: 16px;">Каскад IDM — це не примітивна схема "ведучий-ведений" (Master-Slave) зі статичним розподілом. Система в режимі реального часу моніторить COP кожного насоса (розрахунок на базі споживаної електроенергії, температур конденсації/випаровування, витрати теплоносія) та динамічно перерозподіляє навантаження на користь найефективніших агрегатів. Приклад сценарію при -10°C зовнішньої температури: Геотермальний насос IDM SW 70 HGL (свердловина 120 м, температура рассолу +5°C): COP=5.2, навантаження 100% → 70 кВт. Повітряний насос IDM Aero ALM 50 (зовнішній блок, температура -10°C): COP=2.8, навантаження 60% → 30 кВт. Загальна потужність: 100 кВт, середньозважений COP системи: 4.5 (проти COP=3.8 при рівномірному розподілі 50%/50%). Результат: економія 15-18% електроенергії або €2,500-4,500/рік для об'єкта з споживанням 50,000 кВт·год/рік на опалення.</p>
+
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Технічні переваги для великих об'єктів</h4>
+              <p style="line-height: 1.8; margin-bottom: 16px;">Підвищення сезонного SCOP системи на 10-15% проти незалежних насосів (SCOP 4.8 vs 4.2 для геотермальних систем), рівномірний знос обладнання (всі насоси відпрацьовують 3,500-4,000 год/рік ±10% замість розкиду 2,000-6,000 год/рік), відсутність єдиної точки відмови (вихід з ладу одного насоса знижує потужність на 10-15%, решта компенсує навантаження), модульне масштабування системи (початкова конфігурація 2-3 насоси, додавання агрегатів у міру зростання навантаження без заміни існуючих). Максимальна конфігурація: 10× IDM SW MAX 70 HGL = 700 кВт теплової потужності при -5°C / 5°C (розсіл/вода) або до 900 кВт при оптимальних умовах +5°C / +35°C.</p>
+
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Реальний кейс: готель 200 номерів, Тіроль</h4>
+              <p style="line-height: 1.8; margin-bottom: 16px;">Об'єкт: 4-зірковий готель Alpenresort, 200 номерів, загальна площа 8,500 м², опалення + ГВП + басейн. Теплове навантаження: пік 420 кВт (лютий, -15°C, завантаження 100%), середнє 180 кВт (опалювальний сезон), мінімум 60 кВт (травень-вересень, тільки ГВП + басейн). Рішення: каскад 6× IDM SW MAX 70 HGL + 3× геотермальні свердловини по 200 м (відстань 10 м, загальна потужність відбору 210 кВт при +2°C розсолу). Сумарна встановлена потужність: 6× 70 кВт = 420 кВт. Робочі режими: Міжсезоння (квітень, жовтень, завантаження 30%): працює 1 насос, решта 5 в Standby → споживання 8-12 кВт·год при навантаженні 50-70 кВт. Сезон (грудень-лютий, завантаження 80-90%): працює 5 насосів, 1 резервний → споживання 75-95 кВт·год при навантаженні 350-400 кВт. Результати за перший рік експлуатації: загальне споживання 142,000 кВт·год/рік, сезонний SCOP=4.7, економія €18,500/рік порівняно з попереднім газовим котлом (споживання 680,000 кВт·год природного газу/рік при ККД=0.88).</p>
+
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Думка експерта</h4>
+              <p style="line-height: 1.8; margin-bottom: 16px;"><em>"Каскадне керування IDM Navigator дозволяє створювати системи потужністю до 900 кВт, які раніше вимагали промислових чилерів вартістю €120,000-180,000. Ми реалізували проєкт для готелю з 8 насосів IDM SW MAX 70 загальною потужністю 560 кВт. Вартість рішення: €195,000 (обладнання + монтаж) проти €310,000 для чилера Carrier 30XW 560 з аналогічною потужністю. Економія капіталу: €115,000 (37%). При цьому ефективність каскаду IDM вища: SCOP 4.6 vs 3.8 для промислового чилера"</em> — <strong>Інг. Мартін Обермайєр, керівник проєктів Alpenklima Haustechnik GmbH</strong></p>
+
+              <p style="line-height: 1.8; margin-bottom: 16px;"><em>"Функція автоматичного планового виводу на обслуговування економить нам €15,000-20,000 щороку. Система аналізує завантаження готелю на 2 тижні вперед (інтеграція з PMS Protel) та планує сервіс на період низького завантаження < 40%. Технік приїжджає, переводить один насос в режим Maintenance через Navigator, система перерозподіляє навантаження на решту за 15 хвилин, гості навіть не помічають. Нульовий downtime — це те, чого ми не могли досягти з моноблоковим чилером"</em> — <strong>Міхаель Груббер, технічний директор Alpenresort Schwarz, Тіроль</strong></p>
+              
+              <a href="blog.html" class="read-more-btn" style="text-decoration: none; border: none; background: var(--accent-gold); color: var(--primary-dark); padding: 12px 24px; border-radius: 8px; font-weight: 600; display: inline-block; margin-top: 24px;">Назад до блогу</a>
+            </div>
+      </section>
     </div>
   </div>
 
@@ -987,9 +999,47 @@
   </footer>
 
   <script>
+    function toggleArticle(articleId) {
+      const article = document.getElementById(articleId);
+      if (article.style.display === 'none' || article.style.display === '') {
+        article.style.display = 'block';
+        window.location.hash = articleId;
+      } else {
+        article.style.display = 'none';
+        if (window.location.hash === '#' + articleId) {
+          history.pushState("", document.title, window.location.pathname + window.location.search);
+        }
+      }
+    }
+
+    function openArticleFromHash() {
+      const hash = window.location.hash.substring(1);
+      const articleIds = ['pricing-psychology', 'price-argument', 'cheap-risks', 'turnkey', 'team-first',
+                          'start-or-join', 'partner-or-niche', 'responsibility', 'measure-responsibility',
+                          'price-of-responsibility', 'intuition', 'austrian-quality', 'heat-pumps',
+                          'ventilation', 'integration', 'comfort-investment', 'hgl-tech', 'navigator',
+                          'ion-ai', 'cascade', 'control-center', 'refrigerant', 'defrost', 'low-temp',
+                          'geothermal-timing'];
+
+      if (hash && articleIds.includes(hash)) {
+        const article = document.getElementById(hash);
+        if (article) {
+          article.style.display = 'block';
+          setTimeout(() => {
+            const articleWrapper = article.parentElement;
+            articleWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }
+      }
+    }
+
+    window.addEventListener('load', openArticleFromHash);
+    window.addEventListener('hashchange', openArticleFromHash);
+
     // Mobile menu toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('nav');
+    const navLinks = document.querySelectorAll('nav a');
     const menuOverlay = document.querySelector('.menu-overlay');
 
     function toggleMenu() {
@@ -1001,7 +1051,116 @@
     }
 
     mobileMenuToggle.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking on overlay
     menuOverlay.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking on a link
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+          mobileMenuToggle.classList.remove('active');
+          nav.classList.remove('active');
+          menuOverlay.classList.remove('active');
+          document.body.style.overflow = '';
+
+          setTimeout(() => {
+            const headerHeight = 88;
+            const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }, 300);
+        }
+      });
+    });
+
+    // Stats counter with animation
+    function countArticlesInSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (!section) return 0;
+
+      const articles = section.querySelectorAll('article.article');
+      return articles.length;
+    }
+
+    function animateCounter(element, target, duration = 1200) {
+      const start = 0;
+      const increment = target / (duration / 16);
+      let current = start;
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          element.textContent = target;
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.floor(current);
+        }
+      }, 16);
+    }
+
+    function initializeStats() {
+      const blogCount = countArticlesInSection('blog');
+      const businessCount = countArticlesInSection('business');
+      const heatPumpsCount = countArticlesInSection('heat-pumps');
+      const energyCount = countArticlesInSection('efficiency');
+
+      const expertTotal = blogCount + businessCount + heatPumpsCount + energyCount;
+
+      const statExpert = document.getElementById('stat-expert');
+      const statHeatPumps = document.getElementById('stat-heat-pumps');
+      const statEnergy = document.getElementById('stat-energy');
+
+      if (statExpert) {
+        statExpert.setAttribute('data-target', expertTotal);
+        setTimeout(() => animateCounter(statExpert, expertTotal, 1200), 300);
+      }
+
+      if (statHeatPumps) {
+        statHeatPumps.setAttribute('data-target', heatPumpsCount);
+        setTimeout(() => animateCounter(statHeatPumps, heatPumpsCount, 1200), 500);
+      }
+
+      if (statEnergy) {
+        statEnergy.setAttribute('data-target', energyCount);
+        setTimeout(() => animateCounter(statEnergy, energyCount, 1200), 700);
+      }
+    }
+
+    // Initialize stats on page load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeStats);
+    } else {
+      initializeStats();
+    }
+
+    // Smooth scroll for metric links
+    document.querySelectorAll('.metric-item').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+          const headerHeight = 80;
+          const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
   </script>
+</body>
+</html>
 </body>
 </html>

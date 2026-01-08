@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Дмитро Царенко - Блог і статті</title>
+  <title>Наукові публікації - Дмитро Царенко</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -958,27 +958,46 @@
     </div>
   </header>
 
-  <div class="hero-banner">
-    <img src="dsc08620 copy.jpg" alt="Дмитро Царенко" loading="eager">
-  </div>
-  <div class="metrics-section">
-    <div class="hero-subtitle-container">
-      <div class="hero-subtitle">Підприємець • Науковець • Експерт в галузі альтернативної енергетики</div>
-      <div class="hero-subtitle">Ділюся досвідом і статтями про технології, енергоефективність, теплові насоси та бізнес</div>
-    </div>
-    <div class="metrics-container">
-      <a href="blog.html" class="metric-item">
-        <div class="metric-number">23</div>
-        <div class="metric-label">Експертних матеріалів</div>
-      </a>
-      <a href="heat-pumps.html" class="metric-item">
-        <div class="metric-number">9</div>
-        <div class="metric-label">Статей про теплові насоси</div>
-      </a>
-      <a href="efficiency.html" class="metric-item">
-        <div class="metric-number">3</div>
-        <div class="metric-label">Статті про енергоефективність</div>
-      </a>
+  
+  
+
+  <div class="container">
+    <div class="sections">
+      <section id="publications" class="section">
+        <h2>Наукові публікації</h2>
+        <div class="articles">
+          <article class="article">
+            <h3>Організація стратегічного планування як складової ризик-менеджменту аграрного бізнесу</h3>
+            <p>ECONOMIC SCIENCES / «Colloquium-journal», 2025</p>
+            <span class="article-date">2025</span>
+          </article>
+          <article class="article">
+            <h3>Страхування як інструмент ризик-менеджменту в агробізнесі</h3>
+            <p>Проблеми економіки, 2025</p>
+            <span class="article-date">2025</span>
+          </article>
+          <article class="article">
+            <h3>Реалізація ризик-менеджменту на підприємствах агросфери: ідентифікація ризиків та фінансове забезпечення</h3>
+            <p>Актуальні питання економічних наук, 2024</p>
+            <span class="article-date">2024</span>
+          </article>
+          <article class="article">
+            <h3>Інноваційні стратегії для підвищення ефективності ризик-менеджменту агробізнесу</h3>
+            <p>Інвестиції: практика та досвід, 2024</p>
+            <span class="article-date">2024</span>
+          </article>
+          <article class="article">
+            <h3>Чинники реалізації стратегічного управління підприємством у сучасних умовах</h3>
+            <p>Український журнал прикладної економіки та техніки, 2023</p>
+            <span class="article-date">2023</span>
+          </article>
+          <article class="article">
+            <h3>Фінансові інструменти як складова стратегії ризик-менеджменту аграрного бізнесу</h3>
+            <p>Енергозбереження. Енергетика. Енергоаудит, 2021</p>
+            <span class="article-date">2021</span>
+          </article>
+        </div>
+      </section>
     </div>
   </div>
 
@@ -987,9 +1006,47 @@
   </footer>
 
   <script>
+    function toggleArticle(articleId) {
+      const article = document.getElementById(articleId);
+      if (article.style.display === 'none' || article.style.display === '') {
+        article.style.display = 'block';
+        window.location.hash = articleId;
+      } else {
+        article.style.display = 'none';
+        if (window.location.hash === '#' + articleId) {
+          history.pushState("", document.title, window.location.pathname + window.location.search);
+        }
+      }
+    }
+
+    function openArticleFromHash() {
+      const hash = window.location.hash.substring(1);
+      const articleIds = ['pricing-psychology', 'price-argument', 'cheap-risks', 'turnkey', 'team-first',
+                          'start-or-join', 'partner-or-niche', 'responsibility', 'measure-responsibility',
+                          'price-of-responsibility', 'intuition', 'austrian-quality', 'heat-pumps',
+                          'ventilation', 'integration', 'comfort-investment', 'hgl-tech', 'navigator',
+                          'ion-ai', 'cascade', 'control-center', 'refrigerant', 'defrost', 'low-temp',
+                          'geothermal-timing'];
+
+      if (hash && articleIds.includes(hash)) {
+        const article = document.getElementById(hash);
+        if (article) {
+          article.style.display = 'block';
+          setTimeout(() => {
+            const articleWrapper = article.parentElement;
+            articleWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }
+      }
+    }
+
+    window.addEventListener('load', openArticleFromHash);
+    window.addEventListener('hashchange', openArticleFromHash);
+
     // Mobile menu toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('nav');
+    const navLinks = document.querySelectorAll('nav a');
     const menuOverlay = document.querySelector('.menu-overlay');
 
     function toggleMenu() {
@@ -1001,7 +1058,116 @@
     }
 
     mobileMenuToggle.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking on overlay
     menuOverlay.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking on a link
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+          mobileMenuToggle.classList.remove('active');
+          nav.classList.remove('active');
+          menuOverlay.classList.remove('active');
+          document.body.style.overflow = '';
+
+          setTimeout(() => {
+            const headerHeight = 88;
+            const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }, 300);
+        }
+      });
+    });
+
+    // Stats counter with animation
+    function countArticlesInSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (!section) return 0;
+
+      const articles = section.querySelectorAll('article.article');
+      return articles.length;
+    }
+
+    function animateCounter(element, target, duration = 1200) {
+      const start = 0;
+      const increment = target / (duration / 16);
+      let current = start;
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          element.textContent = target;
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.floor(current);
+        }
+      }, 16);
+    }
+
+    function initializeStats() {
+      const blogCount = countArticlesInSection('blog');
+      const businessCount = countArticlesInSection('business');
+      const heatPumpsCount = countArticlesInSection('heat-pumps');
+      const energyCount = countArticlesInSection('efficiency');
+
+      const expertTotal = blogCount + businessCount + heatPumpsCount + energyCount;
+
+      const statExpert = document.getElementById('stat-expert');
+      const statHeatPumps = document.getElementById('stat-heat-pumps');
+      const statEnergy = document.getElementById('stat-energy');
+
+      if (statExpert) {
+        statExpert.setAttribute('data-target', expertTotal);
+        setTimeout(() => animateCounter(statExpert, expertTotal, 1200), 300);
+      }
+
+      if (statHeatPumps) {
+        statHeatPumps.setAttribute('data-target', heatPumpsCount);
+        setTimeout(() => animateCounter(statHeatPumps, heatPumpsCount, 1200), 500);
+      }
+
+      if (statEnergy) {
+        statEnergy.setAttribute('data-target', energyCount);
+        setTimeout(() => animateCounter(statEnergy, energyCount, 1200), 700);
+      }
+    }
+
+    // Initialize stats on page load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeStats);
+    } else {
+      initializeStats();
+    }
+
+    // Smooth scroll for metric links
+    document.querySelectorAll('.metric-item').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+          const headerHeight = 80;
+          const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
   </script>
+</body>
+</html>
 </body>
 </html>
