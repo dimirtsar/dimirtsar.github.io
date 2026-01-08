@@ -2535,11 +2535,27 @@
 
     // Close menu when clicking on a link
     navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenuToggle.classList.remove('active');
-        nav.classList.remove('active');
-        menuOverlay.classList.remove('active');
-        document.body.style.overflow = '';
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+          mobileMenuToggle.classList.remove('active');
+          nav.classList.remove('active');
+          menuOverlay.classList.remove('active');
+          document.body.style.overflow = '';
+
+          setTimeout(() => {
+            const headerHeight = 88;
+            const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }, 300);
+        }
       });
     });
 
