@@ -810,6 +810,10 @@
         padding: 16px 0;
         border-bottom: 1px solid var(--border-color);
         width: 100%;
+        color: var(--primary-dark);
+      }
+      nav a:hover {
+        color: var(--accent-gold-dark);
       }
       nav a::after {
         display: none;
@@ -2547,7 +2551,7 @@
       if (!targetSection) return 0;
 
       const currentSection = targetSection.parentElement;
-      const articles = currentSection.querySelectorAll('.article[onclick^="toggleArticle"]');
+      const articles = currentSection.querySelectorAll('.article .read-more-btn');
       return articles.length;
     }
 
@@ -2601,6 +2605,25 @@
     } else {
       initializeStats();
     }
+
+    // Smooth scroll for metric links
+    document.querySelectorAll('.metric-item').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+          const headerHeight = 80;
+          const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
   </script>
 </body>
 </html>
