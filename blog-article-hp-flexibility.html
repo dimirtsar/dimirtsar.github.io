@@ -439,7 +439,7 @@
       <h2>Децентралізовані теплові насоси: інструмент балансування енергосистеми</h2>
       <span class="article-date" style="display: block; margin-bottom: 20px;">березень 2024</span>
 
-      <div class="article-content">
+      <div id="hp-flexibility" class="article-content" style="display: block;">
         <div class="publication-meta">
           <p><strong>Журнал:</strong> Energy Efficiency (Springer), Vol. 17, Article №26</p>
           <p><strong>Дата публікації:</strong> березень 2024</p>
@@ -596,8 +596,8 @@
         <p>Ключ до успіху — розглядати теплові насоси не як ізольовані прилади, а як частину єдиної інтелектуальної енергосистеми. Це вимагає координації між регуляторами, енергокомпаніями, виробниками обладнання та споживачами, але потенційна віддача величезна: енергетична система, що є одночасно чистою, дешевою та стійкою.</p>
 
         <div style="display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap;">
-          <a href="blog.html" class="read-more-btn">Назад до блогу</a>
-          <a href="index.html" class="read-more-btn" style="background: var(--primary-dark); color: #ffffff;">На головну</a>
+          <a href="#" onclick="toggleArticle('hp-flexibility'); return false;" class="read-more-btn" style="text-decoration: none; border: none; background: var(--accent-gold); color: var(--primary-dark); padding: 12px 24px; border-radius: 8px; font-weight: 600; display: inline-block;">Згорнути</a>
+          <a href="index.html" class="read-more-btn" style="text-decoration: none; border: none; background: var(--primary-dark); color: #ffffff; padding: 12px 24px; border-radius: 8px; font-weight: 600; display: inline-block;">На головну</a>
         </div>
       </div>
     </section>
@@ -606,5 +606,40 @@
   <footer>
     <p>© 2026 Дмитро Царенко. Усі права захищені.</p>
   </footer>
+
+  <script>
+    function toggleArticle(articleId) {
+      const article = document.getElementById(articleId);
+
+      if (article.style.display === 'none' || article.style.display === '') {
+        article.style.display = 'block';
+        window.location.hash = articleId;
+      } else {
+        article.style.display = 'none';
+        if (window.location.hash === '#' + articleId) {
+          history.pushState("", document.title, window.location.pathname + window.location.search);
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('nav');
+    const overlay = document.querySelector('.menu-overlay');
+
+    menuToggle.addEventListener('click', function() {
+      menuToggle.classList.toggle('active');
+      nav.classList.toggle('active');
+      overlay.classList.toggle('active');
+      document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+    });
+
+    overlay.addEventListener('click', function() {
+      menuToggle.classList.remove('active');
+      nav.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  </script>
 </body>
 </html>

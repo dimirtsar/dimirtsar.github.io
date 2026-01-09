@@ -439,7 +439,7 @@
       <h2>Поширення ґрунтових теплових насосів в Австрії: масштабне дослідження 1990-2022</h2>
       <span class="article-date" style="display: block; margin-bottom: 20px;">квітень 2025</span>
 
-      <div class="article-content">
+      <div id="hp-diffusion-austria" class="article-content" style="display: block;">
         <div class="publication-meta">
           <p><strong>Журнал:</strong> Applied Energy (Elsevier), Vol. 383</p>
           <p><strong>Дата публікації:</strong> квітень 2025</p>
@@ -562,8 +562,8 @@
         <p>Ґрунтові теплові насоси можуть стати важливим елементом енергетичної незалежності України, особливо в контексті диверсифікації джерел опалення та зменшення залежності від імпортованих енергоносіїв.</p>
 
         <div style="display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap;">
-          <a href="blog.html" class="read-more-btn">Назад до блогу</a>
-          <a href="index.html" class="read-more-btn" style="background: var(--primary-dark); color: #ffffff;">На головну</a>
+          <a href="#" onclick="toggleArticle('hp-diffusion-austria'); return false;" class="read-more-btn" style="text-decoration: none; border: none; background: var(--accent-gold); color: var(--primary-dark); padding: 12px 24px; border-radius: 8px; font-weight: 600; display: inline-block;">Згорнути</a>
+          <a href="index.html" class="read-more-btn" style="text-decoration: none; border: none; background: var(--primary-dark); color: #ffffff; padding: 12px 24px; border-radius: 8px; font-weight: 600; display: inline-block;">На головну</a>
         </div>
       </div>
     </section>
@@ -572,5 +572,40 @@
   <footer>
     <p>© 2026 Дмитро Царенко. Усі права захищені.</p>
   </footer>
+
+  <script>
+    function toggleArticle(articleId) {
+      const article = document.getElementById(articleId);
+
+      if (article.style.display === 'none' || article.style.display === '') {
+        article.style.display = 'block';
+        window.location.hash = articleId;
+      } else {
+        article.style.display = 'none';
+        if (window.location.hash === '#' + articleId) {
+          history.pushState("", document.title, window.location.pathname + window.location.search);
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('nav');
+    const overlay = document.querySelector('.menu-overlay');
+
+    menuToggle.addEventListener('click', function() {
+      menuToggle.classList.toggle('active');
+      nav.classList.toggle('active');
+      overlay.classList.toggle('active');
+      document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+    });
+
+    overlay.addEventListener('click', function() {
+      menuToggle.classList.remove('active');
+      nav.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  </script>
 </body>
 </html>
