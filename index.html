@@ -302,26 +302,65 @@
       max-width: 1280px;
       margin: 0 auto;
     }
-    .featured-articles-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 42px;
-      font-weight: 700;
-      color: var(--text-primary);
-      text-align: center;
-      margin-bottom: 12px;
-      letter-spacing: -0.5px;
-    }
-    .featured-articles-subtitle {
-      text-align: center;
-      font-size: 18px;
-      color: var(--text-secondary);
+    .featured-articles-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
       margin-bottom: 56px;
-      font-weight: 500;
+    }
+    .toggle-featured-btn {
+      background: var(--bg-white);
+      border: 2px solid var(--border-light);
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+      color: var(--text-secondary);
+    }
+    .toggle-featured-btn:hover {
+      background: var(--accent-gold);
+      border-color: var(--accent-gold-dark);
+      color: var(--primary-dark);
+      transform: scale(1.1);
+    }
+    .toggle-featured-btn .toggle-icon {
+      transition: transform 0.3s ease;
+    }
+    .featured-articles-section.collapsed .toggle-featured-btn .toggle-icon {
+      transform: rotate(180deg);
     }
     .featured-articles-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 32px;
+      max-height: 2000px;
+      overflow: hidden;
+      transition: max-height 0.5s ease, opacity 0.3s ease;
+      opacity: 1;
+    }
+    .featured-articles-section.collapsed .featured-articles-grid {
+      max-height: 0;
+      opacity: 0;
+    }
+    .featured-articles-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+    .featured-articles-subtitle {
+      font-size: 18px;
+      color: var(--text-secondary);
+      margin-bottom: 0;
+      font-weight: 500;
     }
     .featured-article-card {
       background: var(--bg-white);
@@ -413,31 +452,41 @@
       .featured-articles-section {
         padding: 60px 32px;
       }
+      .featured-articles-header {
+        margin-bottom: 48px;
+      }
       .featured-articles-title {
         font-size: 36px;
       }
       .featured-articles-subtitle {
         font-size: 16px;
-        margin-bottom: 48px;
       }
-      .featured-articles-grid {
-        gap: 28px;
+      .toggle-featured-btn {
+        width: 44px;
+        height: 44px;
       }
     }
     @media (max-width: 768px) {
       .featured-articles-section {
         padding: 48px 24px;
       }
+      .featured-articles-header {
+        margin-bottom: 40px;
+        gap: 16px;
+      }
       .featured-articles-title {
         font-size: 32px;
       }
       .featured-articles-subtitle {
         font-size: 15px;
-        margin-bottom: 40px;
       }
-      .featured-articles-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
+      .toggle-featured-btn {
+        width: 40px;
+        height: 40px;
+      }
+      .toggle-featured-btn svg {
+        width: 20px;
+        height: 20px;
       }
       .featured-article-card {
         padding: 28px;
@@ -1138,8 +1187,17 @@
 
   <section class="featured-articles-section">
     <div class="featured-articles-container">
-      <h2 class="featured-articles-title">Актуальні дослідження</h2>
-      <p class="featured-articles-subtitle">Наукові публікації та експертний аналіз теплових насосів</p>
+      <div class="featured-articles-header">
+        <div>
+          <h2 class="featured-articles-title">Актуальні дослідження</h2>
+          <p class="featured-articles-subtitle">Наукові публікації та експертний аналіз теплових насосів</p>
+        </div>
+        <button class="toggle-featured-btn" aria-label="Згорнути розділ">
+          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
+      </div>
 
       <div class="featured-articles-grid">
         <article class="featured-article-card">
@@ -1225,6 +1283,18 @@
     const metricsSection = document.querySelector('.metrics-container');
     if (metricsSection) {
       metricsObserver.observe(metricsSection);
+    }
+
+    // Toggle featured articles section
+    const toggleFeaturedBtn = document.querySelector('.toggle-featured-btn');
+    const featuredSection = document.querySelector('.featured-articles-section');
+
+    if (toggleFeaturedBtn && featuredSection) {
+      toggleFeaturedBtn.addEventListener('click', () => {
+        const isCollapsed = featuredSection.classList.contains('collapsed');
+        featuredSection.classList.toggle('collapsed');
+        toggleFeaturedBtn.setAttribute('aria-label', isCollapsed ? 'Згорнути розділ' : 'Розгорнути розділ');
+      });
     }
   </script>
 </body>
