@@ -1122,15 +1122,15 @@
     </div>
     <div class="metrics-container">
       <a href="blog.html" class="metric-item">
-        <div class="metric-number">23</div>
+        <div class="metric-number" data-target="23">0</div>
         <div class="metric-label">Експертних матеріалів</div>
       </a>
       <a href="heat-pumps.html" class="metric-item">
-        <div class="metric-number">9</div>
+        <div class="metric-number" data-target="12">0</div>
         <div class="metric-label">Статей про теплові насоси</div>
       </a>
       <a href="efficiency.html" class="metric-item">
-        <div class="metric-number">3</div>
+        <div class="metric-number" data-target="3">0</div>
         <div class="metric-label">Статті про енергоефективність</div>
       </a>
     </div>
@@ -1189,6 +1189,43 @@
 
     mobileMenuToggle.addEventListener('click', toggleMenu);
     menuOverlay.addEventListener('click', toggleMenu);
+
+    // Animated counters for metrics
+    function animateCounter(element, target, duration = 1500) {
+      const start = 0;
+      const increment = target / (duration / 16);
+      let current = start;
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          element.textContent = target;
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.floor(current);
+        }
+      }, 16);
+    }
+
+    // Intersection Observer to trigger animation when metrics section is visible
+    const metricsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const metricNumbers = entry.target.querySelectorAll('.metric-number[data-target]');
+          metricNumbers.forEach(element => {
+            const target = parseInt(element.getAttribute('data-target'));
+            animateCounter(element, target);
+          });
+          metricsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    // Observe metrics section
+    const metricsSection = document.querySelector('.metrics-container');
+    if (metricsSection) {
+      metricsObserver.observe(metricsSection);
+    }
   </script>
 </body>
 </html>
