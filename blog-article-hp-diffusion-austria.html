@@ -282,6 +282,84 @@
       box-shadow: 0 8px 24px rgba(255, 214, 67, 0.4);
     }
 
+    .articles-list {
+      display: none;
+      margin-top: 40px;
+    }
+    .articles-list.show {
+      display: block;
+    }
+    .articles-list h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .article-card {
+      background: var(--bg-white);
+      border: 2px solid var(--border-light);
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 24px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .article-card:hover {
+      border-color: var(--accent-gold);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+    .article-card:hover::before {
+      transform: scaleX(1);
+    }
+    .article-card-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      background: linear-gradient(135deg, var(--accent-gold-dark) 0%, var(--accent-gold) 100%);
+      color: var(--primary-dark);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+    }
+    .article-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .article-card p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+    .article-card.current {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
     .publication-meta {
       background: rgba(255, 214, 67, 0.08);
       border-left: 4px solid var(--accent-gold);
@@ -566,6 +644,33 @@
           <a href="index.html" class="read-more-btn" style="text-decoration: none; border: none; background: var(--primary-dark); color: #ffffff; padding: 12px 24px; border-radius: 8px; font-weight: 600; display: inline-block;">На головну</a>
         </div>
       </div>
+
+      <div id="articles-list" class="articles-list">
+        <h3>Актуальні дослідження теплових насосів</h3>
+
+        <a href="blog-article-hp-owners-austria.html" class="article-card">
+          <span class="article-card-tag">Дослідження</span>
+          <h4>Типи власників теплових насосів в Австрії</h4>
+          <p>Перше широкомасштабне дослідження поведінки та мотивацій користувачів теплових насосів. Чотири типи власників та практичні рекомендації для української специфіки</p>
+        </a>
+
+        <a href="blog-article-hp-diffusion-austria.html" class="article-card current">
+          <span class="article-card-tag">Статистика</span>
+          <h4>Поширення ґрунтових теплових насосів в Австрії</h4>
+          <p>Аналіз 17 000+ установок за 32 роки. Які регіони лідирують, що впливає на темпи впровадження та які висновки для України</p>
+        </a>
+
+        <a href="blog-article-hp-flexibility.html" class="article-card">
+          <span class="article-card-tag">Енергетика</span>
+          <h4>Децентралізовані теплові насоси</h4>
+          <p>Як теплові насоси можуть стати ключем до інтеграції ВДЕ та енергетичної незалежності України. Результати моделювання сценарію 100% відновлюваної енергії</p>
+        </a>
+
+        <div style="display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; justify-content: center;">
+          <a href="#" onclick="toggleArticle('hp-diffusion-austria'); return false;" class="read-more-btn" style="text-decoration: none; border: none; background: var(--accent-gold); color: var(--primary-dark); padding: 12px 24px; border-radius: 8px; font-weight: 600; display: inline-block;">Розгорнути статтю</a>
+          <a href="index.html" class="read-more-btn" style="text-decoration: none; border: none; background: var(--primary-dark); color: #ffffff; padding: 12px 24px; border-radius: 8px; font-weight: 600; display: inline-block;">На головну</a>
+        </div>
+      </div>
     </section>
   </div>
 
@@ -576,12 +681,15 @@
   <script>
     function toggleArticle(articleId) {
       const article = document.getElementById(articleId);
+      const articlesList = document.getElementById('articles-list');
 
-      if (article.style.display === 'none' || article.style.display === '') {
+      if (article.style.display === 'none') {
         article.style.display = 'block';
+        articlesList.classList.remove('show');
         window.location.hash = articleId;
       } else {
         article.style.display = 'none';
+        articlesList.classList.add('show');
         if (window.location.hash === '#' + articleId) {
           history.pushState("", document.title, window.location.pathname + window.location.search);
         }
