@@ -962,7 +962,7 @@
     <div class="sections">
       <section id="blog" class="section">
         <h2>Блог</h2>
-        <div class="articles">
+        <div class="articles" id="articlesContainer">
           <article class="article">
             <h3>Чому одні продукти коштують дорожче за інших: психологія та економіка ціноутворення</h3>
             <p>Розбираємося, які чинники формують сприйняття вартості та як ціна стає інструментом позиціювання</p>
@@ -1284,7 +1284,59 @@
       });
     });
   </script>
-</body>
-</html>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+    const supabaseUrl = 'https://0ec90b57d6e95fcbda19832f.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJib2x0IiwicmVmIjoiMGVjOTBiNTdkNmU5NWZjYmRhMTk4MzJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg4ODE1NzQsImV4cCI6MTc1ODg4MTU3NH0.9I8-U0x86Ak8t2DGaIk0HfvTSLsAyzdnz-Nw00mMkKw';
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+    async function loadArticlesFromDatabase() {
+      const { data: articles, error } = await supabase
+        .from('blog_articles')
+        .select('*')
+        .eq('published', true)
+        .order('created_at', { ascending: false });
+
+      if (error) {
+        console.error('Error loading articles:', error);
+        return;
+      }
+
+      if (!articles || articles.length === 0) {
+        return;
+      }
+
+      const articlesContainer = document.getElementById('articlesContainer');
+      if (!articlesContainer) return;
+
+      articles.forEach(article => {
+        const articleElement = document.createElement('article');
+        articleElement.className = 'article';
+
+        const date = new Date(article.created_at);
+        const formattedDate = date.toLocaleDateString('uk-UA', {
+          year: 'numeric',
+          month: 'long'
+        });
+
+        articleElement.innerHTML = `
+          <h3>${article.title}</h3>
+          <p>${article.excerpt}</p>
+          <span class="article-date">${formattedDate}</span>
+          <a href="blog-article-${article.slug}.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
+        `;
+
+        articlesContainer.insertBefore(articleElement, articlesContainer.firstChild);
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadArticlesFromDatabase);
+    } else {
+      loadArticlesFromDatabase();
+    }
+  </script>
 </body>
 </html>

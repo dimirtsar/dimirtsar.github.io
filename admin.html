@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адмін-панель | Dmytro Tsarenko</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #2c5aa0;
+        }
+
+        .auth-section {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin: 50px auto;
+        }
+
+        .admin-section {
+            display: none;
+        }
+
+        .admin-section.active {
+            display: block;
+        }
+
+        .top-bar {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #2c5aa0;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1e4070;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c82333;
+        }
+
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #218838;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        textarea {
+            min-height: 200px;
+            resize: vertical;
+        }
+
+        .articles-list {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .article-item {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .article-item:last-child {
+            border-bottom: none;
+        }
+
+        .article-info h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .article-meta {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .article-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+
+        .status-published {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-draft {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .editor-section {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .message {
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .message-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-section" id="authSection">
+        <h1 style="margin-bottom: 30px; text-align: center;">Адмін-панель</h1>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="authEmail" placeholder="admin@example.com">
+        </div>
+        <div class="form-group">
+            <label>Пароль</label>
+            <input type="password" id="authPassword" placeholder="••••••••">
+        </div>
+        <button class="btn btn-primary" style="width: 100%;" onclick="login()">Увійти</button>
+        <div id="authMessage" style="margin-top: 15px;"></div>
+    </div>
+
+    <div class="admin-section" id="adminSection">
+        <header>
+            <div class="container">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h1>Управління статтями</h1>
+                    <button class="btn btn-secondary" onclick="logout()">Вийти</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="top-bar">
+                <h2>Статті блогу</h2>
+                <button class="btn btn-primary" onclick="showEditor()">Додати нову статтю</button>
+            </div>
+
+            <div id="messageContainer"></div>
+
+            <div id="articlesListSection">
+                <div class="articles-list" id="articlesList">
+                    <p style="padding: 20px; text-align: center; color: #666;">Завантаження...</p>
+                </div>
+            </div>
+
+            <div id="editorSection" class="editor-section hidden">
+                <h2 style="margin-bottom: 20px;">Редагування статті</h2>
+                <input type="hidden" id="articleId">
+
+                <div class="form-group">
+                    <label>Назва статті</label>
+                    <input type="text" id="articleTitle" placeholder="Назва статті">
+                </div>
+
+                <div class="form-group">
+                    <label>URL (slug)</label>
+                    <input type="text" id="articleSlug" placeholder="url-statti">
+                </div>
+
+                <div class="form-group">
+                    <label>Категорія</label>
+                    <select id="articleCategory">
+                        <option value="technology">Технології</option>
+                        <option value="business">Бізнес</option>
+                        <option value="heat-pumps">Теплові насоси</option>
+                        <option value="energy">Енергоефективність</option>
+                        <option value="general">Загальне</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Короткий опис</label>
+                    <textarea id="articleExcerpt" placeholder="Короткий опис статті для попереднього перегляду"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Повний текст (HTML)</label>
+                    <textarea id="articleContent" style="min-height: 400px;" placeholder="<p>Повний текст статті...</p>"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>URL зображення</label>
+                    <input type="text" id="articleImage" placeholder="images/article.jpg">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="articlePublished" style="width: auto; margin-right: 5px;">
+                        Опублікувати статтю
+                    </label>
+                </div>
+
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn btn-success" onclick="saveArticle()">Зберегти</button>
+                    <button class="btn btn-secondary" onclick="cancelEdit()">Скасувати</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+        const supabaseUrl = 'https://0ec90b57d6e95fcbda19832f.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJib2x0IiwicmVmIjoiMGVjOTBiNTdkNmU5NWZjYmRhMTk4MzJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg4ODE1NzQsImV4cCI6MTc1ODg4MTU3NH0.9I8-U0x86Ak8t2DGaIk0HfvTSLsAyzdnz-Nw00mMkKw';
+        const supabase = createClient(supabaseUrl, supabaseKey);
+
+        window.supabase = supabase;
+        window.currentArticleId = null;
+
+        async function checkAuth() {
+            const { data: { session } } = await supabase.auth.getSession();
+            if (session) {
+                document.getElementById('authSection').style.display = 'none';
+                document.getElementById('adminSection').classList.add('active');
+                loadArticles();
+            }
+        }
+
+        window.login = async function() {
+            const email = document.getElementById('authEmail').value;
+            const password = document.getElementById('authPassword').value;
+
+            const { data, error } = await supabase.auth.signInWithPassword({
+                email: email,
+                password: password
+            });
+
+            if (error) {
+                document.getElementById('authMessage').innerHTML =
+                    '<div class="message message-error">Помилка входу: ' + error.message + '</div>';
+            } else {
+                document.getElementById('authSection').style.display = 'none';
+                document.getElementById('adminSection').classList.add('active');
+                loadArticles();
+            }
+        };
+
+        window.logout = async function() {
+            await supabase.auth.signOut();
+            document.getElementById('authSection').style.display = 'block';
+            document.getElementById('adminSection').classList.remove('active');
+        };
+
+        window.loadArticles = async function() {
+            const { data: articles, error } = await supabase
+                .from('blog_articles')
+                .select('*')
+                .order('created_at', { ascending: false });
+
+            if (error) {
+                document.getElementById('articlesList').innerHTML =
+                    '<p style="padding: 20px; text-align: center; color: #dc3545;">Помилка завантаження: ' + error.message + '</p>';
+                return;
+            }
+
+            if (!articles || articles.length === 0) {
+                document.getElementById('articlesList').innerHTML =
+                    '<p style="padding: 20px; text-align: center; color: #666;">Статей ще немає. Додайте першу!</p>';
+                return;
+            }
+
+            const html = articles.map(article => `
+                <div class="article-item">
+                    <div class="article-info">
+                        <h3>
+                            ${article.title}
+                            <span class="status-badge ${article.published ? 'status-published' : 'status-draft'}">
+                                ${article.published ? 'Опубліковано' : 'Чернетка'}
+                            </span>
+                        </h3>
+                        <div class="article-meta">
+                            ${article.category} • ${new Date(article.created_at).toLocaleDateString('uk-UA')}
+                        </div>
+                    </div>
+                    <div class="article-actions">
+                        <button class="btn btn-primary" onclick="editArticle('${article.id}')">Редагувати</button>
+                        <button class="btn btn-danger" onclick="deleteArticle('${article.id}')">Видалити</button>
+                    </div>
+                </div>
+            `).join('');
+
+            document.getElementById('articlesList').innerHTML = html;
+        };
+
+        window.showEditor = function(article = null) {
+            document.getElementById('editorSection').classList.remove('hidden');
+            document.getElementById('articlesListSection').style.display = 'none';
+
+            if (article) {
+                window.currentArticleId = article.id;
+                document.getElementById('articleTitle').value = article.title;
+                document.getElementById('articleSlug').value = article.slug;
+                document.getElementById('articleCategory').value = article.category;
+                document.getElementById('articleExcerpt').value = article.excerpt;
+                document.getElementById('articleContent').value = article.content;
+                document.getElementById('articleImage').value = article.image_url || '';
+                document.getElementById('articlePublished').checked = article.published;
+            } else {
+                window.currentArticleId = null;
+                document.getElementById('articleTitle').value = '';
+                document.getElementById('articleSlug').value = '';
+                document.getElementById('articleCategory').value = 'general';
+                document.getElementById('articleExcerpt').value = '';
+                document.getElementById('articleContent').value = '';
+                document.getElementById('articleImage').value = '';
+                document.getElementById('articlePublished').checked = false;
+            }
+        };
+
+        window.cancelEdit = function() {
+            document.getElementById('editorSection').classList.add('hidden');
+            document.getElementById('articlesListSection').style.display = 'block';
+            window.currentArticleId = null;
+        };
+
+        window.editArticle = async function(id) {
+            const { data: article, error } = await supabase
+                .from('blog_articles')
+                .select('*')
+                .eq('id', id)
+                .maybeSingle();
+
+            if (error || !article) {
+                showMessage('Помилка завантаження статті', 'error');
+                return;
+            }
+
+            showEditor(article);
+        };
+
+        window.saveArticle = async function() {
+            const articleData = {
+                title: document.getElementById('articleTitle').value,
+                slug: document.getElementById('articleSlug').value,
+                category: document.getElementById('articleCategory').value,
+                excerpt: document.getElementById('articleExcerpt').value,
+                content: document.getElementById('articleContent').value,
+                image_url: document.getElementById('articleImage').value,
+                published: document.getElementById('articlePublished').checked,
+                updated_at: new Date().toISOString()
+            };
+
+            let result;
+            if (window.currentArticleId) {
+                result = await supabase
+                    .from('blog_articles')
+                    .update(articleData)
+                    .eq('id', window.currentArticleId);
+            } else {
+                result = await supabase
+                    .from('blog_articles')
+                    .insert([articleData]);
+            }
+
+            if (result.error) {
+                showMessage('Помилка збереження: ' + result.error.message, 'error');
+            } else {
+                showMessage('Статтю успішно збережено!', 'success');
+                cancelEdit();
+                loadArticles();
+            }
+        };
+
+        window.deleteArticle = async function(id) {
+            if (!confirm('Ви впевнені, що хочете видалити цю статтю?')) {
+                return;
+            }
+
+            const { error } = await supabase
+                .from('blog_articles')
+                .delete()
+                .eq('id', id);
+
+            if (error) {
+                showMessage('Помилка видалення: ' + error.message, 'error');
+            } else {
+                showMessage('Статтю видалено', 'success');
+                loadArticles();
+            }
+        };
+
+        function showMessage(text, type) {
+            const messageContainer = document.getElementById('messageContainer');
+            messageContainer.innerHTML = `<div class="message message-${type}">${text}</div>`;
+            setTimeout(() => {
+                messageContainer.innerHTML = '';
+            }, 5000);
+        }
+
+        checkAuth();
+    </script>
+</body>
+</html>
