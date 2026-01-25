@@ -70,6 +70,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 16px;
     }
     .logo {
       text-decoration: none;
@@ -77,6 +78,8 @@
       display: flex;
       flex-direction: column;
       gap: 2px;
+      flex: 1;
+      min-width: 0;
     }
     .logo:hover {
       transform: scale(1.02);
@@ -98,6 +101,10 @@
       opacity: 1;
       letter-spacing: 0.5px;
       text-transform: uppercase;
+      max-width: calc(100vw - 180px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     nav {
       display: flex;
@@ -139,8 +146,10 @@
       cursor: pointer;
       padding: 8px;
       z-index: 1003;
+      position: relative;
       touch-action: manipulation;
       -webkit-tap-highlight-color: transparent;
+      flex-shrink: 0;
     }
     .mobile-menu-toggle span {
       width: 28px;
@@ -873,13 +882,15 @@
         padding-top: 84px;
       }
       .header-content {
-        padding: 20px 24px;
+        padding: 16px 24px;
+        gap: 12px;
       }
       .logo-name {
         font-size: 24px;
       }
       .logo-tagline {
-        font-size: 11px;
+        font-size: 10px;
+        max-width: calc(100vw - 140px);
       }
       .mobile-menu-toggle {
         display: flex;
@@ -985,13 +996,16 @@
         padding-top: 72px;
       }
       .header-content {
-        padding: 16px 20px;
+        padding: 14px 20px;
+        gap: 8px;
       }
       .logo-name {
         font-size: 20px;
       }
       .logo-tagline {
-        font-size: 10px;
+        font-size: 9px;
+        max-width: calc(100vw - 120px);
+        letter-spacing: 0.3px;
       }
       nav {
         width: 260px;
