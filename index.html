@@ -503,6 +503,33 @@
       }
     }
 
+    .blog-articles-section {
+      background: linear-gradient(135deg, #fafbfc 0%, #f6f8fa 100%);
+      padding: 80px 40px;
+      border-top: 1px solid var(--border-light);
+    }
+    .blog-articles-section .featured-article-tag {
+      background: linear-gradient(135deg, #0a1628 0%, #151922 100%);
+      color: var(--accent-gold);
+    }
+    .blog-articles-section.collapsed .toggle-blog-btn .toggle-icon {
+      transform: rotate(180deg);
+    }
+    .blog-articles-section.collapsed .featured-articles-grid {
+      max-height: 0;
+      opacity: 0;
+    }
+    @media (max-width: 1024px) {
+      .blog-articles-section {
+        padding: 60px 32px;
+      }
+    }
+    @media (max-width: 768px) {
+      .blog-articles-section {
+        padding: 48px 24px;
+      }
+    }
+
     .container {
       max-width: 1280px;
       margin: 0 auto;
@@ -1220,6 +1247,25 @@
     </div>
   </section>
 
+  <section class="blog-articles-section">
+    <div class="featured-articles-container">
+      <div class="featured-articles-header">
+        <div>
+          <h2 class="featured-articles-title">Блог - нове</h2>
+          <p class="featured-articles-subtitle">Останні публікації про бізнес, менеджмент та інновації</p>
+        </div>
+        <button class="toggle-featured-btn toggle-blog-btn" aria-label="Згорнути розділ">
+          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <div class="featured-articles-grid" id="blogArticlesGrid">
+      </div>
+    </div>
+  </section>
+
   <div class="metrics-section">
     <div class="hero-subtitle-container">
       <div class="hero-subtitle">Практичний досвід: теплові насоси, енергоефективність, бізнес</div>
@@ -1299,7 +1345,7 @@
     }
 
     // Toggle featured articles section
-    const toggleFeaturedBtn = document.querySelector('.toggle-featured-btn');
+    const toggleFeaturedBtn = document.querySelector('.toggle-featured-btn:not(.toggle-blog-btn)');
     const featuredSection = document.querySelector('.featured-articles-section');
 
     if (toggleFeaturedBtn && featuredSection) {
@@ -1308,6 +1354,66 @@
         featuredSection.classList.toggle('collapsed');
         toggleFeaturedBtn.setAttribute('aria-label', isCollapsed ? 'Згорнути розділ' : 'Розгорнути розділ');
       });
+    }
+
+    // Toggle blog articles section
+    const toggleBlogBtn = document.querySelector('.toggle-blog-btn');
+    const blogSection = document.querySelector('.blog-articles-section');
+
+    if (toggleBlogBtn && blogSection) {
+      toggleBlogBtn.addEventListener('click', () => {
+        const isCollapsed = blogSection.classList.contains('collapsed');
+        blogSection.classList.toggle('collapsed');
+        toggleBlogBtn.setAttribute('aria-label', isCollapsed ? 'Згорнути розділ' : 'Розгорнути розділ');
+      });
+    }
+
+    // Latest blog articles - ОНОВЛЮЙТЕ ЦЕЙ МАСИВ ПРИ ДОДАВАННІ НОВИХ СТАТЕЙ У blog.html
+    const latestBlogArticles = [
+      {
+        title: 'Ринкові ціни в інженерії: як їх визначати, чому вони різні і чому «дешево» майже завжди дорого',
+        description: 'Як формується ринкова ціна в інженерії, чому вона залежить не тільки від обладнання, і чому фраза «дешевше значить вигідніше» майже завжди помилкова',
+        date: 'Січень 2026',
+        url: 'blog-article-market-pricing.html',
+        tag: 'Бізнес'
+      },
+      {
+        title: 'Чому одні продукти коштують дорожче за інших: психологія та економіка ціноутворення',
+        description: 'Розбираємося, які чинники формують сприйняття вартості та як ціна стає інструментом позиціювання',
+        date: 'Січень 2026',
+        url: 'blog-article-pricing-psychology.html',
+        tag: 'Бізнес'
+      },
+      {
+        title: 'Аргументація високої ціни: як компанії пояснюють вартість своїх продуктів',
+        description: 'Стратегії комунікації вартості від провідних світових брендів та експертів',
+        date: 'Січень 2026',
+        url: 'blog-article-price-argument.html',
+        tag: 'Менеджмент'
+      }
+    ];
+
+    // Render blog articles
+    function renderBlogArticles() {
+      const grid = document.getElementById('blogArticlesGrid');
+      if (!grid) return;
+
+      grid.innerHTML = latestBlogArticles.map(article => `
+        <article class="featured-article-card">
+          <span class="featured-article-tag">${article.tag}</span>
+          <h3 class="featured-article-title">${article.title}</h3>
+          <p class="featured-article-description">${article.description}</p>
+          <span class="featured-article-date">${article.date}</span>
+          <a href="${article.url}" class="featured-article-button">Читати статтю →</a>
+        </article>
+      `).join('');
+    }
+
+    // Initialize blog articles on page load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', renderBlogArticles);
+    } else {
+      renderBlogArticles();
     }
   </script>
 </body>
