@@ -92,12 +92,14 @@
     }
     .logo-tagline {
       font-family: 'Inter', sans-serif;
-      font-size: 12px;
+      font-size: 10px;
       font-weight: 600;
       color: var(--accent-gold);
       opacity: 1;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
       text-transform: uppercase;
+      max-width: calc(100vw - 180px);
+      line-height: 1.3;
     }
     nav {
       display: flex;
@@ -305,10 +307,10 @@
       margin-bottom: 48px;
     }
     .about-author-image {
-      width: calc(100% + 80px);
-      margin-left: -40px;
-      margin-right: -40px;
-      border-radius: 0;
+      width: 100%;
+      max-width: 350px;
+      margin: 0 auto;
+      border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 12px 48px rgba(10, 22, 40, 0.15);
       position: relative;
@@ -320,11 +322,11 @@
         gap: 48px;
       }
       .about-author-image {
-        width: 400px;
-        min-width: 400px;
+        width: 320px;
+        min-width: 320px;
         margin-left: 0;
         margin-right: 0;
-        border-radius: 8px;
+        border-radius: 12px;
       }
     }
     .about-author-image::after {
@@ -335,14 +337,9 @@
       right: 0;
       bottom: 0;
       border: 2px solid var(--accent-gold);
-      border-radius: 0;
+      border-radius: 12px;
       opacity: 0;
       transition: opacity 0.3s ease;
-    }
-    @media (min-width: 1024px) {
-      .about-author-image::after {
-        border-radius: 8px;
-      }
     }
     .about-author-image:hover::after {
       opacity: 1;
@@ -350,13 +347,14 @@
     .about-author-image img {
       width: 100%;
       height: auto;
-      object-fit: contain;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
       display: block;
       transition: transform 0.5s ease;
       filter: brightness(1.05) contrast(1.03);
     }
     .about-author-image:hover img {
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
     .about-author-text {
       flex: 1;
@@ -676,7 +674,9 @@
         font-size: 24px;
       }
       .logo-tagline {
-        font-size: 11px;
+        font-size: 10px;
+        max-width: calc(100vw - 140px);
+        letter-spacing: 0.3px;
       }
       .mobile-menu-toggle {
         display: flex;
@@ -747,10 +747,7 @@
         gap: 32px;
       }
       .about-author-image {
-        width: calc(100% + 48px);
-        margin-left: -24px;
-        margin-right: -24px;
-        height: 300px;
+        max-width: 300px;
       }
       .sections {
         gap: 0;
@@ -788,7 +785,9 @@
         font-size: 20px;
       }
       .logo-tagline {
-        font-size: 10px;
+        font-size: 9px;
+        max-width: calc(100vw - 120px);
+        letter-spacing: 0.3px;
       }
       nav {
         width: 260px;
@@ -918,17 +917,13 @@
       }
 
       .about-author-image {
-        width: calc(100% + 40px);
-        margin-left: -20px;
-        margin-right: -20px;
+        max-width: 280px;
       }
     }
 
     @media (max-width: 520px) {
       .about-author-image {
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
+        max-width: 250px;
       }
     }
   </style>
@@ -939,7 +934,7 @@
     <div class="header-content">
       <a href="index.html" class="logo">
         <span class="logo-name">Дмитро Царенко</span>
-        <span class="logo-tagline">Експерт в галузі теплових насосів та енергоефективності</span>
+        <span class="logo-tagline">Теплові насоси · Енергоефективність</span>
       </a>
       <button class="mobile-menu-toggle" aria-label="Меню">
         <span></span>
@@ -967,7 +962,7 @@
         <h2>Про мене</h2>
         <div class="about-author">
           <div class="about-author-image">
-            <img src="2026-01-02_15.35.18.jpg" alt="Дмитро Царенко" loading="lazy">
+            <img src="images/photo_2026-01-25_23-26-06.jpg" alt="Дмитро Царенко" loading="lazy">
           </div>
           <div class="about-author-text">
             <p style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: var(--primary-dark); line-height: 1.6; margin-bottom: 28px; font-style: italic; text-align: center; padding: 20px; background: linear-gradient(135deg, rgba(255, 214, 67, 0.08) 0%, rgba(255, 214, 67, 0.03) 100%); border-left: 4px solid var(--accent-gold); border-radius: 8px;">
