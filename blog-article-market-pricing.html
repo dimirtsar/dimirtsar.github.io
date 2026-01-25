@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <meta charset="UTF-8">
   <title>Коротко про головне - Дмитро Царенко</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,653 +17,9 @@
   <meta name="twitter:description" content="Коротко про головне">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-dark: #0a1628;
-      --secondary-dark: #151922;
-      --accent-gold: #ffd643;
-      --accent-gold-dark: #e6c135;
-      --accent-gold-light: #ffe76b;
-      --text-primary: #0f1419;
-      --text-secondary: #536471;
-      --text-light: #8899a6;
-      --bg-dark: #0d1117;
-      --bg-darker: #010409;
-      --bg-light: #f6f8fa;
-      --bg-white: #ffffff;
-      --border-color: #30363d;
-      --border-light: #e7ecf0;
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
-      --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
-      --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.25);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #f6f8fa;
-      color: var(--text-primary);
-      line-height: 1.7;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      padding-top: 88px;
-    }
-    header {
-      background: var(--primary-dark);
-      backdrop-filter: blur(20px);
-      border-bottom: 3px solid var(--accent-gold);
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      z-index: 1002;
-      box-shadow: var(--shadow-lg);
-      transition: all 0.3s ease;
-    }
-    .header-content {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-    }
-    .logo {
-      text-decoration: none;
-      transition: transform 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      flex: 1;
-      min-width: 0;
-    }
-    .logo:hover {
-      transform: scale(1.02);
-    }
-    .logo-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: -0.5px;
-      line-height: 1;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    }
-    .logo-tagline {
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--accent-gold);
-      opacity: 1;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      max-width: calc(100vw - 180px);
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    nav {
-      display: flex;
-      gap: 40px;
-      align-items: center;
-    }
-    nav a {
-      color: rgba(255, 255, 255, 0.9);
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 600;
-      position: relative;
-      transition: all 0.3s ease;
-      letter-spacing: 0.3px;
-    }
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 0;
-      height: 3px;
-      background: var(--accent-gold);
-      transition: width 0.3s ease;
-      box-shadow: 0 0 8px var(--accent-gold);
-    }
-    nav a:hover {
-      color: var(--accent-gold);
-    }
-    nav a:hover::after {
-      width: 100%;
-    }
-    .mobile-menu-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 6px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      z-index: 1003;
-      position: relative;
-      touch-action: manipulation;
-      -webkit-tap-highlight-color: transparent;
-      flex-shrink: 0;
-    }
-    .mobile-menu-toggle span {
-      width: 28px;
-      height: 3px;
-      background: #ffffff;
-      border-radius: 2px;
-      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
-      will-change: transform, opacity;
-    }
-    .mobile-menu-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translate(8px, 8px);
-      background: #000000;
-    }
-    .mobile-menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-    .mobile-menu-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(8px, -8px);
-      background: #000000;
-    }
-    .menu-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.25s ease, visibility 0.25s ease;
-      z-index: 999;
-    }
-    .menu-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 80px 40px;
-    }
-
-    .article-header {
-      margin-bottom: 48px;
-    }
-
-    .article-header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 48px;
-      font-weight: 800;
-      color: var(--primary-dark);
-      margin-bottom: 24px;
-      line-height: 1.2;
-      letter-spacing: -0.5px;
-    }
-
-    .article-date {
-      font-size: 14px;
-      color: var(--accent-gold-dark);
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      background: rgba(255, 214, 67, 0.1);
-      padding: 8px 16px;
-      border-radius: 6px;
-      display: inline-block;
-    }
-
-    .article-image {
-      width: 100%;
-      max-width: 1400px;
-      height: 450px;
-      margin: 0 auto 48px;
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 32px rgba(10, 22, 40, 0.15);
-    }
-
-    .article-image::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(201, 169, 97, 0.1) 0%, transparent 50%);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .article-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s ease;
-      filter: brightness(1.05) contrast(1.03);
-    }
-
-    .article-image:hover img {
-      transform: scale(1.02);
-    }
-
-    .article-content {
-      background: #ffffff;
-      padding: 48px;
-      border-radius: 12px;
-      box-shadow: var(--shadow-sm);
-      border: 2px solid var(--border-light);
-    }
-
-    .article-content h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--primary-dark);
-      margin-top: 48px;
-      margin-bottom: 24px;
-      padding-bottom: 16px;
-      border-bottom: 3px solid var(--accent-gold);
-      letter-spacing: -0.5px;
-    }
-
-    .article-content h2:first-child {
-      margin-top: 0;
-    }
-
-    .article-content h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--primary-dark);
-      margin-top: 40px;
-      margin-bottom: 20px;
-      letter-spacing: -0.5px;
-    }
-
-    .article-content h4 {
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--primary-dark);
-      margin-top: 32px;
-      margin-bottom: 16px;
-    }
-
-    .article-content p {
-      font-size: 17px;
-      line-height: 1.8;
-      color: var(--text-primary);
-      margin-bottom: 20px;
-    }
-
-    .article-content ul,
-    .article-content ol {
-      margin: 24px 0;
-      padding-left: 28px;
-    }
-
-    .article-content li {
-      font-size: 17px;
-      line-height: 1.8;
-      color: var(--text-primary);
-      margin-bottom: 12px;
-    }
-
-    .article-content blockquote {
-      margin: 32px 0;
-      padding: 24px 32px;
-      background: rgba(255, 214, 67, 0.05);
-      border-left: 4px solid var(--accent-gold);
-      border-radius: 8px;
-      font-style: italic;
-      color: var(--text-secondary);
-    }
-
-    .article-content em {
-      font-style: italic;
-      color: var(--text-secondary);
-    }
-
-    .article-content strong {
-      font-weight: 700;
-      color: var(--primary-dark);
-    }
-
-    .expert-quote {
-      margin: 40px 0;
-      padding: 32px;
-      background: linear-gradient(135deg, rgba(255, 214, 67, 0.08) 0%, rgba(255, 214, 67, 0.02) 100%);
-      border: 2px solid var(--accent-gold);
-      border-radius: 12px;
-      position: relative;
-    }
-
-    .expert-quote::before {
-      content: '"';
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      font-family: 'Playfair Display', serif;
-      font-size: 72px;
-      color: var(--accent-gold);
-      opacity: 0.3;
-      line-height: 1;
-    }
-
-    .expert-quote p {
-      font-size: 18px;
-      line-height: 1.7;
-      font-style: italic;
-      color: var(--text-primary);
-      margin-bottom: 16px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .expert-quote .author {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--accent-gold-dark);
-      font-style: normal;
-      margin-bottom: 0;
-    }
-
-    .conclusion-box {
-      margin: 48px 0 0;
-      padding: 32px;
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
-      border-radius: 12px;
-      box-shadow: var(--shadow-md);
-    }
-
-    .conclusion-box h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      color: var(--accent-gold);
-      margin-top: 0;
-      margin-bottom: 20px;
-    }
-
-    .conclusion-box p {
-      font-size: 17px;
-      line-height: 1.8;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 0;
-    }
-
-    .action-buttons {
-      display: flex;
-      gap: 16px;
-      margin-top: 48px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 14px 28px;
-      font-size: 15px;
-      font-weight: 600;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      display: inline-block;
-      letter-spacing: 0.3px;
-    }
-
-    .btn-primary {
-      background: var(--accent-gold);
-      color: var(--primary-dark);
-      border: 2px solid var(--accent-gold);
-    }
-
-    .btn-primary:hover {
-      background: var(--accent-gold-dark);
-      border-color: var(--accent-gold-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(255, 214, 67, 0.3);
-    }
-
-    .btn-secondary {
-      background: var(--primary-dark);
-      color: #ffffff;
-      border: 2px solid var(--primary-dark);
-    }
-
-    .btn-secondary:hover {
-      background: var(--secondary-dark);
-      border-color: var(--secondary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(10, 22, 40, 0.3);
-    }
-
-    footer {
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
-      color: rgba(255, 255, 255, 0.9);
-      padding: 64px 40px;
-      text-align: center;
-      margin-top: 100px;
-      position: relative;
-      overflow: hidden;
-    }
-    footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: var(--accent-gold);
-      box-shadow: 0 0 20px var(--accent-gold);
-    }
-    footer p {
-      font-size: 15px;
-      letter-spacing: 0.5px;
-      opacity: 0.85;
-    }
-
-    @media (max-width: 1024px) {
-      .container {
-        padding: 60px 32px;
-      }
-      .article-header h1 {
-        font-size: 40px;
-      }
-      .article-content {
-        padding: 40px 32px;
-      }
-      .article-content h2 {
-        font-size: 28px;
-      }
-      .article-content h3 {
-        font-size: 24px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      body {
-        padding-top: 84px;
-      }
-      .header-content {
-        padding: 16px 24px;
-        gap: 12px;
-      }
-      .logo-name {
-        font-size: 24px;
-      }
-      .logo-tagline {
-        font-size: 10px;
-        max-width: calc(100vw - 140px);
-      }
-      .mobile-menu-toggle {
-        display: flex;
-      }
-      nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 280px;
-        height: 100vh;
-        background: rgba(255, 255, 255, 0.98);
-        flex-direction: column;
-        gap: 0;
-        padding: 80px 24px 24px;
-        box-shadow: -4px 0 24px rgba(0, 0, 0, 0.1);
-        transform: translateX(100%);
-        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        will-change: transform;
-        z-index: 1001;
-        -webkit-overflow-scrolling: touch;
-        overscroll-behavior: contain;
-      }
-      nav.active {
-        transform: translateX(0);
-      }
-      nav a {
-        font-size: 16px;
-        padding: 16px 0;
-        border-bottom: 1px solid var(--border-color);
-        width: 100%;
-        color: var(--primary-dark);
-      }
-      nav a:hover {
-        color: var(--accent-gold-dark);
-      }
-      nav a::after {
-        display: none;
-      }
-      .container {
-        padding: 48px 24px;
-      }
-      .article-header h1 {
-        font-size: 32px;
-        margin-bottom: 20px;
-      }
-      .article-image {
-        height: 300px;
-        margin-bottom: 36px;
-      }
-      .article-content {
-        padding: 32px 24px;
-      }
-      .article-content h2 {
-        font-size: 26px;
-        margin-top: 36px;
-        margin-bottom: 20px;
-      }
-      .article-content h3 {
-        font-size: 22px;
-        margin-top: 32px;
-      }
-      .article-content h4 {
-        font-size: 18px;
-      }
-      .article-content p,
-      .article-content li {
-        font-size: 16px;
-      }
-      .expert-quote {
-        padding: 24px;
-      }
-      .expert-quote p {
-        font-size: 16px;
-      }
-      .conclusion-box {
-        padding: 24px;
-      }
-      .conclusion-box h3 {
-        font-size: 24px;
-      }
-      .conclusion-box p {
-        font-size: 16px;
-      }
-      .action-buttons {
-        flex-direction: column;
-      }
-      .btn {
-        width: 100%;
-        text-align: center;
-      }
-      footer {
-        padding: 48px 24px;
-        margin-top: 64px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      body {
-        padding-top: 72px;
-      }
-      .header-content {
-        padding: 14px 20px;
-        gap: 8px;
-      }
-      .logo-name {
-        font-size: 20px;
-      }
-      .logo-tagline {
-        font-size: 9px;
-        max-width: calc(100vw - 120px);
-        letter-spacing: 0.3px;
-      }
-      nav {
-        width: 260px;
-      }
-      .container {
-        padding: 40px 20px;
-      }
-      .article-header h1 {
-        font-size: 28px;
-      }
-      .article-date {
-        font-size: 12px;
-        padding: 6px 12px;
-      }
-      .article-image {
-        height: 250px;
-        margin-bottom: 32px;
-      }
-      .article-content {
-        padding: 28px 20px;
-      }
-      .article-content h2 {
-        font-size: 24px;
-      }
-      .article-content h3 {
-        font-size: 20px;
-      }
-      .article-content p,
-      .article-content li {
-        font-size: 15px;
-      }
-      .expert-quote {
-        padding: 20px;
-      }
-      .expert-quote::before {
-        font-size: 56px;
-      }
-      .conclusion-box {
-        padding: 20px;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media=\'all\'; this.onload=null;">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <style>:root{--primary-dark:#0a1628;--secondary-dark:#151922;--accent-gold:#ffd643;--accent-gold-dark:#e6c135;--accent-gold-light:#ffe76b;--text-primary:#0f1419;--text-secondary:#536471;--text-light:#8899a6;--bg-dark:#0d1117;--bg-darker:#010409;--bg-light:#f6f8fa;--bg-white:#ffffff;--border-color:#30363d;--border-light:#e7ecf0;--shadow-sm:0 2px 8px rgba(0,0,0,0.1);--shadow-md:0 4px 16px rgba(0,0,0,0.15);--shadow-lg:0 8px 32px rgba(0,0,0,0.2);--shadow-xl:0 12px 48px rgba(0,0,0,0.25)}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f6f8fa;color:var(--text-primary);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding-top:88px}header{background:var(--primary-dark);backdrop-filter:blur(20px);border-bottom:3px solid var(--accent-gold);position:fixed;top:0;left:0;right:0;width:100%;z-index:1002;box-shadow:var(--shadow-lg);transition:all 0.3s ease}.header-content{max-width:1280px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;gap:16px}.logo{text-decoration:none;transition:transform 0.3s ease;display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}.logo:hover{transform:scale(1.02)}.logo-name{font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:#ffffff;letter-spacing:-0.5px;line-height:1;text-shadow:0 2px 8px rgba(0,0,0,0.3)}.logo-tagline{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;color:var(--accent-gold);opacity:1;letter-spacing:0.5px;text-transform:uppercase;max-width:calc(100vw - 180px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}nav{display:flex;gap:40px;align-items:center}nav a{color:rgba(255,255,255,0.9);text-decoration:none;font-size:15px;font-weight:600;position:relative;transition:all 0.3s ease;letter-spacing:0.3px}nav a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:3px;background:var(--accent-gold);transition:width 0.3s ease;box-shadow:0 0 8px var(--accent-gold)}nav a:hover{color:var(--accent-gold)}nav a:hover::after{width:100%}.mobile-menu-toggle{display:none;flex-direction:column;gap:6px;background:none;border:none;cursor:pointer;padding:8px;z-index:1003;position:relative;touch-action:manipulation;-webkit-tap-highlight-color:transparent;flex-shrink:0}.mobile-menu-toggle span{width:28px;height:3px;background:#ffffff;border-radius:2px;transition:transform 0.2s cubic-bezier(0.4,0,0.2,1),opacity 0.2s ease;will-change:transform,opacity}.mobile-menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(8px,8px);background:#000000}.mobile-menu-toggle.active span:nth-child(2){opacity:0}.mobile-menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(8px,-8px);background:#000000}.menu-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);opacity:0;visibility:hidden;transition:opacity 0.25s ease,visibility 0.25s ease;z-index:999}.menu-overlay.active{opacity:1;visibility:visible}.container{max-width:1280px;margin:0 auto;padding:80px 40px}.article-header{margin-bottom:48px}.article-header h1{font-family:'Playfair Display',serif;font-size:48px;font-weight:800;color:var(--primary-dark);margin-bottom:24px;line-height:1.2;letter-spacing:-0.5px}.article-date{font-size:14px;color:var(--accent-gold-dark);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(255,214,67,0.1);padding:8px 16px;border-radius:6px;display:inline-block}.article-image{width:100%;max-width:1400px;height:450px;margin:0 auto 48px;position:relative;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(10,22,40,0.15)}.article-image::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(201,169,97,0.1) 0%,transparent 50%);pointer-events:none;z-index:1}.article-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;filter:brightness(1.05) contrast(1.03)}.article-image:hover img{transform:scale(1.02)}.article-content{background:#ffffff;padding:48px;border-radius:12px;box-shadow:var(--shadow-sm);border:2px solid var(--border-light)}.article-content h2{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--primary-dark);margin-top:48px;margin-bottom:24px;padding-bottom:16px;border-bottom:3px solid var(--accent-gold);letter-spacing:-0.5px}.article-content h2:first-child{margin-top:0}.article-content h3{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--primary-dark);margin-top:40px;margin-bottom:20px;letter-spacing:-0.5px}.article-content h4{font-size:20px;font-weight:600;color:var(--primary-dark);margin-top:32px;margin-bottom:16px}.article-content p{font-size:17px;line-height:1.8;color:var(--text-primary);margin-bottom:20px}.article-content ul,.article-content ol{margin:24px 0;padding-left:28px}.article-content li{font-size:17px;line-height:1.8;color:var(--text-primary);margin-bottom:12px}.article-content blockquote{margin:32px 0;padding:24px 32px;background:rgba(255,214,67,0.05);border-left:4px solid var(--accent-gold);border-radius:8px;font-style:italic;color:var(--text-secondary)}.article-content em{font-style:italic;color:var(--text-secondary)}.article-content strong{font-weight:700;color:var(--primary-dark)}.expert-quote{margin:40px 0;padding:32px;background:linear-gradient(135deg,rgba(255,214,67,0.08) 0%,rgba(255,214,67,0.02) 100%);border:2px solid var(--accent-gold);border-radius:12px;position:relative}.expert-quote::before{content:'"';position:absolute;top:16px;left:16px;font-family:'Playfair Display',serif;font-size:72px;color:var(--accent-gold);opacity:0.3;line-height:1}.expert-quote p{font-size:18px;line-height:1.7;font-style:italic;color:var(--text-primary);margin-bottom:16px;position:relative;z-index:1}.expert-quote .author{font-size:15px;font-weight:600;color:var(--accent-gold-dark);font-style:normal;margin-bottom:0}.conclusion-box{margin:48px 0 0;padding:32px;background:linear-gradient(135deg,var(--primary-dark) 0%,var(--secondary-dark) 100%);border-radius:12px;box-shadow:var(--shadow-md)}.conclusion-box h3{font-family:'Playfair Display',serif;font-size:28px;color:var(--accent-gold);margin-top:0;margin-bottom:20px}.conclusion-box p{font-size:17px;line-height:1.8;color:rgba(255,255,255,0.9);margin-bottom:0}.action-buttons{display:flex;gap:16px;margin-top:48px;flex-wrap:wrap}.btn{padding:14px 28px;font-size:15px;font-weight:600;border-radius:8px;text-decoration:none;transition:all 0.3s ease;display:inline-block;letter-spacing:0.3px}.btn-primary{background:var(--accent-gold);color:var(--primary-dark);border:2px solid var(--accent-gold)}.btn-primary:hover{background:var(--accent-gold-dark);border-color:var(--accent-gold-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,214,67,0.3)}.btn-secondary{background:var(--primary-dark);color:#ffffff;border:2px solid var(--primary-dark)}.btn-secondary:hover{background:var(--secondary-dark);border-color:var(--secondary-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,22,40,0.3)}footer{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--secondary-dark) 100%);color:rgba(255,255,255,0.9);padding:64px 40px;text-align:center;margin-top:100px;position:relative;overflow:hidden}footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent-gold);box-shadow:0 0 20px var(--accent-gold)}footer p{font-size:15px;letter-spacing:0.5px;opacity:0.85}@media (max-width:1024px){.container{padding:60px 32px}.article-header h1{font-size:40px}.article-content{padding:40px 32px}.article-content h2{font-size:28px}.article-content h3{font-size:24px}}@media (max-width:768px){body{padding-top:84px}.header-content{padding:16px 24px;gap:12px}.logo-name{font-size:24px}.logo-tagline{font-size:10px;max-width:calc(100vw - 140px)}.mobile-menu-toggle{display:flex}nav{position:fixed;top:0;right:0;width:280px;height:100vh;background:rgba(255,255,255,0.98);flex-direction:column;gap:0;padding:80px 24px 24px;box-shadow:-4px 0 24px rgba(0,0,0,0.1);transform:translateX(100%);transition:transform 0.25s cubic-bezier(0.4,0,0.2,1);will-change:transform;z-index:1001;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}nav.active{transform:translateX(0)}nav a{font-size:16px;padding:16px 0;border-bottom:1px solid var(--border-color);width:100%;color:var(--primary-dark)}nav a:hover{color:var(--accent-gold-dark)}nav a::after{display:none}.container{padding:48px 24px}.article-header h1{font-size:32px;margin-bottom:20px}.article-image{height:300px;margin-bottom:36px}.article-content{padding:32px 24px}.article-content h2{font-size:26px;margin-top:36px;margin-bottom:20px}.article-content h3{font-size:22px;margin-top:32px}.article-content h4{font-size:18px}.article-content p,.article-content li{font-size:16px}.expert-quote{padding:24px}.expert-quote p{font-size:16px}.conclusion-box{padding:24px}.conclusion-box h3{font-size:24px}.conclusion-box p{font-size:16px}.action-buttons{flex-direction:column}.btn{width:100%;text-align:center}footer{padding:48px 24px;margin-top:64px}}@media (max-width:520px){body{padding-top:72px}.header-content{padding:14px 20px;gap:8px}.logo-name{font-size:20px}.logo-tagline{font-size:9px;max-width:calc(100vw - 120px);letter-spacing:0.3px}nav{width:260px}.container{padding:40px 20px}.article-header h1{font-size:28px}.article-date{font-size:12px;padding:6px 12px}.article-image{height:250px;margin-bottom:32px}.article-content{padding:28px 20px}.article-content h2{font-size:24px}.article-content h3{font-size:20px}.article-content p,.article-content li{font-size:15px}.expert-quote{padding:20px}.expert-quote::before{font-size:56px}.conclusion-box{padding:20px}}</style>
 </head>
 <body>
   <div class="menu-overlay"></div>
@@ -695,239 +53,239 @@
     </div>
 
     <div class="article-image">
-      <img src="images/sale_labels_2400.jpg" alt="Цінові пропозиції та знижки">
-    </div>
+      <img src="images/sale_labels_2400.jpg" alt="Цінові пропозиції та знижки" loading="eager" decoding="async">
+    </div loading="eager">
 
-    <div class="article-content">
-      <h2>Коротко про головне</h2>
-      <p>Коли мова йде про інженерні системи (теплові насоси, вентиляцію, автоматизацію), питання ціни далеко не завжди дорівнює питанню вартості рішення. Часто — це різні величини. У цій статті — про те, як формується ринкова ціна, чому вона залежить не тільки від обладнання, і чому фраза «дешевше значить вигідніше» майже завжди помилкова.</p>
+    <div class="article-content" loading="eager">
+      <h2 loading="eager">Коротко про головне</h2 loading="eager">
+      <p loading="eager">Коли мова йде про інженерні системи (теплові насоси, вентиляцію, автоматизацію), питання ціни далеко не завжди дорівнює питанню вартості рішення. Часто — це різні величини. У цій статті — про те, як формується ринкова ціна, чому вона залежить не тільки від обладнання, і чому фраза «дешевше значить вигідніше» майже завжди помилкова.</p loading="eager">
 
-      <h2>1. Чому питання ціни в інженерії завжди викликає конфлікт</h2>
-      <p>В інженерії ціна — значно більше, ніж просто цифра у кошторисі.<br>
-      Це питання довіри, відповідальності та прогнозу майбутнього результату.</p>
-      <p>Саме тому розмова про вартість інженерних систем часто починається з непорозумінь. Клієнт і інженер можуть дивитися на ту саму цифру, але розуміти її по-різному.</p>
+      <h2 loading="eager">1. Чому питання ціни в інженерії завжди викликає конфлікт</h2 loading="eager">
+      <p loading="eager">В інженерії ціна — значно більше, ніж просто цифра у кошторисі.<br loading="eager">
+      Це питання довіри, відповідальності та прогнозу майбутнього результату.</p loading="eager">
+      <p loading="eager">Саме тому розмова про вартість інженерних систем часто починається з непорозумінь. Клієнт і інженер можуть дивитися на ту саму цифру, але розуміти її по-різному.</p loading="eager">
 
-      <h4>Типовий погляд клієнта:</h4>
-      <ul>
-        <li>є потреба — наприклад, опалення, вентиляція або кондиціювання;</li>
-        <li>є потужність — кіловати;</li>
-        <li>є обладнання — відомий бренд;</li>
-        <li>отже, можна знайти «ринкову ціну».</li>
-      </ul>
+      <h4 loading="eager">Типовий погляд клієнта:</h4 loading="eager">
+      <ul loading="eager">
+        <li loading="eager">є потреба — наприклад, опалення, вентиляція або кондиціювання;</li loading="eager">
+        <li loading="eager">є потужність — кіловати;</li loading="eager">
+        <li loading="eager">є обладнання — відомий бренд;</li loading="eager">
+        <li loading="eager">отже, можна знайти «ринкову ціну».</li loading="eager">
+      </ul loading="eager">
 
-      <p>Погляд інженера зовсім інший.<br>
-      Для нього існує не абстрактна система, а конкретний об'єкт з унікальними тепловтратами, режимами роботи, взаємодією між системами. І найголовніше — є відповідальність за результат, який має працювати роками.</p>
+      <p loading="eager">Погляд інженера зовсім інший.<br loading="eager">
+      Для нього існує не абстрактна система, а конкретний об'єкт з унікальними тепловтратами, режимами роботи, взаємодією між системами. І найголовніше — є відповідальність за результат, який має працювати роками.</p loading="eager">
 
-      <p>Це два принципово різні способи мислення про одну й ту саму цифру.</p>
+      <p loading="eager">Це два принципово різні способи мислення про одну й ту саму цифру.</p loading="eager">
 
-      <p>Європейські професійні інженерні інституції звертають увагу на те, що проблема ринку полягає не в «дорогих системах», а в розриві між очікуваною і фактичною продуктивністю систем:</p>
+      <p loading="eager">Європейські професійні інженерні інституції звертають увагу на те, що проблема ринку полягає не в «дорогих системах», а в розриві між очікуваною і фактичною продуктивністю систем:</p loading="eager">
 
-      <blockquote>
-        "Buildings frequently consume two to five times more energy than predicted at design stage."<br>
-        — CIBSE, Closing the Performance Gap, TM54, Section 1<br><br>
-        <strong>Переклад:</strong><br>
+      <blockquote loading="eager">
+        "Buildings frequently consume two to five times more energy than predicted at design stage."<br loading="eager">
+        — CIBSE, Closing the Performance Gap, TM54, Section 1<br loading="eager"><br loading="eager">
+        <strong loading="eager">Переклад:</strong loading="eager"><br loading="eager">
         «Будівлі часто споживають у 2–5 разів більше енергії, ніж закладалося на стадії проєктування.»
-      </blockquote>
+      </blockquote loading="eager">
 
-      <p>Цей факт напряму пов'язаний із тим, як формується ціна і що насправді купує клієнт.</p>
+      <p loading="eager">Цей факт напряму пов'язаний із тим, як формується ціна і що насправді купує клієнт.</p loading="eager">
 
-      <h2>2. Що насправді означає «ринкова ціна» в інженерії</h2>
-      <p>У класичній економіці ринкова ціна — це баланс попиту й пропозиції.<br>
-      В інженерії це визначення працює лише частково.</p>
+      <h2 loading="eager">2. Що насправді означає «ринкова ціна» в інженерії</h2 loading="eager">
+      <p loading="eager">У класичній економіці ринкова ціна — це баланс попиту й пропозиції.<br loading="eager">
+      В інженерії це визначення працює лише частково.</p loading="eager">
 
-      <p><strong>Ринкова ціна в інженерії — це ціна керованого ризику.</strong></p>
+      <p loading="eager"><strong loading="eager">Ринкова ціна в інженерії — це ціна керованого ризику.</strong loading="eager"></p loading="eager">
 
-      <h4>Це не лише:</h4>
-      <ul>
-        <li>собівартість обладнання;</li>
-        <li>вартість монтажу.</li>
-      </ul>
+      <h4 loading="eager">Це не лише:</h4 loading="eager">
+      <ul loading="eager">
+        <li loading="eager">собівартість обладнання;</li loading="eager">
+        <li loading="eager">вартість монтажу.</li loading="eager">
+      </ul loading="eager">
 
-      <h4>Це також:</h4>
-      <ul>
-        <li>точність проєктних припущень;</li>
-        <li>якість теплотехнічних розрахунків;</li>
-        <li>глибина опрацювання сценаріїв;</li>
-        <li>рівень автоматизації й контролю;</li>
-        <li>монтажна дисципліна;</li>
-        <li>пусконалагодження;</li>
-        <li>відповідальність за результат у часі.</li>
-      </ul>
+      <h4 loading="eager">Це також:</h4 loading="eager">
+      <ul loading="eager">
+        <li loading="eager">точність проєктних припущень;</li loading="eager">
+        <li loading="eager">якість теплотехнічних розрахунків;</li loading="eager">
+        <li loading="eager">глибина опрацювання сценаріїв;</li loading="eager">
+        <li loading="eager">рівень автоматизації й контролю;</li loading="eager">
+        <li loading="eager">монтажна дисципліна;</li loading="eager">
+        <li loading="eager">пусконалагодження;</li loading="eager">
+        <li loading="eager">відповідальність за результат у часі.</li loading="eager">
+      </ul loading="eager">
 
-      <p>Harvard Business Review дуже точно формулює цей принцип для складних технічних рішень:</p>
+      <p loading="eager">Harvard Business Review дуже точно формулює цей принцип для складних технічних рішень:</p loading="eager">
 
-      <blockquote>
-        "In complex solutions, customers pay not for the product itself, but for the reduction of uncertainty and risk."<br>
-        — HBR, What Customers Really Value, B2B Strategy<br><br>
-        <strong>Переклад:</strong><br>
+      <blockquote loading="eager">
+        "In complex solutions, customers pay not for the product itself, but for the reduction of uncertainty and risk."<br loading="eager">
+        — HBR, What Customers Really Value, B2B Strategy<br loading="eager"><br loading="eager">
+        <strong loading="eager">Переклад:</strong loading="eager"><br loading="eager">
         «У складних рішеннях клієнти платять не за продукт, а за зменшення невизначеності та ризиків.»
-      </blockquote>
+      </blockquote loading="eager">
 
-      <p>Інженерні системи — саме такі складні рішення.</p>
+      <p loading="eager">Інженерні системи — саме такі складні рішення.</p loading="eager">
 
-      <h2>3. Матеріали й обладнання: чому «однакове» не означає «рівне»</h2>
+      <h2 loading="eager">3. Матеріали й обладнання: чому «однакове» не означає «рівне»</h2 loading="eager">
 
-      <h3>Ілюзія порівняння за потужністю</h3>
-      <p>Одна з найпоширеніших помилок на ринку — порівнювати інженерні рішення лише за:</p>
-      <ul>
-        <li>потужністю в кіловатах;</li>
-        <li>назвою бренду;</li>
-        <li>загальною сумою у кошторисі.</li>
-      </ul>
+      <h3 loading="eager">Ілюзія порівняння за потужністю</h3 loading="eager">
+      <p loading="eager">Одна з найпоширеніших помилок на ринку — порівнювати інженерні рішення лише за:</p loading="eager">
+      <ul loading="eager">
+        <li loading="eager">потужністю в кіловатах;</li loading="eager">
+        <li loading="eager">назвою бренду;</li loading="eager">
+        <li loading="eager">загальною сумою у кошторисі.</li loading="eager">
+      </ul loading="eager">
 
-      <p>Але 10 кВт теплового насоса можуть означати принципово різні системи:</p>
-      <ul>
-        <li>з різними температурами подачі;</li>
-        <li>з різними алгоритмами керування;</li>
-        <li>з різною інтеграцією з вентиляцією й ГВП;</li>
-        <li>з різною стабільністю роботи в міжсезоння.</li>
-      </ul>
+      <p loading="eager">Але 10 кВт теплового насоса можуть означати принципово різні системи:</p loading="eager">
+      <ul loading="eager">
+        <li loading="eager">з різними температурами подачі;</li loading="eager">
+        <li loading="eager">з різними алгоритмами керування;</li loading="eager">
+        <li loading="eager">з різною інтеграцією з вентиляцією й ГВП;</li loading="eager">
+        <li loading="eager">з різною стабільністю роботи в міжсезоння.</li loading="eager">
+      </ul loading="eager">
 
-      <p>У реальній експлуатації це може давати десятки відсотків різниці в споживанні енергії — навіть при однаковому обладнанні.</p>
+      <p loading="eager">У реальній експлуатації це може давати десятки відсотків різниці в споживанні енергії — навіть при однаковому обладнанні.</p loading="eager">
 
-      <h3>Що показують європейські дослідження</h3>
-      <p>CIBSE Journal зазначає:</p>
+      <h3 loading="eager">Що показують європейські дослідження</h3 loading="eager">
+      <p loading="eager">CIBSE Journal зазначає:</p loading="eager">
 
-      <blockquote>
-        "Real-world data reveals a significant performance gap between different heat pump installations."<br>
-        — CIBSE Journal, Bridging the heat pump efficiency divide<br><br>
-        <strong>Переклад:</strong><br>
+      <blockquote loading="eager">
+        "Real-world data reveals a significant performance gap between different heat pump installations."<br loading="eager">
+        — CIBSE Journal, Bridging the heat pump efficiency divide<br loading="eager"><br loading="eager">
+        <strong loading="eager">Переклад:</strong loading="eager"><br loading="eager">
         «Реальні дані показують значний розрив ефективності між різними інсталяціями теплових насосів.»
-      </blockquote>
+      </blockquote loading="eager">
 
-      <p>І далі:</p>
+      <p loading="eager">І далі:</p loading="eager">
 
-      <blockquote>
-        "Achieving an SPF of 3.86 yields annual cost savings of approximately 26%."<br><br>
+      <blockquote loading="eager">
+        "Achieving an SPF of 3.86 yields annual cost savings of approximately 26%."<br loading="eager"><br loading="eager">
         «Досягнення SPF ≈ 3,86 дає близько 26% річної економії витрат.»
-      </blockquote>
+      </blockquote loading="eager">
 
-      <p>Це означає просту річ: інженерія визначає економіку сильніше, ніж бренд чи потужність обладнання.</p>
+      <p loading="eager">Це означає просту річ: інженерія визначає економіку сильніше, ніж бренд чи потужність обладнання.</p loading="eager">
 
-      <h2>4. Інженерні послуги — найбільш недооцінена частина ціни</h2>
-      <p>Проєктування, гідравліка, автоматика, пусконалагодження — це ті речі, яких клієнт не бачить фізично. Саме тому на них найчастіше намагаються зекономити.</p>
+      <h2 loading="eager">4. Інженерні послуги — найбільш недооцінена частина ціни</h2 loading="eager">
+      <p loading="eager">Проєктування, гідравліка, автоматика, пусконалагодження — це ті речі, яких клієнт не бачить фізично. Саме тому на них найчастіше намагаються зекономити.</p loading="eager">
 
-      <p>Але саме тут формується результат.</p>
+      <p loading="eager">Але саме тут формується результат.</p loading="eager">
 
-      <blockquote>
-        "The performance gap is primarily caused by poor design assumptions, inadequate commissioning and lack of feedback after handover."<br>
-        — CIBSE TM54, Section 3<br><br>
-        <strong>Переклад:</strong><br>
+      <blockquote loading="eager">
+        "The performance gap is primarily caused by poor design assumptions, inadequate commissioning and lack of feedback after handover."<br loading="eager">
+        — CIBSE TM54, Section 3<br loading="eager"><br loading="eager">
+        <strong loading="eager">Переклад:</strong loading="eager"><br loading="eager">
         «Розрив у реальній ефективності спричинений помилковими проєктними припущеннями, недостатнім пусконалагодженням і відсутністю зворотного звʼязку після здачі об'єкта.»
-      </blockquote>
+      </blockquote loading="eager">
 
-      <p>Саме тому інженерні послуги — це не «додаткова надбудова» до обладнання, а ключова складова вартості та результату.</p>
+      <p loading="eager">Саме тому інженерні послуги — це не «додаткова надбудова» до обладнання, а ключова складова вартості та результату.</p loading="eager">
 
-      <h2>5. Теплові насоси як дзеркало ринку інженерних цін</h2>
+      <h2 loading="eager">5. Теплові насоси як дзеркало ринку інженерних цін</h2 loading="eager">
 
-      <h3>Повна вартість володіння</h3>
-      <p>У звіті Nesta Reducing the cost of heat pumps зазначається:</p>
+      <h3 loading="eager">Повна вартість володіння</h3 loading="eager">
+      <p loading="eager">У звіті Nesta Reducing the cost of heat pumps зазначається:</p loading="eager">
 
-      <blockquote>
-        "Installation and running costs are the two most important areas to focus on when it comes to cost reduction."<br>
-        — Nesta<br><br>
-        <strong>Переклад:</strong><br>
+      <blockquote loading="eager">
+        "Installation and running costs are the two most important areas to focus on when it comes to cost reduction."<br loading="eager">
+        — Nesta<br loading="eager"><br loading="eager">
+        <strong loading="eager">Переклад:</strong loading="eager"><br loading="eager">
         «Витрати на встановлення та експлуатацію — ключові для загальної вартості.»
-      </blockquote>
+      </blockquote loading="eager">
 
-      <p>За даними Nesta:</p>
-      <ul>
-        <li>55–65 % витрат — на електроенергію;</li>
-        <li>15–20 % — на саме обладнання;</li>
-        <li>решта — монтаж і сервіс.</li>
-      </ul>
+      <p loading="eager">За даними Nesta:</p loading="eager">
+      <ul loading="eager">
+        <li loading="eager">55–65 % витрат — на електроенергію;</li loading="eager">
+        <li loading="eager">15–20 % — на саме обладнання;</li loading="eager">
+        <li loading="eager">решта — монтаж і сервіс.</li loading="eager">
+      </ul loading="eager">
 
-      <p>Це означає, що «дешевше обладнання» майже не вирішує питання економіки.</p>
+      <p loading="eager">Це означає, що «дешевше обладнання» майже не вирішує питання економіки.</p loading="eager">
 
-      <h2>6. Практичні кейси з реальної інженерії</h2>
+      <h2 loading="eager">6. Практичні кейси з реальної інженерії</h2 loading="eager">
 
-      <p><strong>Кейс 1.</strong><br>
-      Два однакові будинки, однакова потужність теплового насоса — але різниця в споживанні 20–30 % через різний підхід до проєктування, гідравліки та налаштування автоматизації.</p>
+      <p loading="eager"><strong loading="eager">Кейс 1.</strong loading="eager"><br loading="eager">
+      Два однакові будинки, однакова потужність теплового насоса — але різниця в споживанні 20–30 % через різний підхід до проєктування, гідравліки та налаштування автоматизації.</p loading="eager">
 
-      <p><strong>Кейс 2.</strong><br>
-      Клієнт обирає дешевшу пропозицію → недостатній контроль режимів → включається електродогрів → рахунки зростають → втрачається довіра.</p>
+      <p loading="eager"><strong loading="eager">Кейс 2.</strong loading="eager"><br loading="eager">
+      Клієнт обирає дешевшу пропозицію → недостатній контроль режимів → включається електродогрів → рахунки зростають → втрачається довіра.</p loading="eager">
 
-      <h2>7. Дефіцит інженерів і реальна ринкова ціна послуг</h2>
-      <p>Nesta також зазначає:</p>
+      <h2 loading="eager">7. Дефіцит інженерів і реальна ринкова ціна послуг</h2 loading="eager">
+      <p loading="eager">Nesta також зазначає:</p loading="eager">
 
-      <blockquote>
-        "The sector faces a shortage of skilled installers, which directly impacts installation costs."<br>
-        — Nesta Installer Survey<br><br>
-        <strong>Переклад:</strong><br>
+      <blockquote loading="eager">
+        "The sector faces a shortage of skilled installers, which directly impacts installation costs."<br loading="eager">
+        — Nesta Installer Survey<br loading="eager"><br loading="eager">
+        <strong loading="eager">Переклад:</strong loading="eager"><br loading="eager">
         «Галузь стикається з дефіцитом кваліфікованих інсталяторів, що безпосередньо впливає на вартість робіт.»
-      </blockquote>
+      </blockquote loading="eager">
 
-      <p>Це — проста ринкова логіка: якісна інженерія не може бути дешевою там, де бракує фахівців.</p>
+      <p loading="eager">Це — проста ринкова логіка: якісна інженерія не може бути дешевою там, де бракує фахівців.</p loading="eager">
 
-      <h2>8. Як клієнту правильно оцінювати ринкову ціну</h2>
-      <p>Питання має звучати не «чому так дорого», а:</p>
-      <ul>
-        <li>який буде реальний результат;</li>
-        <li>яка вартість володіння системою;</li>
-        <li>хто відповідає за систему через 3–5 років.</li>
-      </ul>
+      <h2 loading="eager">8. Як клієнту правильно оцінювати ринкову ціну</h2 loading="eager">
+      <p loading="eager">Питання має звучати не «чому так дорого», а:</p loading="eager">
+      <ul loading="eager">
+        <li loading="eager">який буде реальний результат;</li loading="eager">
+        <li loading="eager">яка вартість володіння системою;</li loading="eager">
+        <li loading="eager">хто відповідає за систему через 3–5 років.</li loading="eager">
+      </ul loading="eager">
 
-      <h2>9. Авторська позиція. Про «ринкові ціни» без ілюзій</h2>
-      <p>Я неодноразово чую одне й те саме запитання:<br>
-      «Ваші ціни ринкові?»</p>
+      <h2 loading="eager">9. Авторська позиція. Про «ринкові ціни» без ілюзій</h2 loading="eager">
+      <p loading="eager">Я неодноразово чую одне й те саме запитання:<br loading="eager">
+      «Ваші ціни ринкові?»</p loading="eager">
 
-      <p>Колись це вводило мене в ступор. Я відповідав «так», не до кінця усвідомлюючи, що саме мається на увазі.</p>
+      <p loading="eager">Колись це вводило мене в ступор. Я відповідав «так», не до кінця усвідомлюючи, що саме мається на увазі.</p loading="eager">
 
-      <p>Сьогодні я відповідаю інакше.</p>
+      <p loading="eager">Сьогодні я відповідаю інакше.</p loading="eager">
 
-      <p>Ми не продаємо одне й те саме, що всі.<br>
-      Ми не торгуємо товаром.<br>
-      Ми не продаємо «однакову послугу».</p>
+      <p loading="eager">Ми не продаємо одне й те саме, що всі.<br loading="eager">
+      Ми не торгуємо товаром.<br loading="eager">
+      Ми не продаємо «однакову послугу».</p loading="eager">
 
-      <p><strong>Ми створюємо власний продукт.</strong></p>
+      <p loading="eager"><strong loading="eager">Ми створюємо власний продукт.</strong loading="eager"></p loading="eager">
 
-      <p>Це комплекс інженерних рішень, напрацьований роками:</p>
-      <ul>
-        <li>через десятки реалізованих обʼєктів;</li>
-        <li>через виправлення й удосконалення;</li>
-        <li>через розуміння того, як система живе після здачі.</li>
-      </ul>
+      <p loading="eager">Це комплекс інженерних рішень, напрацьований роками:</p loading="eager">
+      <ul loading="eager">
+        <li loading="eager">через десятки реалізованих обʼєктів;</li loading="eager">
+        <li loading="eager">через виправлення й удосконалення;</li loading="eager">
+        <li loading="eager">через розуміння того, як система живе після здачі.</li loading="eager">
+      </ul loading="eager">
 
-      <p>Ті, хто каже «ми зробимо дешевше», часто не створюють нам конкуренції — не тому, що вони гірші, а тому, що ми працюємо на різних ринках.</p>
+      <p loading="eager">Ті, хто каже «ми зробимо дешевше», часто не створюють нам конкуренції — не тому, що вони гірші, а тому, що ми працюємо на різних ринках.</p loading="eager">
 
-      <p>Вони продають товар.<br>
-      Ми створюємо результат.</p>
+      <p loading="eager">Вони продають товар.<br loading="eager">
+      Ми створюємо результат.</p loading="eager">
 
-      <p>Наше завдання — підвищувати обізнаність, інвестувати в навчання молодих спеціалістів і формувати культуру інженерної відповідальності.</p>
+      <p loading="eager">Наше завдання — підвищувати обізнаність, інвестувати в навчання молодих спеціалістів і формувати культуру інженерної відповідальності.</p loading="eager">
 
-      <h3>Думка експерта — конкретна та впливова</h3>
-      <div class="expert-quote">
-        <p>«The demand is increasingly moving in the direction of complete solutions and iDM is at the forefront here as a technology leader. With our intelligent heat pump, we also supply the complete energy management system.»</p>
-        <p class="author">— Christoph Bacher, Managing Director, iDM Energiesysteme GmbH<br>
-        MCI News — iDM on expansion course</p>
-      </div>
+      <h3 loading="eager">Думка експерта — конкретна та впливова</h3 loading="eager">
+      <div class="expert-quote" loading="eager">
+        <p loading="eager">«The demand is increasingly moving in the direction of complete solutions and iDM is at the forefront here as a technology leader. With our intelligent heat pump, we also supply the complete energy management system.»</p loading="eager">
+        <p class="author" loading="eager">— Christoph Bacher, Managing Director, iDM Energiesysteme GmbH<br loading="eager">
+        MCI News — iDM on expansion course</p loading="eager">
+      </div loading="eager">
 
-      <p><strong>Переклад:</strong><br>
-      «Попит все більше зміщується в бік комплексних рішень, і iDM тут є технологічним лідером. З нашим інтелектуальним тепловим насосом ми також постачаємо повну систему управління енергією.»</p>
+      <p loading="eager"><strong loading="eager">Переклад:</strong loading="eager"><br loading="eager">
+      «Попит все більше зміщується в бік комплексних рішень, і iDM тут є технологічним лідером. З нашим інтелектуальним тепловим насосом ми також постачаємо повну систему управління енергією.»</p loading="eager">
 
-      <p>(джерело статті: <a href="https://www.mci.edu/en/news-filter-en/117-studyprogram-news/272-news-smart-building-technologies-en/5630-idm-on-expansion-course" target="_blank" style="color: var(--accent-gold-dark); text-decoration: underline;">https://www.mci.edu/en/news-filter-en/117-studyprogram-news/272-news-smart-building-technologies-en/5630-idm-on-expansion-course</a>)</p>
+      <p loading="eager">(джерело статті: <a href="https://www.mci.edu/en/news-filter-en/117-studyprogram-news/272-news-smart-building-technologies-en/5630-idm-on-expansion-course" target="_blank" style="color: var(--accent-gold-dark); text-decoration: underline;" loading="eager">https://www.mci.edu/en/news-filter-en/117-studyprogram-news/272-news-smart-building-technologies-en/5630-idm-on-expansion-course</a loading="eager">)</p loading="eager">
 
-      <p>Це реальна думка керівника iDM, компанії з понад 45-річною історією виробництва теплових насосів, інтелектуальних систем і повного енергоменеджменту — реальний голос практиків ринку.</p>
+      <p loading="eager">Це реальна думка керівника iDM, компанії з понад 45-річною історією виробництва теплових насосів, інтелектуальних систем і повного енергоменеджменту — реальний голос практиків ринку.</p loading="eager">
 
-      <div class="conclusion-box">
-        <h3>Фінальний висновок</h3>
-        <p>Ринкова ціна в інженерії — це не середнє арифметичне пропозицій.<br>
-        Це — ціна прогнозованого результату, відповідальності, досвіду та контролю ризиків.</p>
-        <p>І справжня економія починається не з дешевшої цифри, а з правильного інженерного рішення, яке працює роками.</p>
-      </div>
+      <div class="conclusion-box" loading="eager">
+        <h3 loading="eager">Фінальний висновок</h3 loading="eager">
+        <p loading="eager">Ринкова ціна в інженерії — це не середнє арифметичне пропозицій.<br loading="eager">
+        Це — ціна прогнозованого результату, відповідальності, досвіду та контролю ризиків.</p loading="eager">
+        <p loading="eager">І справжня економія починається не з дешевшої цифри, а з правильного інженерного рішення, яке працює роками.</p loading="eager">
+      </div loading="eager">
 
-      <div class="action-buttons">
-        <a href="blog.html" class="btn btn-primary">Повернутися до блогу</a>
-        <a href="index.html" class="btn btn-secondary">На головну</a>
-      </div>
-    </div>
-  </div>
+      <div class="action-buttons" loading="eager">
+        <a href="blog.html" class="btn btn-primary" loading="eager">Повернутися до блогу</a loading="eager">
+        <a href="index.html" class="btn btn-secondary" loading="eager">На головну</a loading="eager">
+      </div loading="eager">
+    </div loading="eager">
+  </div loading="eager">
 
-  <footer>
-    <p>&copy; 2026 Дмитро Царенко. Всі права захищені.</p>
-  </footer>
+  <footer loading="eager">
+    <p loading="eager">&copy; 2026 Дмитро Царенко. Всі права захищені.</p loading="eager">
+  </footer loading="eager">
 
-  <script>
+  <script loading="eager">
     // Mobile menu toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('nav');
@@ -943,6 +301,6 @@
 
     mobileMenuToggle.addEventListener('click', toggleMenu);
     menuOverlay.addEventListener('click', toggleMenu);
-  </script>
-</body>
-</html>
+  </script loading="eager">
+</body loading="eager">
+</html loading="eager">

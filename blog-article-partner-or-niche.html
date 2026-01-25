@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <meta charset="UTF-8">
   <title>Партнер чи ніша: що обрати спочатку при створенні бізнесу - Дмитро Царенко</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,932 +17,9 @@
   <meta name="twitter:description" content="Партнер чи ніша: що обрати спочатку при створенні бізнесу">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-dark: #0a1628;
-      --secondary-dark: #151922;
-      --accent-gold: #ffd643;
-      --accent-gold-dark: #e6c135;
-      --accent-gold-light: #ffe76b;
-      --text-primary: #0f1419;
-      --text-secondary: #536471;
-      --text-light: #8899a6;
-      --bg-dark: #0d1117;
-      --bg-darker: #010409;
-      --bg-light: #f6f8fa;
-      --bg-white: #ffffff;
-      --border-color: #30363d;
-      --border-light: #e7ecf0;
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
-      --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
-      --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.25);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #f6f8fa;
-      color: var(--text-primary);
-      line-height: 1.7;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      padding-top: 88px;
-    }
-    header {
-      background: var(--primary-dark);
-      backdrop-filter: blur(20px);
-      border-bottom: 3px solid var(--accent-gold);
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      z-index: 1002;
-      box-shadow: var(--shadow-lg);
-      transition: all 0.3s ease;
-    }
-    .header-content {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      text-decoration: none;
-      transition: transform 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .logo:hover {
-      transform: scale(1.02);
-    }
-    .logo-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: -0.5px;
-      line-height: 1;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    }
-    .logo-tagline {
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--accent-gold);
-      opacity: 1;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-    nav {
-      display: flex;
-      gap: 40px;
-      align-items: center;
-    }
-    nav a {
-      color: rgba(255, 255, 255, 0.9);
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 600;
-      position: relative;
-      transition: all 0.3s ease;
-      letter-spacing: 0.3px;
-    }
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 0;
-      height: 3px;
-      background: var(--accent-gold);
-      transition: width 0.3s ease;
-      box-shadow: 0 0 8px var(--accent-gold);
-    }
-    nav a:hover {
-      color: var(--accent-gold);
-    }
-    nav a:hover::after {
-      width: 100%;
-    }
-    .mobile-menu-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 6px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      z-index: 1003;
-      touch-action: manipulation;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .mobile-menu-toggle span {
-      width: 28px;
-      height: 3px;
-      background: #ffffff;
-      border-radius: 2px;
-      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
-      will-change: transform, opacity;
-    }
-    .mobile-menu-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translate(8px, 8px);
-      background: #000000;
-    }
-    .mobile-menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-    .mobile-menu-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(8px, -8px);
-      background: #000000;
-    }
-    .menu-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.25s ease, visibility 0.25s ease;
-      z-index: 999;
-    }
-    .menu-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-    .hero-banner {
-      width: 100%;
-      height: 620px;
-      overflow: hidden;
-      position: relative;
-      margin-bottom: 0;
-    }
-    .hero-banner::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(10, 22, 40, 0.3) 0%, rgba(26, 35, 50, 0.2) 50%, rgba(201, 169, 97, 0.15) 100%);
-      z-index: 1;
-    }
-    .hero-banner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-      filter: brightness(1.05) contrast(1.03);
-    }
-    .metrics-section {
-      background: var(--primary-dark);
-      border-top: 3px solid var(--accent-gold);
-      border-bottom: 3px solid var(--accent-gold);
-      padding: 44px 40px 52px;
-    }
-    .hero-subtitle-container {
-      max-width: 1280px;
-      margin: 0 auto 36px;
-      text-align: center;
-    }
-    .hero-subtitle {
-      font-size: 18px;
-      color: #ffffff;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-      line-height: 1.6;
-      margin-bottom: 14px;
-    }
-    .hero-subtitle:first-child {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--accent-gold);
-      letter-spacing: 0.5px;
-      margin-bottom: 18px;
-    }
-    .metrics-container {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 32px;
-    }
-    .metric-item {
-      text-align: center;
-      padding: 24px 20px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
-      border: 2px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow-md);
-      cursor: pointer;
-      text-decoration: none;
-      display: block;
-      color: inherit;
-    }
-    .metric-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 32px rgba(255, 214, 67, 0.3);
-      border-color: var(--accent-gold);
-      background: rgba(255, 214, 67, 0.1);
-    }
-    .metric-item:active {
-      transform: translateY(-2px);
-    }
-    .metric-number {
-      font-family: 'Playfair Display', serif;
-      font-size: 48px;
-      font-weight: 800;
-      color: var(--accent-gold);
-      line-height: 1.2;
-      margin-bottom: 10px;
-      text-shadow: 0 0 20px rgba(255, 214, 67, 0.4);
-    }
-    .metric-label {
-      font-size: 15px;
-      font-weight: 600;
-      color: rgba(255, 255, 255, 0.9);
-      letter-spacing: 0.5px;
-      line-height: 1.4;
-    }
-
-    @media (max-width: 768px) {
-      .metrics-section {
-        padding: 48px 24px;
-      }
-      .metrics-container {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-      .metric-item {
-        padding: 24px 20px;
-      }
-      .metric-number {
-        font-size: 48px;
-      }
-      .metric-label {
-        font-size: 14px;
-      }
-    }
-
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 80px 40px;
-    }
-    .about-author {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      margin-bottom: 48px;
-    }
-    .about-author-image {
-      width: calc(100% + 80px);
-      margin-left: -40px;
-      margin-right: -40px;
-      border-radius: 0;
-      overflow: hidden;
-      box-shadow: 0 12px 48px rgba(10, 22, 40, 0.15);
-      position: relative;
-    }
-    @media (min-width: 1024px) {
-      .about-author {
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 48px;
-      }
-      .about-author-image {
-        width: 400px;
-        min-width: 400px;
-        margin-left: 0;
-        margin-right: 0;
-        border-radius: 8px;
-      }
-    }
-    .about-author-image::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border: 2px solid var(--accent-gold);
-      border-radius: 0;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    @media (min-width: 1024px) {
-      .about-author-image::after {
-        border-radius: 8px;
-      }
-    }
-    .about-author-image:hover::after {
-      opacity: 1;
-    }
-    .about-author-image img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      display: block;
-      transition: transform 0.5s ease;
-      filter: brightness(1.05) contrast(1.03);
-    }
-    .about-author-image:hover img {
-      transform: scale(1.05);
-    }
-    .about-author-text {
-      flex: 1;
-    }
-    .sections {
-      display: grid;
-      gap: 0;
-    }
-    .section {
-      background: transparent;
-      border-radius: 0;
-      padding: 80px 0;
-      border-bottom: 2px solid var(--border-color);
-      transition: all 0.3s ease;
-      position: relative;
-      scroll-margin-top: 100px;
-    }
-    .section:first-child {
-      padding-top: 0;
-    }
-    .section:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-    .section::before {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 2px;
-      background: var(--accent-gold);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .section:hover::before {
-      opacity: 1;
-    }
-    .section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 42px;
-      font-weight: 800;
-      margin-bottom: 40px;
-      color: var(--primary-dark);
-      padding-bottom: 20px;
-      border-bottom: 4px solid var(--accent-gold);
-      display: inline-block;
-      letter-spacing: -0.5px;
-      position: relative;
-      box-shadow: 0 4px 0 0 rgba(255, 214, 67, 0.2);
-    }
-    .section h2::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 50%;
-      height: 4px;
-      background: var(--accent-gold);
-      box-shadow: 0 0 10px var(--accent-gold);
-    }
-    .articles {
-      display: grid;
-      gap: 28px;
-      margin-top: 40px;
-    }
-    .article {
-      padding: 28px;
-      background: #ffffff;
-      border: 2px solid #e7ecf0;
-      border-radius: 12px;
-      transition: all 0.3s ease;
-      position: relative;
-      box-shadow: var(--shadow-sm);
-    }
-    .article::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 5px;
-      height: 100%;
-      background: var(--accent-gold);
-      transform: scaleY(0);
-      transform-origin: top;
-      transition: transform 0.3s ease;
-      border-radius: 12px 0 0 12px;
-      box-shadow: 0 0 10px var(--accent-gold);
-    }
-    .article:hover::before {
-      transform: scaleY(1);
-    }
-    .article:hover {
-      box-shadow: 0 8px 32px rgba(255, 214, 67, 0.25);
-      border-color: var(--accent-gold);
-      transform: translateY(-4px);
-    }
-    .article h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--primary-dark);
-      margin-bottom: 16px;
-      line-height: 1.3;
-      letter-spacing: -0.5px;
-      position: relative;
-      z-index: 1;
-    }
-    .article p {
-      font-size: 16px;
-      color: var(--text-secondary);
-      margin-bottom: 20px;
-      line-height: 1.6;
-      position: relative;
-      z-index: 1;
-    }
-    .article-date {
-      font-size: 12px;
-      color: var(--accent-gold-dark);
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      position: relative;
-      z-index: 1;
-      background: rgba(255, 214, 67, 0.1);
-      padding: 6px 12px;
-      border-radius: 6px;
-      display: inline-block;
-    }
-    .read-more-btn {
-      margin-top: 16px;
-      padding: 8px 0;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--primary-dark);
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid var(--primary-dark);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      letter-spacing: 0.3px;
-      display: inline-block;
-    }
-    .read-more-btn:hover {
-      color: var(--accent-gold-dark);
-      border-bottom-color: var(--accent-gold-dark);
-      padding-left: 4px;
-    }
-    .read-more-btn:active {
-      opacity: 0.7;
-    }
-    .article-image {
-      width: 100%;
-      max-width: 1400px;
-      margin: 0 auto 32px;
-      position: relative;
-    }
-    .article-image:not(:has(svg)) {
-      height: 350px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 32px rgba(10, 22, 40, 0.15);
-    }
-    .article-image:has(svg) {
-      border-radius: 12px;
-      overflow: visible;
-    }
-    .article-image::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(201, 169, 97, 0.1) 0%, transparent 50%);
-      pointer-events: none;
-      z-index: 1;
-    }
-    .article-image:has(svg)::after {
-      display: none;
-    }
-    .article-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s ease;
-      filter: brightness(1.05) contrast(1.03);
-    }
-    .article-image:has(svg) img {
-      height: auto;
-      object-fit: contain;
-    }
-    .article-image.contain-image {
-      height: auto;
-      max-height: 700px;
-      margin-bottom: 32px;
-    }
-    .article-image.contain-image img {
-      object-fit: contain;
-      height: auto;
-      max-height: 700px;
-      width: 100%;
-    }
-    .article-image:hover img {
-      transform: scale(1.02);
-    }
-    .article-image.contain-image:hover img {
-      transform: none;
-    }
-    .article-image svg {
-      width: 100%;
-      height: auto;
-      max-height: none;
-      display: block;
-      border-radius: 12px;
-      box-shadow: 0 8px 32px rgba(10, 22, 40, 0.15);
-    }
-    @media (max-width: 1200px) {
-      .article-image svg text {
-        font-size: 90%;
-      }
-    }
-    @media (max-width: 1024px) {
-      .article-image svg {
-        border-radius: 8px;
-      }
-      .article-image svg text {
-        font-size: 80%;
-      }
-    }
-    @media (max-width: 768px) {
-      .article-image.contain-image {
-        max-height: 550px;
-        margin-bottom: 28px;
-      }
-      .article-image.contain-image img {
-        max-height: 550px;
-        width: 100%;
-      }
-      .article-image svg text {
-        font-size: 65%;
-      }
-      .article-image svg rect.svg-label-desktop {
-        width: 85%;
-      }
-    }
-    @media (max-width: 520px) {
-      .article-image:not(:has(svg)) {
-        height: 250px;
-      }
-      .article-image.contain-image {
-        height: auto;
-        max-height: 450px;
-        margin-bottom: 24px;
-      }
-      .article-image.contain-image img {
-        max-height: 450px;
-        width: 100%;
-      }
-      .article-image svg {
-        border-radius: 6px;
-      }
-      .article-image svg text {
-        font-size: 50%;
-      }
-      .article-image svg rect.svg-label-desktop {
-        width: 70%;
-      }
-    }
-
-    footer {
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
-      color: rgba(255, 255, 255, 0.9);
-      padding: 64px 40px;
-      text-align: center;
-      margin-top: 100px;
-      position: relative;
-      overflow: hidden;
-    }
-    footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: var(--accent-gold);
-      box-shadow: 0 0 20px var(--accent-gold);
-    }
-    footer p {
-      font-size: 15px;
-      letter-spacing: 0.5px;
-      opacity: 0.85;
-    }
-    @media (max-width: 1024px) {
-      .container {
-        padding: 60px 32px;
-      }
-      .section {
-        padding: 60px 0;
-      }
-      .section h2 {
-        font-size: 36px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      body {
-        padding-top: 84px;
-      }
-      .header-content {
-        padding: 20px 24px;
-      }
-      .logo-name {
-        font-size: 24px;
-      }
-      .logo-tagline {
-        font-size: 11px;
-      }
-      .mobile-menu-toggle {
-        display: flex;
-      }
-      nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 280px;
-        height: 100vh;
-        background: rgba(255, 255, 255, 0.98);
-        flex-direction: column;
-        gap: 0;
-        padding: 80px 24px 24px;
-        box-shadow: -4px 0 24px rgba(0, 0, 0, 0.1);
-        transform: translateX(100%);
-        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        will-change: transform;
-        z-index: 1001;
-        -webkit-overflow-scrolling: touch;
-        overscroll-behavior: contain;
-      }
-      nav.active {
-        transform: translateX(0);
-      }
-      nav a {
-        font-size: 16px;
-        padding: 16px 0;
-        border-bottom: 1px solid var(--border-color);
-        width: 100%;
-        color: var(--primary-dark);
-      }
-      nav a:hover {
-        color: var(--accent-gold-dark);
-      }
-      nav a::after {
-        display: none;
-      }
-      .hero-banner {
-        height: 500px;
-      }
-      .metrics-section {
-        padding: 38px 24px 48px;
-      }
-      .hero-subtitle-container {
-        margin-bottom: 32px;
-      }
-      .hero-subtitle:first-child {
-        font-size: 18px;
-      }
-      .hero-subtitle {
-        font-size: 16px;
-      }
-      .metrics-container {
-        gap: 24px;
-      }
-      .metric-item {
-        padding: 20px 16px;
-      }
-      .metric-number {
-        font-size: 42px;
-      }
-      .container {
-        padding: 48px 24px;
-      }
-      .about-author {
-        flex-direction: column;
-        gap: 32px;
-      }
-      .about-author-image {
-        width: calc(100% + 48px);
-        margin-left: -24px;
-        margin-right: -24px;
-        height: 300px;
-      }
-      .sections {
-        gap: 0;
-      }
-      .section {
-        padding: 60px 0;
-      }
-      .section h2 {
-        font-size: 32px;
-        margin-bottom: 24px;
-      }
-      .article {
-        padding: 24px;
-      }
-      .article h3 {
-        font-size: 20px;
-      }
-      .article p {
-        font-size: 15px;
-      }
-      footer {
-        padding: 48px 24px;
-        margin-top: 64px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      body {
-        padding-top: 72px;
-      }
-      .header-content {
-        padding: 16px 20px;
-      }
-      .logo-name {
-        font-size: 20px;
-      }
-      .logo-tagline {
-        font-size: 10px;
-      }
-      nav {
-        width: 260px;
-      }
-      .hero-banner {
-        height: 420px;
-      }
-      .metrics-section {
-        padding: 32px 20px 44px;
-      }
-      .hero-subtitle-container {
-        margin-bottom: 28px;
-      }
-      .hero-subtitle:first-child {
-        font-size: 17px;
-      }
-      .hero-subtitle {
-        font-size: 15px;
-      }
-      .metrics-container {
-        gap: 20px;
-        grid-template-columns: 1fr;
-      }
-      .metric-item {
-        padding: 18px 16px;
-      }
-      .metric-number {
-        font-size: 38px;
-      }
-      .container {
-        padding: 40px 20px;
-      }
-    }
-
-    .contact-form-wrapper {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 40px;
-      background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(10, 22, 40, 0.08);
-    }
-
-    .contact-form-wrapper h3 {
-      font-family: 'Playfair Display', serif;
-      color: var(--primary-dark);
-      text-align: center;
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .form-group label {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-primary);
-      letter-spacing: 0.3px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      padding: 14px 18px;
-      font-size: 15px;
-      font-family: 'Inter', sans-serif;
-      border: 1.5px solid var(--border-color);
-      border-radius: 10px;
-      background: #ffffff;
-      color: var(--text-primary);
-      transition: all 0.3s ease;
-      outline: none;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--accent-gold);
-      box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-      line-height: 1.6;
-    }
-
-    .submit-button {
-      padding: 16px 32px;
-      font-size: 16px;
-      font-weight: 600;
-      color: #ffffff;
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent-gold) 100%);
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      font-size: 14px;
-      margin-top: 8px;
-    }
-
-    .submit-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(201, 169, 97, 0.3);
-    }
-
-    .submit-button:active {
-      transform: translateY(0);
-    }
-
-    @media (max-width: 768px) {
-      .contact-form-wrapper {
-        padding: 28px 24px;
-      }
-
-      .contact-form-wrapper h3 {
-        font-size: 20px;
-      }
-
-      .about-author-image {
-        width: calc(100% + 40px);
-        margin-left: -20px;
-        margin-right: -20px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .about-author-image {
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media=\'all\'; this.onload=null;">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <style>:root{--primary-dark:#0a1628;--secondary-dark:#151922;--accent-gold:#ffd643;--accent-gold-dark:#e6c135;--accent-gold-light:#ffe76b;--text-primary:#0f1419;--text-secondary:#536471;--text-light:#8899a6;--bg-dark:#0d1117;--bg-darker:#010409;--bg-light:#f6f8fa;--bg-white:#ffffff;--border-color:#30363d;--border-light:#e7ecf0;--shadow-sm:0 2px 8px rgba(0,0,0,0.1);--shadow-md:0 4px 16px rgba(0,0,0,0.15);--shadow-lg:0 8px 32px rgba(0,0,0,0.2);--shadow-xl:0 12px 48px rgba(0,0,0,0.25)}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f6f8fa;color:var(--text-primary);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding-top:88px}header{background:var(--primary-dark);backdrop-filter:blur(20px);border-bottom:3px solid var(--accent-gold);position:fixed;top:0;left:0;right:0;width:100%;z-index:1002;box-shadow:var(--shadow-lg);transition:all 0.3s ease}.header-content{max-width:1280px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center}.logo{text-decoration:none;transition:transform 0.3s ease;display:flex;flex-direction:column;gap:2px}.logo:hover{transform:scale(1.02)}.logo-name{font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:#ffffff;letter-spacing:-0.5px;line-height:1;text-shadow:0 2px 8px rgba(0,0,0,0.3)}.logo-tagline{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;color:var(--accent-gold);opacity:1;letter-spacing:0.5px;text-transform:uppercase}nav{display:flex;gap:40px;align-items:center}nav a{color:rgba(255,255,255,0.9);text-decoration:none;font-size:15px;font-weight:600;position:relative;transition:all 0.3s ease;letter-spacing:0.3px}nav a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:3px;background:var(--accent-gold);transition:width 0.3s ease;box-shadow:0 0 8px var(--accent-gold)}nav a:hover{color:var(--accent-gold)}nav a:hover::after{width:100%}.mobile-menu-toggle{display:none;flex-direction:column;gap:6px;background:none;border:none;cursor:pointer;padding:8px;z-index:1003;touch-action:manipulation;-webkit-tap-highlight-color:transparent}.mobile-menu-toggle span{width:28px;height:3px;background:#ffffff;border-radius:2px;transition:transform 0.2s cubic-bezier(0.4,0,0.2,1),opacity 0.2s ease;will-change:transform,opacity}.mobile-menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(8px,8px);background:#000000}.mobile-menu-toggle.active span:nth-child(2){opacity:0}.mobile-menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(8px,-8px);background:#000000}.menu-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);opacity:0;visibility:hidden;transition:opacity 0.25s ease,visibility 0.25s ease;z-index:999}.menu-overlay.active{opacity:1;visibility:visible}.hero-banner{width:100%;height:620px;overflow:hidden;position:relative;margin-bottom:0}.hero-banner::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(10,22,40,0.3) 0%,rgba(26,35,50,0.2) 50%,rgba(201,169,97,0.15) 100%);z-index:1}.hero-banner img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:brightness(1.05) contrast(1.03)}.metrics-section{background:var(--primary-dark);border-top:3px solid var(--accent-gold);border-bottom:3px solid var(--accent-gold);padding:44px 40px 52px}.hero-subtitle-container{max-width:1280px;margin:0 auto 36px;text-align:center}.hero-subtitle{font-size:18px;color:#ffffff;font-weight:600;letter-spacing:0.3px;line-height:1.6;margin-bottom:14px}.hero-subtitle:first-child{font-size:20px;font-weight:700;color:var(--accent-gold);letter-spacing:0.5px;margin-bottom:18px}.metrics-container{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px}.metric-item{text-align:center;padding:24px 20px;background:rgba(255,255,255,0.05);border-radius:10px;border:2px solid rgba(255,255,255,0.1);transition:all 0.3s ease;box-shadow:var(--shadow-md);cursor:pointer;text-decoration:none;display:block;color:inherit}.metric-item:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(255,214,67,0.3);border-color:var(--accent-gold);background:rgba(255,214,67,0.1)}.metric-item:active{transform:translateY(-2px)}.metric-number{font-family:'Playfair Display',serif;font-size:48px;font-weight:800;color:var(--accent-gold);line-height:1.2;margin-bottom:10px;text-shadow:0 0 20px rgba(255,214,67,0.4)}.metric-label{font-size:15px;font-weight:600;color:rgba(255,255,255,0.9);letter-spacing:0.5px;line-height:1.4}@media (max-width:768px){.metrics-section{padding:48px 24px}.metrics-container{grid-template-columns:1fr;gap:24px}.metric-item{padding:24px 20px}.metric-number{font-size:48px}.metric-label{font-size:14px}}.container{max-width:1280px;margin:0 auto;padding:80px 40px}.about-author{display:flex;flex-direction:column;gap:40px;margin-bottom:48px}.about-author-image{width:calc(100% + 80px);margin-left:-40px;margin-right:-40px;border-radius:0;overflow:hidden;box-shadow:0 12px 48px rgba(10,22,40,0.15);position:relative}@media (min-width:1024px){.about-author{flex-direction:row;align-items:flex-start;gap:48px}.about-author-image{width:400px;min-width:400px;margin-left:0;margin-right:0;border-radius:8px}}.about-author-image::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;border:2px solid var(--accent-gold);border-radius:0;opacity:0;transition:opacity 0.3s ease}@media (min-width:1024px){.about-author-image::after{border-radius:8px}}.about-author-image:hover::after{opacity:1}.about-author-image img{width:100%;height:auto;object-fit:contain;display:block;transition:transform 0.5s ease;filter:brightness(1.05) contrast(1.03)}.about-author-image:hover img{transform:scale(1.05)}.about-author-text{flex:1}.sections{display:grid;gap:0}.section{background:transparent;border-radius:0;padding:80px 0;border-bottom:2px solid var(--border-color);transition:all 0.3s ease;position:relative;scroll-margin-top:100px}.section:first-child{padding-top:0}.section:last-child{border-bottom:none;padding-bottom:0}.section::before{content:'';position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);width:80px;height:2px;background:var(--accent-gold);opacity:0;transition:opacity 0.3s ease}.section:hover::before{opacity:1}.section h2{font-family:'Playfair Display',serif;font-size:42px;font-weight:800;margin-bottom:40px;color:var(--primary-dark);padding-bottom:20px;border-bottom:4px solid var(--accent-gold);display:inline-block;letter-spacing:-0.5px;position:relative;box-shadow:0 4px 0 0 rgba(255,214,67,0.2)}.section h2::after{content:'';position:absolute;bottom:-4px;left:0;width:50%;height:4px;background:var(--accent-gold);box-shadow:0 0 10px var(--accent-gold)}.articles{display:grid;gap:28px;margin-top:40px}.article{padding:28px;background:#ffffff;border:2px solid #e7ecf0;border-radius:12px;transition:all 0.3s ease;position:relative;box-shadow:var(--shadow-sm)}.article::before{content:'';position:absolute;top:0;left:0;width:5px;height:100%;background:var(--accent-gold);transform:scaleY(0);transform-origin:top;transition:transform 0.3s ease;border-radius:12px 0 0 12px;box-shadow:0 0 10px var(--accent-gold)}.article:hover::before{transform:scaleY(1)}.article:hover{box-shadow:0 8px 32px rgba(255,214,67,0.25);border-color:var(--accent-gold);transform:translateY(-4px)}.article h3{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--primary-dark);margin-bottom:16px;line-height:1.3;letter-spacing:-0.5px;position:relative;z-index:1}.article p{font-size:16px;color:var(--text-secondary);margin-bottom:20px;line-height:1.6;position:relative;z-index:1}.article-date{font-size:12px;color:var(--accent-gold-dark);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;position:relative;z-index:1;background:rgba(255,214,67,0.1);padding:6px 12px;border-radius:6px;display:inline-block}.read-more-btn{margin-top:16px;padding:8px 0;font-size:14px;font-weight:500;color:var(--primary-dark);background:transparent;border:none;border-bottom:1px solid var(--primary-dark);cursor:pointer;transition:all 0.2s ease;letter-spacing:0.3px;display:inline-block}.read-more-btn:hover{color:var(--accent-gold-dark);border-bottom-color:var(--accent-gold-dark);padding-left:4px}.read-more-btn:active{opacity:0.7}.article-image{width:100%;max-width:1400px;margin:0 auto 32px;position:relative}.article-image:not(:has(svg)){height:350px;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(10,22,40,0.15)}.article-image:has(svg){border-radius:12px;overflow:visible}.article-image::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(201,169,97,0.1) 0%,transparent 50%);pointer-events:none;z-index:1}.article-image:has(svg)::after{display:none}.article-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;filter:brightness(1.05) contrast(1.03)}.article-image:has(svg) img{height:auto;object-fit:contain}.article-image.contain-image{height:auto;max-height:700px;margin-bottom:32px}.article-image.contain-image img{object-fit:contain;height:auto;max-height:700px;width:100%}.article-image:hover img{transform:scale(1.02)}.article-image.contain-image:hover img{transform:none}.article-image svg{width:100%;height:auto;max-height:none;display:block;border-radius:12px;box-shadow:0 8px 32px rgba(10,22,40,0.15)}@media (max-width:1200px){.article-image svg text{font-size:90%}}@media (max-width:1024px){.article-image svg{border-radius:8px}.article-image svg text{font-size:80%}}@media (max-width:768px){.article-image.contain-image{max-height:550px;margin-bottom:28px}.article-image.contain-image img{max-height:550px;width:100%}.article-image svg text{font-size:65%}.article-image svg rect.svg-label-desktop{width:85%}}@media (max-width:520px){.article-image:not(:has(svg)){height:250px}.article-image.contain-image{height:auto;max-height:450px;margin-bottom:24px}.article-image.contain-image img{max-height:450px;width:100%}.article-image svg{border-radius:6px}.article-image svg text{font-size:50%}.article-image svg rect.svg-label-desktop{width:70%}}footer{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--secondary-dark) 100%);color:rgba(255,255,255,0.9);padding:64px 40px;text-align:center;margin-top:100px;position:relative;overflow:hidden}footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent-gold);box-shadow:0 0 20px var(--accent-gold)}footer p{font-size:15px;letter-spacing:0.5px;opacity:0.85}@media (max-width:1024px){.container{padding:60px 32px}.section{padding:60px 0}.section h2{font-size:36px}}@media (max-width:768px){body{padding-top:84px}.header-content{padding:20px 24px}.logo-name{font-size:24px}.logo-tagline{font-size:11px}.mobile-menu-toggle{display:flex}nav{position:fixed;top:0;right:0;width:280px;height:100vh;background:rgba(255,255,255,0.98);flex-direction:column;gap:0;padding:80px 24px 24px;box-shadow:-4px 0 24px rgba(0,0,0,0.1);transform:translateX(100%);transition:transform 0.25s cubic-bezier(0.4,0,0.2,1);will-change:transform;z-index:1001;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}nav.active{transform:translateX(0)}nav a{font-size:16px;padding:16px 0;border-bottom:1px solid var(--border-color);width:100%;color:var(--primary-dark)}nav a:hover{color:var(--accent-gold-dark)}nav a::after{display:none}.hero-banner{height:500px}.metrics-section{padding:38px 24px 48px}.hero-subtitle-container{margin-bottom:32px}.hero-subtitle:first-child{font-size:18px}.hero-subtitle{font-size:16px}.metrics-container{gap:24px}.metric-item{padding:20px 16px}.metric-number{font-size:42px}.container{padding:48px 24px}.about-author{flex-direction:column;gap:32px}.about-author-image{width:calc(100% + 48px);margin-left:-24px;margin-right:-24px;height:300px}.sections{gap:0}.section{padding:60px 0}.section h2{font-size:32px;margin-bottom:24px}.article{padding:24px}.article h3{font-size:20px}.article p{font-size:15px}footer{padding:48px 24px;margin-top:64px}}@media (max-width:520px){body{padding-top:72px}.header-content{padding:16px 20px}.logo-name{font-size:20px}.logo-tagline{font-size:10px}nav{width:260px}.hero-banner{height:420px}.metrics-section{padding:32px 20px 44px}.hero-subtitle-container{margin-bottom:28px}.hero-subtitle:first-child{font-size:17px}.hero-subtitle{font-size:15px}.metrics-container{gap:20px;grid-template-columns:1fr}.metric-item{padding:18px 16px}.metric-number{font-size:38px}.container{padding:40px 20px}}.contact-form-wrapper{max-width:700px;margin:0 auto;padding:40px;background:linear-gradient(135deg,#ffffff 0%,#fafbfc 100%);border:1px solid var(--border-color);border-radius:16px;box-shadow:0 8px 32px rgba(10,22,40,0.08)}.contact-form-wrapper h3{font-family:'Playfair Display',serif;color:var(--primary-dark);text-align:center}.contact-form{display:flex;flex-direction:column;gap:24px}.form-group{display:flex;flex-direction:column;gap:8px}.form-group label{font-size:14px;font-weight:600;color:var(--text-primary);letter-spacing:0.3px}.form-group input,.form-group textarea{padding:14px 18px;font-size:15px;font-family:'Inter',sans-serif;border:1.5px solid var(--border-color);border-radius:10px;background:#ffffff;color:var(--text-primary);transition:all 0.3s ease;outline:none}.form-group input:focus,.form-group textarea:focus{border-color:var(--accent-gold);box-shadow:0 0 0 3px rgba(201,169,97,0.1)}.form-group textarea{resize:vertical;min-height:120px;line-height:1.6}.submit-button{padding:16px 32px;font-size:16px;font-weight:600;color:#ffffff;background:linear-gradient(135deg,var(--primary-dark) 0%,var(--accent-gold) 100%);border:none;border-radius:10px;cursor:pointer;transition:all 0.3s ease;letter-spacing:0.5px;text-transform:uppercase;font-size:14px;margin-top:8px}.submit-button:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(201,169,97,0.3)}.submit-button:active{transform:translateY(0)}@media (max-width:768px){.contact-form-wrapper{padding:28px 24px}.contact-form-wrapper h3{font-size:20px}.about-author-image{width:calc(100% + 40px);margin-left:-20px;margin-right:-20px}}@media (max-width:520px){.about-author-image{width:100%;margin-left:0;margin-right:0}}</style>
 </head>
 <body>
   <div class="menu-overlay"></div>
@@ -974,173 +53,173 @@
         <span class="article-date" style="display: block; margin-bottom: 20px;">січень 2026</span>
         <div id="partner-or-niche" class="article-content" style="display: block; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
               <div class="article-image">
-                <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Business strategy and planning">
-              </div>
-              <p style="line-height: 1.8; margin-bottom: 16px;">Одне з найважливіших питань для початківця підприємця: що робити першим — визначитися з напрямком бізнесу чи знайти партнера? Обидва фактори критично важливі для успіху, але послідовність їх вибору може суттєво вплинути на результат. Розглянемо різні сценарії та досвід успішних бізнесменів.</p>
+                <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Business strategy and planning" loading="eager" decoding="async">
+              </div loading="eager">
+              <p style="line-height: 1.8; margin-bottom: 16px;" loading="eager">Одне з найважливіших питань для початківця підприємця: що робити першим — визначитися з напрямком бізнесу чи знайти партнера? Обидва фактори критично важливі для успіху, але послідовність їх вибору може суттєво вплинути на результат. Розглянемо різні сценарії та досвід успішних бізнесменів.</p loading="eager">
 
-              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Сценарій 1: Спочатку напрямок, потім партнер</h4>
-              <p style="line-height: 1.8; margin-bottom: 16px;">Цей підхід передбачає, що ви спочатку визначаєтеся з бізнес-ідеєю, ринком, продуктом, а потім шукаєте партнера, який доповнить ваші компетенції та допоможе реалізувати бачення.</p>
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;" loading="eager">Сценарій 1: Спочатку напрямок, потім партнер</h4 loading="eager">
+              <p style="line-height: 1.8; margin-bottom: 16px;" loading="eager">Цей підхід передбачає, що ви спочатку визначаєтеся з бізнес-ідеєю, ринком, продуктом, а потім шукаєте партнера, який доповнить ваші компетенції та допоможе реалізувати бачення.</p loading="eager">
 
-              <p style="line-height: 1.8; margin-bottom: 16px;">Переваги цього підходу:</p>
-              <ul style="margin-left: 20px; margin-bottom: 16px; line-height: 1.8;">
-                <li><strong>Чітке бачення:</strong> ви точно знаєте, чого хочете, і шукаєте людину, яка поділяє це бачення</li>
-                <li><strong>Цільовий пошук партнера:</strong> розумієте, які саме компетенції потрібні, що полегшує відбір</li>
-                <li><strong>Ініціатива та контроль:</strong> ви ідейний лідер, що задає напрямок</li>
-                <li><strong>Пристрасть:</strong> ви обрали напрямок, який вас надихає, і шукаєте однодумця</li>
-              </ul>
+              <p style="line-height: 1.8; margin-bottom: 16px;" loading="eager">Переваги цього підходу:</p loading="eager">
+              <ul style="margin-left: 20px; margin-bottom: 16px; line-height: 1.8;" loading="eager">
+                <li loading="eager"><strong loading="eager">Чітке бачення:</strong loading="eager"> ви точно знаєте, чого хочете, і шукаєте людину, яка поділяє це бачення</li loading="eager">
+                <li loading="eager"><strong loading="eager">Цільовий пошук партнера:</strong loading="eager"> розумієте, які саме компетенції потрібні, що полегшує відбір</li loading="eager">
+                <li loading="eager"><strong loading="eager">Ініціатива та контроль:</strong loading="eager"> ви ідейний лідер, що задає напрямок</li loading="eager">
+                <li loading="eager"><strong loading="eager">Пристрасть:</strong loading="eager"> ви обрали напрямок, який вас надихає, і шукаєте однодумця</li loading="eager">
+              </ul loading="eager">
 
-              <p style="line-height: 1.8; margin-bottom: 16px;">Виклики:</p>
-              <ul style="margin-left: 20px; margin-bottom: 16px; line-height: 1.8;">
-                <li><strong>Складність пошуку:</strong> знайти партнера з потрібними навичками та спільним баченням може бути важко</li>
-                <li><strong>Ризик нав'язування:</strong> партнер може погодитись формально, але не відчувати такої ж пристрасті до ідеї</li>
-                <li><strong>Обмеженість перспективи:</strong> можливо, партнер бачить кращі можливості, але ви вже "закохані" в свою ідею</li>
-              </ul>
+              <p style="line-height: 1.8; margin-bottom: 16px;" loading="eager">Виклики:</p loading="eager">
+              <ul style="margin-left: 20px; margin-bottom: 16px; line-height: 1.8;" loading="eager">
+                <li loading="eager"><strong loading="eager">Складність пошуку:</strong loading="eager"> знайти партнера з потрібними навичками та спільним баченням може бути важко</li loading="eager">
+                <li loading="eager"><strong loading="eager">Ризик нав'язування:</strong loading="eager"> партнер може погодитись формально, але не відчувати такої ж пристрасті до ідеї</li loading="eager">
+                <li loading="eager"><strong loading="eager">Обмеженість перспективи:</strong loading="eager"> можливо, партнер бачить кращі можливості, але ви вже "закохані" в свою ідею</li loading="eager">
+              </ul loading="eager">
 
-              <p style="line-height: 1.8; margin-bottom: 16px;">Ілон Маск спочатку визначився з баченням — електромобілі майбутнього (Tesla), колонізація Марса (SpaceX), чиста енергія (SolarCity). Потім він залучав людей, які поділяли це бачення. Він говорить: <em>"Якщо щось достатньо важливе, ви повинні спробувати, навіть якщо ймовірний результат — невдача"</em> (Elon Musk, Interview with TED). Партнери приєднуються до місії, а не навпаки.</p>
+              <p style="line-height: 1.8; margin-bottom: 16px;" loading="eager">Ілон Маск спочатку визначився з баченням — електромобілі майбутнього (Tesla), колонізація Марса (SpaceX), чиста енергія (SolarCity). Потім він залучав людей, які поділяли це бачення. Він говорить: <em loading="eager">"Якщо щось достатньо важливе, ви повинні спробувати, навіть якщо ймовірний результат — невдача"</em loading="eager"> (Elon Musk, Interview with TED). Партнери приєднуються до місії, а не навпаки.</p loading="eager">
 
-              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Сценарій 2: Спочатку партнер, потім напрямок</h4>
-              <p style="line-height: 1.8; margin-bottom: 16px;">Цей підхід означає, що ви знаходите людину, з якою у вас хороша синергія, довіра та взаємоповага, а потім разом шукаєте, в якому напрямку рухатися.</p>
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;" loading="eager">Сценарій 2: Спочатку партнер, потім напрямок</h4 loading="eager">
+              <p style="line-height: 1.8; margin-bottom: 16px;" loading="eager">Цей підхід означає, що ви знаходите людину, з якою у вас хороша синергія, довіра та взаємоповага, а потім разом шукаєте, в якому напрямку рухатися.</p loading="eager">
 
-              <p style="line-height: 1.8; margin-bottom: 16px;">Переваги:</p>
-              <ul style="margin-left: 20px; margin-bottom: 16px; line-height: 1.8;">
-                <li><strong>Сильніша команда з самого початку:</strong> довіра та спільне бачення важливіші за ідею</li>
-                <li><strong>Гнучкість у виборі ніші:</strong> можете разом досліджувати ринок та обирати найкращі можливості</li>
-                <li><strong>Розподіл ризиків та навантаження:</strong> легше долати труднощі разом</li>
-                <li><strong>Краща якість ідей:</strong> два розуми генерують кращі рішення, ніж один</li>
-              </ul>
+              <p style="line-height: 1.8; margin-bottom: 16px;" loading="eager">Переваги:</p loading="eager">
+              <ul style="margin-left: 20px; margin-bottom: 16px; line-height: 1.8;" loading="eager">
+                <li loading="eager"><strong loading="eager">Сильніша команда з самого початку:</strong loading="eager"> довіра та спільне бачення важливіші за ідею</li loading="eager">
+                <li loading="eager"><strong loading="eager">Гнучкість у виборі ніші:</strong loading="eager"> можете разом досліджувати ринок та обирати найкращі можливості</li loading="eager">
+                <li loading="eager"><strong loading="eager">Розподіл ризиків та навантаження:</strong loading="eager"> легше долати труднощі разом</li loading="eager">
+                <li loading="eager"><strong loading="eager">Краща якість ідей:</strong loading="eager"> два розуми генерують кращі рішення, ніж один</li loading="eager">
+              </ul loading="eager">
 
-              <p style="line-height: 1.8; margin-bottom: 16px;">Виклики:</p>
-              <ul style="margin-left: 20px; margin-bottom: 16px; line-height: 1.8;">
-                <li><strong>Відсутність чіткого напрямку:</strong> можна довго шукати "ту саму" ідею</li>
-                <li><strong>Ризик розбіжностей:</strong> навіть близькі люди можуть мати різні інтереси та бачення</li>
-                <li><strong>Втрата часу:</strong> експерименти з різними нішами можуть затягнутися</li>
-              </ul>
+              <p style="line-height: 1.8; margin-bottom: 16px;" loading="eager">Виклики:</p loading="eager">
+              <ul style="margin-left: 20px; margin-bottom: 16px; line-height: 1.8;" loading="eager">
+                <li loading="eager"><strong loading="eager">Відсутність чіткого напрямку:</strong loading="eager"> можна довго шукати "ту саму" ідею</li loading="eager">
+                <li loading="eager"><strong loading="eager">Ризик розбіжностей:</strong loading="eager"> навіть близькі люди можуть мати різні інтереси та бачення</li loading="eager">
+                <li loading="eager"><strong loading="eager">Втрата часу:</strong loading="eager"> експерименти з різними нішами можуть затягнутися</li loading="eager">
+              </ul loading="eager">
 
-              <p style="line-height: 1.8; margin-bottom: 16px;">Стів Джобс та Стів Возняк були друзями ще до Apple. Вони разом шукали, що робити, і врешті створили персональні комп'ютери. Джобс казав: <em>"Моя модель бізнесу — The Beatles. Вони були чотирма хлопцями, які стримували негативні сторони один одного. Вони балансували один одного, і загальний результат був більшим за суму частин"</em> (Steve Jobs, Interview with 60 Minutes).</p>
+              <p style="line-height: 1.8; margin-bottom: 16px;" loading="eager">Стів Джобс та Стів Возняк були друзями ще до Apple. Вони разом шукали, що робити, і врешті створили персональні комп'ютери. Джобс казав: <em loading="eager">"Моя модель бізнесу — The Beatles. Вони були чотирма хлопцями, які стримували негативні сторони один одного. Вони балансували один одного, і загальний результат був більшим за суму частин"</em loading="eager"> (Steve Jobs, Interview with 60 Minutes).</p loading="eager">
 
-              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Сценарій 3: Приєднання до партнера з готовим бізнесом</h4>
-              <p style="line-height: 1.8; margin-bottom: 16px;">Третій варіант — знайти партнера, який вже має працюючий бізнес, і приєднатися до нього, щоб разом розвивати та масштабувати.</p>
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;" loading="eager">Сценарій 3: Приєднання до партнера з готовим бізнесом</h4 loading="eager">
+              <p style="line-height: 1.8; margin-bottom: 16px;" loading="eager">Третій варіант — знайти партнера, який вже має працюючий бізнес, і приєднатися до нього, щоб разом розвивати та масштабувати.</p loading="eager">
 
-              <p style="line-height: 1.8; margin-bottom: 16px;">Переваги:</p>
-              <ul style="margin-left: 20px; margin-bottom: 16px; line-height: 1.8;">
-                <li><strong>Мінімізація ризиків:</strong> бізнес вже працює, є клієнти та дохід</li>
-                <li><strong>Швидкий вхід у ринок:</strong> не треба починати з нуля</li>
-                <li><strong>Перевірена модель:</strong> вже відомо, що працює, а що ні</li>
-                <li><strong>Можливість навчання:</strong> партнер має досвід, від якого можна багато перейняти</li>
-              </ul>
+              <p style="line-height: 1.8; margin-bottom: 16px;" loading="eager">Переваги:</p loading="eager">
+              <ul style="margin-left: 20px; margin-bottom: 16px; line-height: 1.8;" loading="eager">
+                <li loading="eager"><strong loading="eager">Мінімізація ризиків:</strong loading="eager"> бізнес вже працює, є клієнти та дохід</li loading="eager">
+                <li loading="eager"><strong loading="eager">Швидкий вхід у ринок:</strong loading="eager"> не треба починати з нуля</li loading="eager">
+                <li loading="eager"><strong loading="eager">Перевірена модель:</strong loading="eager"> вже відомо, що працює, а що ні</li loading="eager">
+                <li loading="eager"><strong loading="eager">Можливість навчання:</strong loading="eager"> партнер має досвід, від якого можна багато перейняти</li loading="eager">
+              </ul loading="eager">
 
-              <p style="line-height: 1.8; margin-bottom: 16px;">Виклики:</p>
-              <ul style="margin-left: 20px; margin-bottom: 16px; line-height: 1.8;">
-                <li><strong>Обмежений вплив на напрямок:</strong> можливо, доведеться адаптувати своє бачення під існуюче</li>
-                <li><strong>Необхідність довіри:</strong> важливо бути впевненим у чесності партнера та якості бізнесу</li>
-                <li><strong>Фінансові умови:</strong> можливо, доведеться інвестувати значний капітал для входу</li>
-              </ul>
+              <p style="line-height: 1.8; margin-bottom: 16px;" loading="eager">Виклики:</p loading="eager">
+              <ul style="margin-left: 20px; margin-bottom: 16px; line-height: 1.8;" loading="eager">
+                <li loading="eager"><strong loading="eager">Обмежений вплив на напрямок:</strong loading="eager"> можливо, доведеться адаптувати своє бачення під існуюче</li loading="eager">
+                <li loading="eager"><strong loading="eager">Необхідність довіри:</strong loading="eager"> важливо бути впевненим у чесності партнера та якості бізнесу</li loading="eager">
+                <li loading="eager"><strong loading="eager">Фінансові умови:</strong loading="eager"> можливо, доведеться інвестувати значний капітал для входу</li loading="eager">
+              </ul loading="eager">
 
-              <p style="line-height: 1.8; margin-bottom: 16px;">Шерил Сендберг приєдналася до Facebook як COO, коли компанія вже існувала, але потребувала масштабування. Вона привнесла досвід монетизації та управління, що дозволило Facebook стати прибутковим гігантом. Марк Цукерберг сказав: <em>"Шерил змінила Facebook із стартапу на справжню компанію"</em> (Mark Zuckerberg, Interview with Fortune).</p>
+              <p style="line-height: 1.8; margin-bottom: 16px;" loading="eager">Шерил Сендберг приєдналася до Facebook як COO, коли компанія вже існувала, але потребувала масштабування. Вона привнесла досвід монетизації та управління, що дозволило Facebook стати прибутковим гігантом. Марк Цукерберг сказав: <em loading="eager">"Шерил змінила Facebook із стартапу на справжню компанію"</em loading="eager"> (Mark Zuckerberg, Interview with Fortune).</p loading="eager">
 
-              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Що важливіше: партнер чи напрямок?</h4>
-              <p style="line-height: 1.8; margin-bottom: 16px;">На це питання немає універсальної відповіді. Інвестори Y Combinator, які профінансували сотні успішних стартапів, говорять: <em>"Ми інвестуємо в команду, а не в ідею. Ідея майже завжди змінюється, але якість команди залишається"</em> (Paul Graham, Y Combinator). Це означає, що правильний партнер важливіший за ідеальну ідею.</p>
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;" loading="eager">Що важливіше: партнер чи напрямок?</h4 loading="eager">
+              <p style="line-height: 1.8; margin-bottom: 16px;" loading="eager">На це питання немає універсальної відповіді. Інвестори Y Combinator, які профінансували сотні успішних стартапів, говорять: <em loading="eager">"Ми інвестуємо в команду, а не в ідею. Ідея майже завжди змінюється, але якість команди залишається"</em loading="eager"> (Paul Graham, Y Combinator). Це означає, що правильний партнер важливіший за ідеальну ідею.</p loading="eager">
 
-              <p style="line-height: 1.8; margin-bottom: 16px;">Водночас Пітер Тіль у "Zero to One" стверджує: <em>"Кращі компанії народжуються не з простого копіювання існуючого, а зі створення чогось нового. Вибір правильної ніші, де ви можете створити монополію, критично важливий"</em> (Peter Thiel, "Zero to One"). Це означає, що напрямок теж має велике значення.</p>
+              <p style="line-height: 1.8; margin-bottom: 16px;" loading="eager">Водночас Пітер Тіль у "Zero to One" стверджує: <em loading="eager">"Кращі компанії народжуються не з простого копіювання існуючого, а зі створення чогось нового. Вибір правильної ніші, де ви можете створити монополію, критично важливий"</em loading="eager"> (Peter Thiel, "Zero to One"). Це означає, що напрямок теж має велике значення.</p loading="eager">
 
-              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Практичні рекомендації</h4>
-              <ul style="margin-left: 20px; margin-bottom: 16px; line-height: 1.8;">
-                <li><strong>Якщо у вас є сильне бачення та пристрасть до конкретної ніші:</strong> почніть з напрямку, потім шукайте партнера, який поділяє цю пристрасть</li>
-                <li><strong>Якщо ви знаєте людину, з якою у вас чудова синергія:</strong> почніть з партнерства, разом дослідіть ринок та оберіть напрямок</li>
-                <li><strong>Якщо ви хочете мінімізувати ризики:</strong> шукайте партнера з готовим бізнесом, де ви можете додати цінність</li>
-                <li><strong>Завжди перевіряйте сумісність:</strong> довіра, спільні цінності та взаємоповага важливіші за будь-які навички</li>
-              </ul>
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;" loading="eager">Практичні рекомендації</h4 loading="eager">
+              <ul style="margin-left: 20px; margin-bottom: 16px; line-height: 1.8;" loading="eager">
+                <li loading="eager"><strong loading="eager">Якщо у вас є сильне бачення та пристрасть до конкретної ніші:</strong loading="eager"> почніть з напрямку, потім шукайте партнера, який поділяє цю пристрасть</li loading="eager">
+                <li loading="eager"><strong loading="eager">Якщо ви знаєте людину, з якою у вас чудова синергія:</strong loading="eager"> почніть з партнерства, разом дослідіть ринок та оберіть напрямок</li loading="eager">
+                <li loading="eager"><strong loading="eager">Якщо ви хочете мінімізувати ризики:</strong loading="eager"> шукайте партнера з готовим бізнесом, де ви можете додати цінність</li loading="eager">
+                <li loading="eager"><strong loading="eager">Завжди перевіряйте сумісність:</strong loading="eager"> довіра, спільні цінності та взаємоповага важливіші за будь-які навички</li loading="eager">
+              </ul loading="eager">
 
-              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;">Висновок</h4>
-              <p style="line-height: 1.8; margin-bottom: 16px;">Ларрі Пейдж, співзасновник Google, сказав: <em>"Якщо ви змінюєте життя людей, у вас завжди буде достатньо ресурсів, щоб зробити це"</em> (Larry Page, Google Founders' Letter). Успіх залежить не від того, що ви обрали першим — партнера чи напрямок, а від того, наскільки сильною є ваша команда та наскільки цінним є те, що ви створюєте. Правильна комбінація обох факторів — ось що будує великі компанії.</p>
+              <h4 style="font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; color: #1a1a1a;" loading="eager">Висновок</h4 loading="eager">
+              <p style="line-height: 1.8; margin-bottom: 16px;" loading="eager">Ларрі Пейдж, співзасновник Google, сказав: <em loading="eager">"Якщо ви змінюєте життя людей, у вас завжди буде достатньо ресурсів, щоб зробити це"</em loading="eager"> (Larry Page, Google Founders' Letter). Успіх залежить не від того, що ви обрали першим — партнера чи напрямок, а від того, наскільки сильною є ваша команда та наскільки цінним є те, що ви створюєте. Правильна комбінація обох факторів — ось що будує великі компанії.</p loading="eager">
               
-              <div style="display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap;">
-                <a href="#" onclick="toggleArticle('partner-or-niche'); return false;" class="read-more-btn" style="text-decoration: none; border: none; background: var(--accent-gold); color: var(--primary-dark); padding: 12px 24px; border-radius: 8px; font-weight: 600; display: inline-block;">Згорнути</a>
-                <a href="index.html" class="read-more-btn" style="text-decoration: none; border: none; background: var(--primary-dark); color: #ffffff; padding: 12px 24px; border-radius: 8px; font-weight: 600; display: inline-block;">На головну</a>
-              </div>
-            </div>
+              <div style="display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap;" loading="eager">
+                <a href="#" onclick="toggleArticle('partner-or-niche'); return false;" class="read-more-btn" style="text-decoration: none; border: none; background: var(--accent-gold); color: var(--primary-dark); padding: 12px 24px; border-radius: 8px; font-weight: 600; display: inline-block;" loading="eager">Згорнути</a loading="eager">
+                <a href="index.html" class="read-more-btn" style="text-decoration: none; border: none; background: var(--primary-dark); color: #ffffff; padding: 12px 24px; border-radius: 8px; font-weight: 600; display: inline-block;" loading="eager">На головну</a loading="eager">
+              </div loading="eager">
+            </div loading="eager">
 
-        <!-- Список інших статей розділу -->
-        <div id="articles-list" style="display: none; margin-top: 40px;">
-          <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 24px;">Інші статті блогу</h3>
-          <div class="articles">
-            <article class="article">
-              <h3>Чому одні продукти коштують дорожче за інших: психологія та економіка ціноутворення</h3>
-              <p>Розбираємося, які чинники формують сприйняття вартості та як ціна стає інструментом позиціювання</p>
-              <span class="article-date">січень 2026</span>
-              <a href="blog-article-pricing-psychology.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
-            </article>
-            <article class="article">
-              <h3>Аргументація високої ціни: як компанії пояснюють вартість своїх продуктів</h3>
-              <p>Стратегії комунікації вартості від провідних світових брендів та експертів</p>
-              <span class="article-date">січень 2026</span>
-              <a href="blog-article-price-argument.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
-            </article>
-            <article class="article">
-              <h3>Чому не варто купувати дешево: довгострокова перспектива вартості</h3>
-              <p>Справжня вартість економії та приховані витрати дешевих рішень</p>
-              <span class="article-date">січень 2026</span>
-              <a href="blog-article-cheap-risks.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
-            </article>
-            <article class="article">
-              <h3>Проекти під ключ: справжня вартість комплексних рішень</h3>
-              <p>Чому повний цикл послуг коштує дорожче, але виявляється вигіднішим</p>
-              <span class="article-date">січень 2026</span>
-              <a href="blog-article-turnkey.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
-            </article>
-            <article class="article">
-              <h3>Люди — головний актив бізнесу: чому команда важливіша за ідею</h3>
-              <p>Як правильний підбір людей визначає успіх компанії та чому інвестиція в команду окупається найкраще</p>
-              <span class="article-date">січень 2026</span>
-              <a href="blog-article-team-first.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
-            </article>
-            <article class="article">
-              <h3>Створити бізнес з нуля чи приєднатися до існуючого: вибір стратегії входження</h3>
-              <p>Переваги та виклики різних шляхів у бізнес, досвід успішних підприємців та критерії прийняття рішення</p>
-              <span class="article-date">січень 2026</span>
-              <a href="blog-article-start-or-join.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
-            </article>
-            <article class="article">
-              <h3>Партнер чи ніша: що обрати спочатку при створенні бізнесу</h3>
-              <p>Стратегічний підхід до вибору напрямку бізнесу та пошуку партнерів на різних етапах розвитку</p>
-              <span class="article-date">січень 2026</span>
-              <a href="blog-article-partner-or-niche.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
-            </article>
-            <article class="article">
-              <h3>Відповідальність та її роль у бізнесі та житті</h3>
-              <p>Чому одні люди приймають на себе відповідальність і досягають результатів, а інші уникають її будь-якою ціною?</p>
-              <span class="article-date">січень 2026</span>
-              <a href="blog-article-responsibility.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
-            </article>
-            <article class="article">
-              <h3>Як визначити ступінь відповідальності: практичні методи оцінки</h3>
-              <p>Вміння точно оцінити свій рівень відповідальності — це перший крок до реального зростання</p>
-              <span class="article-date">січень 2026</span>
-              <a href="blog-article-measure-responsibility.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
-            </article>
-            <article class="article">
-              <h3>Ціна відповідальності: як порахувати та чи варта гра свічок?</h3>
-              <p>Кожне "так" має свою ціну. Коли ви берете на себе відповідальність, ви платите час, енергію та ресурси</p>
-              <span class="article-date">січень 2026</span>
-              <a href="blog-article-price-of-responsibility.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
-            </article>
-            <article class="article">
-              <h3>Інтуїція в бізнесі: коли довіряти внутрішньому голосу</h3>
-              <p>Більшість успішних лідерів визнають: є моменти, коли всі показники кажуть "так", але інтуїція кричить "ні"</p>
-              <span class="article-date">січень 2026</span>
-              <a href="blog-article-intuition.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
-            </article>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
+        <!-- Список інших статей розділу -- loading="eager">
+        <div id="articles-list" style="display: none; margin-top: 40px;" loading="eager">
+          <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 24px;" loading="eager">Інші статті блогу</h3 loading="eager">
+          <div class="articles" loading="eager">
+            <article class="article" loading="eager">
+              <h3 loading="eager">Чому одні продукти коштують дорожче за інших: психологія та економіка ціноутворення</h3 loading="eager">
+              <p loading="eager">Розбираємося, які чинники формують сприйняття вартості та як ціна стає інструментом позиціювання</p loading="eager">
+              <span class="article-date" loading="eager">січень 2026</span loading="eager">
+              <a href="blog-article-pricing-psychology.html" class="read-more-btn" style="text-decoration: none;" loading="eager">Докладніше</a loading="eager">
+            </article loading="eager">
+            <article class="article" loading="eager">
+              <h3 loading="eager">Аргументація високої ціни: як компанії пояснюють вартість своїх продуктів</h3 loading="eager">
+              <p loading="eager">Стратегії комунікації вартості від провідних світових брендів та експертів</p loading="eager">
+              <span class="article-date" loading="eager">січень 2026</span loading="eager">
+              <a href="blog-article-price-argument.html" class="read-more-btn" style="text-decoration: none;" loading="eager">Докладніше</a loading="eager">
+            </article loading="eager">
+            <article class="article" loading="eager">
+              <h3 loading="eager">Чому не варто купувати дешево: довгострокова перспектива вартості</h3 loading="eager">
+              <p loading="eager">Справжня вартість економії та приховані витрати дешевих рішень</p loading="eager">
+              <span class="article-date" loading="eager">січень 2026</span loading="eager">
+              <a href="blog-article-cheap-risks.html" class="read-more-btn" style="text-decoration: none;" loading="eager">Докладніше</a loading="eager">
+            </article loading="eager">
+            <article class="article" loading="eager">
+              <h3 loading="eager">Проекти під ключ: справжня вартість комплексних рішень</h3 loading="eager">
+              <p loading="eager">Чому повний цикл послуг коштує дорожче, але виявляється вигіднішим</p loading="eager">
+              <span class="article-date" loading="eager">січень 2026</span loading="eager">
+              <a href="blog-article-turnkey.html" class="read-more-btn" style="text-decoration: none;" loading="eager">Докладніше</a loading="eager">
+            </article loading="eager">
+            <article class="article" loading="eager">
+              <h3 loading="eager">Люди — головний актив бізнесу: чому команда важливіша за ідею</h3 loading="eager">
+              <p loading="eager">Як правильний підбір людей визначає успіх компанії та чому інвестиція в команду окупається найкраще</p loading="eager">
+              <span class="article-date" loading="eager">січень 2026</span loading="eager">
+              <a href="blog-article-team-first.html" class="read-more-btn" style="text-decoration: none;" loading="eager">Докладніше</a loading="eager">
+            </article loading="eager">
+            <article class="article" loading="eager">
+              <h3 loading="eager">Створити бізнес з нуля чи приєднатися до існуючого: вибір стратегії входження</h3 loading="eager">
+              <p loading="eager">Переваги та виклики різних шляхів у бізнес, досвід успішних підприємців та критерії прийняття рішення</p loading="eager">
+              <span class="article-date" loading="eager">січень 2026</span loading="eager">
+              <a href="blog-article-start-or-join.html" class="read-more-btn" style="text-decoration: none;" loading="eager">Докладніше</a loading="eager">
+            </article loading="eager">
+            <article class="article" loading="eager">
+              <h3 loading="eager">Партнер чи ніша: що обрати спочатку при створенні бізнесу</h3 loading="eager">
+              <p loading="eager">Стратегічний підхід до вибору напрямку бізнесу та пошуку партнерів на різних етапах розвитку</p loading="eager">
+              <span class="article-date" loading="eager">січень 2026</span loading="eager">
+              <a href="blog-article-partner-or-niche.html" class="read-more-btn" style="text-decoration: none;" loading="eager">Докладніше</a loading="eager">
+            </article loading="eager">
+            <article class="article" loading="eager">
+              <h3 loading="eager">Відповідальність та її роль у бізнесі та житті</h3 loading="eager">
+              <p loading="eager">Чому одні люди приймають на себе відповідальність і досягають результатів, а інші уникають її будь-якою ціною?</p loading="eager">
+              <span class="article-date" loading="eager">січень 2026</span loading="eager">
+              <a href="blog-article-responsibility.html" class="read-more-btn" style="text-decoration: none;" loading="eager">Докладніше</a loading="eager">
+            </article loading="eager">
+            <article class="article" loading="eager">
+              <h3 loading="eager">Як визначити ступінь відповідальності: практичні методи оцінки</h3 loading="eager">
+              <p loading="eager">Вміння точно оцінити свій рівень відповідальності — це перший крок до реального зростання</p loading="eager">
+              <span class="article-date" loading="eager">січень 2026</span loading="eager">
+              <a href="blog-article-measure-responsibility.html" class="read-more-btn" style="text-decoration: none;" loading="eager">Докладніше</a loading="eager">
+            </article loading="eager">
+            <article class="article" loading="eager">
+              <h3 loading="eager">Ціна відповідальності: як порахувати та чи варта гра свічок?</h3 loading="eager">
+              <p loading="eager">Кожне "так" має свою ціну. Коли ви берете на себе відповідальність, ви платите час, енергію та ресурси</p loading="eager">
+              <span class="article-date" loading="eager">січень 2026</span loading="eager">
+              <a href="blog-article-price-of-responsibility.html" class="read-more-btn" style="text-decoration: none;" loading="eager">Докладніше</a loading="eager">
+            </article loading="eager">
+            <article class="article" loading="eager">
+              <h3 loading="eager">Інтуїція в бізнесі: коли довіряти внутрішньому голосу</h3 loading="eager">
+              <p loading="eager">Більшість успішних лідерів визнають: є моменти, коли всі показники кажуть "так", але інтуїція кричить "ні"</p loading="eager">
+              <span class="article-date" loading="eager">січень 2026</span loading="eager">
+              <a href="blog-article-intuition.html" class="read-more-btn" style="text-decoration: none;" loading="eager">Докладніше</a loading="eager">
+            </article loading="eager">
+          </div loading="eager">
+        </div loading="eager">
+      </section loading="eager">
+    </div loading="eager">
+  </div loading="eager">
 
-  <footer>
-    <p>&copy; 2026 Дмитро Царенко. Всі права захищені.</p>
-  </footer>
+  <footer loading="eager">
+    <p loading="eager">&copy; 2026 Дмитро Царенко. Всі права захищені.</p loading="eager">
+  </footer loading="eager">
 
-  <script>
+  <script loading="eager">
     function toggleArticle(articleId) {
       const article = document.getElementById(articleId);
       const articlesList = document.getElementById('articles-list');
@@ -1172,7 +251,7 @@
         const article = document.getElementById(hash);
         if (article) {
           article.style.display = 'block';
-          setTimeout(() => {
+          setTimeout(() = loading="eager"> {
             const articleWrapper = article.parentElement;
             articleWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 100);
@@ -1203,8 +282,8 @@
     menuOverlay.addEventListener('click', toggleMenu);
 
     // Close menu when clicking on a link
-    navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
+    navLinks.forEach(link = loading="eager"> {
+      link.addEventListener('click', (e) = loading="eager"> {
         const targetId = link.getAttribute('href');
 
         // Check if it's an anchor link (starts with #)
@@ -1218,7 +297,7 @@
             menuOverlay.classList.remove('active');
             document.body.style.overflow = '';
 
-            setTimeout(() => {
+            setTimeout(() = loading="eager"> {
               const headerHeight = 88;
               const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
 
@@ -1254,9 +333,9 @@
       const increment = target / (duration / 16);
       let current = start;
 
-      const timer = setInterval(() => {
+      const timer = setInterval(() = loading="eager"> {
         current += increment;
-        if (current >= target) {
+        if (current  loading="eager">= target) {
           element.textContent = target;
           clearInterval(timer);
         } else {
@@ -1279,17 +358,17 @@
 
       if (statExpert) {
         statExpert.setAttribute('data-target', expertTotal);
-        setTimeout(() => animateCounter(statExpert, expertTotal, 1200), 300);
+        setTimeout(() = loading="eager"> animateCounter(statExpert, expertTotal, 1200), 300);
       }
 
       if (statHeatPumps) {
         statHeatPumps.setAttribute('data-target', heatPumpsCount);
-        setTimeout(() => animateCounter(statHeatPumps, heatPumpsCount, 1200), 500);
+        setTimeout(() = loading="eager"> animateCounter(statHeatPumps, heatPumpsCount, 1200), 500);
       }
 
       if (statEnergy) {
         statEnergy.setAttribute('data-target', energyCount);
-        setTimeout(() => animateCounter(statEnergy, energyCount, 1200), 700);
+        setTimeout(() = loading="eager"> animateCounter(statEnergy, energyCount, 1200), 700);
       }
     }
 
@@ -1301,7 +380,7 @@
     }
 
     // Smooth scroll for metric links
-    document.querySelectorAll('.metric-item').forEach(link => {
+    document.querySelectorAll('.metric-item').forEach(link = loading="eager"> {
       link.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
@@ -1318,8 +397,8 @@
         }
       });
     });
-  </script>
-</body>
-</html>
-</body>
-</html>
+  </script loading="eager">
+</body loading="eager">
+</html loading="eager">
+</body loading="eager">
+</html loading="eager">
