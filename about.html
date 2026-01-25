@@ -204,6 +204,12 @@
       display: block;
       filter: brightness(1.05) contrast(1.03);
     }
+    @media (min-width: 1024px) {
+      .hero-banner img {
+        object-fit: contain;
+        object-position: center center;
+      }
+    }
     .metrics-section {
       background: var(--primary-dark);
       border-top: 3px solid var(--accent-gold);
