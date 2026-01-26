@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <meta charset="UTF-8">
+  <title>Децентралізовані теплові насоси: інструмент балансування енергосистеми - Дмитро Царенко</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Децентралізовані теплові насоси: інструмент балансування енергосистеми">
+  <meta property="og:title" content="Децентралізовані теплові насоси: інструмент балансування енергосистеми - Дмитро Царенко">
+  <meta property="og:description" content="Децентралізовані теплові насоси: інструмент балансування енергосистеми">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://dtsarenko.live/blog-article-hp-flexibility.html">
+  <meta property="og:site_name" content="Дмитро Царенко">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Децентралізовані теплові насоси: інструмент балансування енергосистеми - Дмитро Царенко">
+  <meta name="twitter:description" content="Децентралізовані теплові насоси: інструмент балансування енергосистеми">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media=\'all\'; this.onload=null;">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <style>:root{--primary-dark:#0a1628;--secondary-dark:#151922;--accent-gold:#ffd643;--accent-gold-dark:#e6c135;--accent-gold-light:#ffe76b;--text-primary:#0f1419;--text-secondary:#536471;--text-light:#8899a6;--bg-dark:#0d1117;--bg-darker:#010409;--bg-light:#f6f8fa;--bg-white:#ffffff;--border-color:#30363d;--border-light:#e7ecf0;--shadow-sm:0 2px 8px rgba(0,0,0,0.1);--shadow-md:0 4px 16px rgba(0,0,0,0.15);--shadow-lg:0 8px 32px rgba(0,0,0,0.2);--shadow-xl:0 12px 48px rgba(0,0,0,0.25)}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f6f8fa;color:var(--text-primary);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding-top:88px}header{background:var(--primary-dark);backdrop-filter:blur(20px);border-bottom:3px solid var(--accent-gold);position:fixed;top:0;left:0;right:0;width:100%;z-index:1002;box-shadow:var(--shadow-lg);transition:all 0.3s ease}.header-content{max-width:1280px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center}.logo{text-decoration:none;transition:transform 0.3s ease;display:flex;flex-direction:column;gap:2px}.logo:hover{transform:scale(1.02)}.logo-name{font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:#ffffff;letter-spacing:-0.5px;line-height:1;text-shadow:0 2px 8px rgba(0,0,0,0.3)}.logo-tagline{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;color:var(--accent-gold);opacity:1;letter-spacing:0.5px;text-transform:uppercase}nav{display:flex;gap:40px;align-items:center}nav a{color:rgba(255,255,255,0.9);text-decoration:none;font-size:15px;font-weight:600;position:relative;transition:all 0.3s ease;letter-spacing:0.3px}nav a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:3px;background:var(--accent-gold);transition:width 0.3s ease;box-shadow:0 0 8px var(--accent-gold)}nav a:hover{color:var(--accent-gold)}nav a:hover::after{width:100%}.mobile-menu-toggle{display:none;flex-direction:column;gap:6px;background:none;border:none;cursor:pointer;padding:8px;z-index:1003;touch-action:manipulation;-webkit-tap-highlight-color:transparent}.mobile-menu-toggle span{width:28px;height:3px;background:#ffffff;border-radius:2px;transition:transform 0.2s cubic-bezier(0.4,0,0.2,1),opacity 0.2s ease;will-change:transform,opacity}.mobile-menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(8px,8px);background:#000000}.mobile-menu-toggle.active span:nth-child(2){opacity:0}.mobile-menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(8px,-8px);background:#000000}.menu-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);opacity:0;visibility:hidden;transition:opacity 0.25s ease,visibility 0.25s ease;z-index:999}.menu-overlay.active{opacity:1;visibility:visible}.container{max-width:1280px;margin:0 auto;padding:80px 40px}.section{background:transparent;border-radius:0;padding:80px 0;border-bottom:2px solid var(--border-color);transition:all 0.3s ease;position:relative;scroll-margin-top:100px}.section:first-child{padding-top:0}.section:last-child{border-bottom:none;padding-bottom:0}.section h2{font-family:'Playfair Display',serif;font-size:42px;font-weight:800;margin-bottom:40px;color:var(--primary-dark);padding-bottom:20px;border-bottom:4px solid var(--accent-gold);display:inline-block;letter-spacing:-0.5px;position:relative;box-shadow:0 4px 0 0 rgba(255,214,67,0.2)}.article-content{line-height:1.8}.article-content p{margin-bottom:16px}.article-content h4{font-size:18px;font-weight:600;margin-top:32px;margin-bottom:16px;color:var(--primary-dark)}.article-content ul,.article-content ol{margin-left:24px;margin-bottom:16px}.article-content li{margin-bottom:8px}.article-content strong{color:var(--primary-dark);font-weight:700}.article-content em{font-style:italic;color:var(--text-secondary)}.article-content a{color:var(--accent-gold-dark);text-decoration:underline;transition:color 0.2s ease}.article-content a:hover{color:var(--primary-dark)}.article-date{font-size:12px;color:var(--accent-gold-dark);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(255,214,67,0.1);padding:6px 12px;border-radius:6px;display:inline-block}.read-more-btn{margin-top:16px;padding:12px 24px;font-size:14px;font-weight:600;color:var(--primary-dark);background:var(--accent-gold);border:none;border-radius:8px;cursor:pointer;transition:all 0.3s ease;letter-spacing:0.3px;display:inline-block;text-decoration:none}.read-more-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,214,67,0.4)}.articles-list{display:none;margin-top:40px}.articles-list.show{display:block}.articles-list h3{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--primary-dark);margin-bottom:32px;text-align:center}.article-card{background:var(--bg-white);border:2px solid var(--border-light);border-radius:12px;padding:28px;margin-bottom:24px;transition:all 0.3s ease;text-decoration:none;display:block;position:relative;overflow:hidden}.article-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent-gold) 0%,var(--accent-gold-light) 100%);transform:scaleX(0);transform-origin:left;transition:transform 0.3s ease}.article-card:hover{border-color:var(--accent-gold);box-shadow:var(--shadow-lg);transform:translateY(-4px)}.article-card:hover::before{transform:scaleX(1)}.article-card-tag{display:inline-block;padding:6px 14px;background:linear-gradient(135deg,var(--accent-gold-dark) 0%,var(--accent-gold) 100%);color:var(--primary-dark);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;border-radius:6px;margin-bottom:16px}.article-card h4{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text-primary);margin-bottom:12px;line-height:1.3}.article-card p{font-size:15px;color:var(--text-secondary);line-height:1.6;margin-bottom:0}.article-card.current{opacity:0.6;pointer-events:none}.publication-meta{background:rgba(255,214,67,0.08);border-left:4px solid var(--accent-gold);padding:20px;margin-bottom:32px;border-radius:8px}.publication-meta p{margin-bottom:8px;line-height:1.6}.publication-meta strong{color:var(--primary-dark)}footer{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--secondary-dark) 100%);color:rgba(255,255,255,0.9);padding:64px 40px;text-align:center;margin-top:100px;position:relative;overflow:hidden}footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent-gold);box-shadow:0 0 20px var(--accent-gold)}footer p{font-size:15px;letter-spacing:0.5px;opacity:0.85}@media (max-width:768px){body{padding-top:84px}.header-content{padding:20px 24px}.logo-name{font-size:24px}.logo-tagline{font-size:11px}.mobile-menu-toggle{display:flex}nav{position:fixed;top:0;right:0;width:280px;height:100vh;background:rgba(255,255,255,0.98);flex-direction:column;gap:0;padding:80px 24px 24px;box-shadow:-4px 0 24px rgba(0,0,0,0.1);transform:translateX(100%);transition:transform 0.25s cubic-bezier(0.4,0,0.2,1);will-change:transform;z-index:1001;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}nav.active{transform:translateX(0)}nav a{font-size:16px;padding:16px 0;border-bottom:1px solid var(--border-color);width:100%;color:var(--primary-dark)}nav a:hover{color:var(--accent-gold-dark)}nav a::after{display:none}.container{padding:48px 24px}.section{padding:48px 0}.section h2{font-size:28px}footer{padding:48px 24px;margin-top:64px}}</style>
+</head>
+<body>
+  <div class="menu-overlay"></div>
+  <header>
+    <div class="header-content">
+      <a href="/" class="logo">
+        <span class="logo-name">Дмитро Царенко</span>
+        <span class="logo-tagline">Блог і статті</span>
+      </a>
+      <button class="mobile-menu-toggle" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <a href="/about/">Про автора</a>
+        <a href="/publications/">Наукові публікації</a>
+        <a href="/blog/">Блог</a>
+        <a href="/heat-pumps/">Теплові насоси</a>
+        <a href="/efficiency/">Енергоефективність</a>
+        <a href="/business/">Бізнес</a>
+        <a href="/contact/">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="section">
+      <h2>Децентралізовані теплові насоси: інструмент балансування енергосистеми</h2>
+      <span class="article-date" style="display: block; margin-bottom: 20px;">березень 2024</span>
+
+      <div id="hp-flexibility" class="article-content" style="display: block;">
+        <div class="publication-meta">
+          <p><strong>Журнал:</strong> Energy Efficiency (Springer), Vol. 17, Article №26</p>
+          <p><strong>Дата публікації:</strong> березень 2024</p>
+          <p><strong>Автори:</strong> Franziska Schöniger, Philipp Mascherbauer, Gustav Resch, Lukas Kranzl, Reinhard Haas</p>
+          <p><strong>Джерело:</strong> <a href="https://link.springer.com/article/10.1007/s12053-024-10206-z" target="_blank" rel="noopener">https://link.springer.com/article/10.1007/s12053-024-10206-z</a></p>
+        </div>
+
+        <h4>Зміст дослідження</h4>
+        <p>Це дослідження розглядає теплові насоси не як прилади опалення, а як критичний елемент гнучкості майбутніх енергосистем з високою часткою відновлюваних джерел енергії (ВДЕ). Автори аналізують, як децентралізовані теплові насоси можуть стати інструментом балансування електричних мереж, зменшуючи потребу у вуглецевоінтенсивних резервних потужностях та відключеннях надлишкової генерації ВДЕ.</p>
+
+        <h4>Методологія: симуляція енергосистеми майбутнього</h4>
+        <p>Дослідники використали комплексний моделювальний підхід:</p>
+        <ul>
+          <li><strong>Теплотехнічна модель будівель:</strong> розрахунок коефіцієнта ефективності (COP), теплової інерції будівель, роботи акумулюючих баків</li>
+          <li><strong>Енергосистемна модель Balmorel:</strong> open-source модель, що симулює роботу електричних мереж з урахуванням попиту, генерації, обмежень мережі</li>
+          <li><strong>Сценарій:</strong> Австрія у 2030 році з 100% виробництва електроенергії з ВДЕ (вітер, сонце, гідроенергетика)</li>
+          <li><strong>Фокус:</strong> можливість зміщення попиту теплових насосів у часі без втрати комфорту користувачів</li>
+        </ul>
+
+        <h4>Ключова концепція: "гнучкий попит на тепло"</h4>
+        <p>Традиційно теплові насоси розглядаються як споживачі електроенергії, що збільшують навантаження на мережу. Але дослідження показує іншу перспективу:</p>
+        <ul>
+          <li><strong>Теплова інерція будівель:</strong> добре утеплений будинок зберігає тепло протягом 6-12 годин без додаткового опалення</li>
+          <li><strong>Буферні баки:</strong> акумулюючі ємності на 300-1000 л дозволяють "запасати" тепло під час надлишку електроенергії</li>
+          <li><strong>Прогнозована робота:</strong> інтелектуальні системи керування можуть оптимізувати роботу на основі прогнозів погоди та виробництва ВДЕ</li>
+        </ul>
+        <p>Це означає, що теплові насоси можуть працювати не тоді, коли потрібне тепло, а тоді, коли є надлишок дешевої зеленої електроенергії.</p>
+
+        <h4>Результати моделювання: масштаб потенціалу</h4>
+        <p><strong>Обсяг гнучкого попиту:</strong></p>
+        <ul>
+          <li>До 20% загального попиту на опалення можна зробити гнучким</li>
+          <li>Це становить 194 ГВт·год електроенергії на рік (еквівалент 0,5% загального споживання електроенергії в Австрії)</li>
+          <li>У годинні піки потужність гнучкого попиту може сягати 400-600 МВт</li>
+        </ul>
+
+        <p><strong>Переможці: вітрова енергетика</strong></p>
+        <p>Дослідження виявило асиметричний вплив на різні типи ВДЕ:</p>
+        <ul>
+          <li><strong>Вітер:</strong> найбільший виграш, оскільки пікова генерація припадає на зимовий період, коли попит на опалення максимальний. Гнучкі теплові насоси дозволяють використати до 85% надлишкової вітрової генерації</li>
+          <li><strong>Сонце:</strong> менший ефект, оскільки пік генерації (літо, день) не збігається з піком попиту на опалення (зима, вечір). Проте в перехідні сезони (весна, осінь) синергія зростає</li>
+          <li><strong>Гідроенергетика:</strong> мінімальний вплив, оскільки ця генерація вже є гнучкою</li>
+        </ul>
+
+        <p><strong>Зменшення потреби у резервних потужностях:</strong></p>
+        <ul>
+          <li>Відключення надлишкової генерації ВДЕ (curtailment) може бути зменшене на 12-18%</li>
+          <li>Потреба у газових пікових станціях для балансування знижується на 8-12%</li>
+          <li>Викиди CO₂ від балансуючих потужностей зменшуються на 150 000 – 200 000 тонн на рік</li>
+        </ul>
+
+        <h4>Технічні вимоги до реалізації</h4>
+        <p>Щоб теплові насоси стали елементом гнучкості, необхідна певна інфраструктура:</p>
+
+        <p><strong>1. Розумні системи керування (Smart Controls)</strong></p>
+        <ul>
+          <li>Інтеграція з прогнозами погоди</li>
+          <li>Доступ до даних про генерацію ВДЕ в режимі реального часу</li>
+          <li>Алгоритми оптимізації з урахуванням комфорту користувачів</li>
+          <li>Можливість віддаленого управління (з дозволу власника)</li>
+        </ul>
+
+        <p><strong>2. Достатня теплова інерція</strong></p>
+        <ul>
+          <li>Якісна теплоізоляція будівлі (мінімум 10-15 см)</li>
+          <li>Буферні баки об'ємом мінімум 300 л для індивідуальних будинків</li>
+          <li>Теплоакумулюючі системи (теплі підлоги, масивні стіни)</li>
+        </ul>
+
+        <p><strong>3. Тарифні стимули</strong></p>
+        <ul>
+          <li>Динамічні тарифи, що відображають реальну вартість генерації</li>
+          <li>Нижчі ціни у години надлишку ВДЕ</li>
+          <li>Бонуси за участь у програмах керування попитом</li>
+        </ul>
+
+        <h4>Висновки дослідників</h4>
+        <p><strong>Зміна парадигми:</strong> теплові насоси — це не тільки споживачі електроенергії, а інструмент балансування енергосистем. Вони можуть поглинати надлишки ВДЕ та зменшувати потребу у вуглецевоінтенсивних резервних потужностях.</p>
+
+        <p><strong>Політична підтримка критична:</strong> без правильних регуляторних рамок та тарифних стимулів потенціал гнучкості залишиться нереалізованим. Необхідні:</p>
+        <ul>
+          <li>Дозвіл на динамічні тарифи для кінцевих споживачів</li>
+          <li>Стандарти для розумних систем керування тепловими насосами</li>
+          <li>Програми підтримки для модернізації існуючих установок</li>
+        </ul>
+
+        <p><strong>Децентралізація — ключ до стійкості:</strong> на відміну від централізованих систем теплопостачання, децентралізовані теплові насоси дозволяють розподілити гнучкість по всій мережі, зменшуючи ризики та підвищуючи стійкість системи.</p>
+
+        <p><strong>Баланс попиту та пропозиції — головний виклик:</strong> у майбутніх енергосистемах з 80-100% ВДЕ управління попитом стане критичним. Теплові насоси мають величезний потенціал у цьому напрямку.</p>
+
+        <h4>Критичне значення для України</h4>
+        <p>Це дослідження особливо актуальне для України з кількох причин:</p>
+
+        <p><strong>1. Відбудова енергосистеми після війни</strong></p>
+        <ul>
+          <li>Україна має унікальну можливість одразу будувати енергосистему майбутнього, а не модернізувати застарілу інфраструктуру</li>
+          <li>Масове впровадження децентралізованих теплових насосів може стати частиною стратегії розподіленої генерації та споживання</li>
+          <li>Це підвищить стійкість енергосистеми до пошкоджень — кожен будинок стає незалежним тепловим вузлом</li>
+        </ul>
+
+        <p><strong>2. Розвиток відновлюваної енергетики</strong></p>
+        <p>Україна має амбітні цілі щодо збільшення частки ВДЕ:</p>
+        <ul>
+          <li>До 2030 року планується досягти 25% ВДЕ у загальному енергобалансі</li>
+          <li>Найбільший потенціал — у вітровій енергетиці (особливо південні та східні регіони)</li>
+          <li>Проблема: як інтегрувати мінливу вітрову генерацію без величезних інвестицій в акумулятори?</li>
+          <li>Рішення: використати теплові насоси як "теплові батареї", що поглинають надлишки вітрової енергії взимку</li>
+        </ul>
+
+        <p><strong>3. Зменшення імпортної залежності</strong></p>
+        <ul>
+          <li>Теплові насоси, живлені від власних ВДЕ, повністю виключають потребу в імпортованому газі чи вугіллі</li>
+          <li>Гнучке управління попитом дозволяє максимізувати використання місцевої генерації</li>
+          <li>Зменшення потреби у резервних газових потужностях знижує стратегічні ризики</li>
+        </ul>
+
+        <p><strong>4. Економічна вигода від динамічних тарифів</strong></p>
+        <p>В Україні впровадження динамічного ціноутворення на електроенергію може принести подвійну вигоду:</p>
+        <ul>
+          <li>Для споживачів: зниження витрат на опалення на 15-25% завдяки використанню дешевої електроенергії у години надлишку ВДЕ</li>
+          <li>Для енергосистеми: зменшення пікових навантажень та кращий баланс попиту/пропозиції</li>
+        </ul>
+
+        <p><strong>5. Практичні кроки для реалізації в Україні</strong></p>
+
+        <p><em>Короткостроково (2025-2027):</em></p>
+        <ul>
+          <li>Пілотні проєкти у нових житлових комплексах з інтеграцією теплових насосів та ВДЕ</li>
+          <li>Розробка національних стандартів для розумних систем керування</li>
+          <li>Впровадження динамічних тарифів для пілотних груп споживачів</li>
+        </ul>
+
+        <p><em>Середньостроково (2027-2030):</em></p>
+        <ul>
+          <li>Масове впровадження розумних лічильників з погодинним обліком</li>
+          <li>Інтеграція теплових насосів у програми керування попитом (Demand Response)</li>
+          <li>Створення цифрової платформи для агрегації гнучкості від тисяч малих споживачів</li>
+        </ul>
+
+        <p><em>Довгостроково (після 2030):</em></p>
+        <ul>
+          <li>Теплові насоси як обов'язковий елемент нового будівництва</li>
+          <li>Автоматизована оптимізація всієї енергосистеми з урахуванням гнучкості децентралізованих споживачів</li>
+          <li>Україна як приклад успішної інтеграції ВДЕ та розумного управління попитом</li>
+        </ul>
+
+        <h4>Висновок: теплові насоси як елемент енергетичної безпеки</h4>
+        <p>Австрійське дослідження демонструє, що теплові насоси — це не просто технологія опалення, а критичний елемент майбутніх енергосистем з високою часткою ВДЕ. Для України це означає можливість одночасно вирішити три стратегічні завдання:</p>
+        <ul>
+          <li><strong>Енергонезалежність:</strong> відмова від імпортованих енергоносіїв</li>
+          <li><strong>Декарбонізація:</strong> перехід на 100% зелену енергію для опалення</li>
+          <li><strong>Стійкість:</strong> розподілена енергосистема, стійка до пошкоджень та кібератак</li>
+        </ul>
+        <p>Ключ до успіху — розглядати теплові насоси не як ізольовані прилади, а як частину єдиної інтелектуальної енергосистеми. Це вимагає координації між регуляторами, енергокомпаніями, виробниками обладнання та споживачами, але потенційна віддача величезна: енергетична система, що є одночасно чистою, дешевою та стійкою.</p>
+
+        <div style="display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap;">
+          <a href="#" onclick="toggleArticle('hp-flexibility'); return false;" class="read-more-btn" style="text-decoration: none; border: none; background: var(--accent-gold); color: var(--primary-dark); padding: 12px 24px; border-radius: 8px; font-weight: 600; display: inline-block;">Згорнути</a>
+          <a href="/" class="read-more-btn" style="text-decoration: none; border: none; background: var(--primary-dark); color: #ffffff; padding: 12px 24px; border-radius: 8px; font-weight: 600; display: inline-block;">На головну</a>
+        </div>
+      </div>
+
+      <div id="articles-list" class="articles-list">
+        <h3>Актуальні дослідження теплових насосів</h3>
+
+        <a href="/blog/hp-owners-austria/" class="article-card">
+          <span class="article-card-tag">Дослідження</span>
+          <h4>Типи власників теплових насосів в Австрії</h4>
+          <p>Перше широкомасштабне дослідження поведінки та мотивацій користувачів теплових насосів. Чотири типи власників та практичні рекомендації для української специфіки</p>
+        </a>
+
+        <a href="/blog/hp-diffusion-austria/" class="article-card">
+          <span class="article-card-tag">Статистика</span>
+          <h4>Поширення ґрунтових теплових насосів в Австрії</h4>
+          <p>Аналіз 17 000+ установок за 32 роки. Які регіони лідирують, що впливає на темпи впровадження та які висновки для України</p>
+        </a>
+
+        <a href="/blog/hp-flexibility/" class="article-card current">
+          <span class="article-card-tag">Енергетика</span>
+          <h4>Децентралізовані теплові насоси</h4>
+          <p>Як теплові насоси можуть стати ключем до інтеграції ВДЕ та енергетичної незалежності України. Результати моделювання сценарію 100% відновлюваної енергії</p>
+        </a>
+
+        <div style="display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; justify-content: center;">
+          <a href="#" onclick="toggleArticle('hp-flexibility'); return false;" class="read-more-btn" style="text-decoration: none; border: none; background: var(--accent-gold); color: var(--primary-dark); padding: 12px 24px; border-radius: 8px; font-weight: 600; display: inline-block;">Розгорнути статтю</a>
+          <a href="/heat-pumps/" class="read-more-btn" style="text-decoration: none; border: none; background: #1e5a8e; color: #ffffff; padding: 12px 24px; border-radius: 8px; font-weight: 600; display: inline-block;">Про теплові насоси більше</a>
+          <a href="/" class="read-more-btn" style="text-decoration: none; border: none; background: var(--primary-dark); color: #ffffff; padding: 12px 24px; border-radius: 8px; font-weight: 600; display: inline-block;">На головну</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2026 Дмитро Царенко. Усі права захищені.</p>
+  </footer>
+
+  <script>
+    function toggleArticle(articleId) {
+      const article = document.getElementById(articleId);
+      const articlesList = document.getElementById('articles-list');
+
+      if (article.style.display === 'none') {
+        article.style.display = 'block';
+        articlesList.classList.remove('show');
+        window.location.hash = articleId;
+      } else {
+        article.style.display = 'none';
+        articlesList.classList.add('show');
+        if (window.location.hash === '#' + articleId) {
+          history.pushState("", document.title, window.location.pathname + window.location.search);
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const nav = document.querySelector('nav');
+      const menuOverlay = document.querySelector('.menu-overlay');
+
+      if (mobileMenuToggle && nav && menuOverlay) {
+        function toggleMenu() {
+          const isActive = nav.classList.contains('active');
+          mobileMenuToggle.classList.toggle('active', !isActive);
+          nav.classList.toggle('active', !isActive);
+          menuOverlay.classList.toggle('active', !isActive);
+          document.body.style.overflow = !isActive ? 'hidden' : '';
+        }
+
+        mobileMenuToggle.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+      }
+    });
+  </script>
+</body>
+</html>
