@@ -422,7 +422,7 @@
           <h3>${article.title}</h3>
           <p>${article.excerpt}</p>
           <span class="article-date">${formattedDate}</span>
-          <a href="blog-article-${article.slug}.html" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
+          <a href="/blog/${article.slug}/" class="read-more-btn" style="text-decoration: none;">Докладніше</a>
         `;
 
         articlesContainer.insertBefore(articleElement, articlesContainer.firstChild);
