@@ -111,15 +111,15 @@
     </div>
     <div class="metrics-container">
       <a href="/blog/" class="metric-item">
-        <div class="metric-number" data-target="25">0</div>
+        <div class="metric-number" id="stat-blog" data-target="0">0</div>
         <div class="metric-label">Експертних матеріалів</div>
       </a>
       <a href="/heat-pumps/" class="metric-item">
-        <div class="metric-number" data-target="13">0</div>
+        <div class="metric-number" id="stat-heat-pumps" data-target="0">0</div>
         <div class="metric-label">Статей про теплові насоси</div>
       </a>
       <a href="/efficiency/" class="metric-item">
-        <div class="metric-number" data-target="3">0</div>
+        <div class="metric-number" id="stat-efficiency" data-target="0">0</div>
         <div class="metric-label">Статті про енергоефективність</div>
       </a>
     </div>
@@ -163,6 +163,55 @@
       }, 16);
     }
 
+    // Auto-count articles from each section
+    async function updateMetricCounts() {
+      try {
+        // Count blog articles
+        const blogResponse = await fetch('/blog/');
+        const blogHtml = await blogResponse.text();
+        const blogParser = new DOMParser();
+        const blogDoc = blogParser.parseFromString(blogHtml, 'text/html');
+        const blogCount = blogDoc.querySelectorAll('article.article').length;
+
+        // Count heat pumps articles
+        const heatPumpsResponse = await fetch('/heat-pumps/');
+        const heatPumpsHtml = await heatPumpsResponse.text();
+        const heatPumpsParser = new DOMParser();
+        const heatPumpsDoc = heatPumpsParser.parseFromString(heatPumpsHtml, 'text/html');
+        const heatPumpsCount = heatPumpsDoc.querySelectorAll('article.article').length;
+
+        // Count efficiency articles
+        const efficiencyResponse = await fetch('/efficiency/');
+        const efficiencyHtml = await efficiencyResponse.text();
+        const efficiencyParser = new DOMParser();
+        const efficiencyDoc = efficiencyParser.parseFromString(efficiencyHtml, 'text/html');
+        const efficiencyCount = efficiencyDoc.querySelectorAll('article.article').length;
+
+        // Update data-target attributes
+        const blogStat = document.getElementById('stat-blog');
+        const heatPumpsStat = document.getElementById('stat-heat-pumps');
+        const efficiencyStat = document.getElementById('stat-efficiency');
+
+        if (blogStat) blogStat.setAttribute('data-target', blogCount);
+        if (heatPumpsStat) heatPumpsStat.setAttribute('data-target', heatPumpsCount);
+        if (efficiencyStat) efficiencyStat.setAttribute('data-target', efficiencyCount);
+
+      } catch (error) {
+        console.error('Error counting articles:', error);
+        // Fallback to manual counts if fetch fails
+        const blogStat = document.getElementById('stat-blog');
+        const heatPumpsStat = document.getElementById('stat-heat-pumps');
+        const efficiencyStat = document.getElementById('stat-efficiency');
+
+        if (blogStat) blogStat.setAttribute('data-target', '26');
+        if (heatPumpsStat) heatPumpsStat.setAttribute('data-target', '14');
+        if (efficiencyStat) efficiencyStat.setAttribute('data-target', '3');
+      }
+    }
+
+    // Call update function on page load
+    updateMetricCounts();
+
     // Intersection Observer to trigger animation when metrics section is visible
     const metricsObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -170,7 +219,9 @@
           const metricNumbers = entry.target.querySelectorAll('.metric-number[data-target]');
           metricNumbers.forEach(element => {
             const target = parseInt(element.getAttribute('data-target'));
-            animateCounter(element, target);
+            if (target > 0) {
+              animateCounter(element, target);
+            }
           });
           metricsObserver.unobserve(entry.target);
         }
