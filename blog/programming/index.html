@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <meta charset="UTF-8">
+  <title>Роль програмування в сучасних теплових насосах - Дмитро Царенко</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Від обладнання до керованої енергосистеми будинку. Як програмування визначає ефективність теплових насосів">
+  <meta property="og:title" content="Роль програмування в сучасних теплових насосах - Дмитро Царенко">
+  <meta property="og:description" content="Від обладнання до керованої енергосистеми будинку">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://dtsarenko.live/blog/programming/">
+  <meta property="og:site_name" content="Дмитро Царенко">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Роль програмування в сучасних теплових насосах - Дмитро Царенко">
+  <meta name="twitter:description" content="Від обладнання до керованої енергосистеми будинку">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <style>:root{--primary-dark:#0a1628;--secondary-dark:#151922;--accent-gold:#ffd643;--accent-gold-dark:#e6c135;--accent-gold-light:#ffe76b;--text-primary:#0f1419;--text-secondary:#536471;--text-light:#8899a6;--bg-dark:#0d1117;--bg-darker:#010409;--bg-light:#f6f8fa;--bg-white:#ffffff;--border-color:#30363d;--border-light:#e7ecf0;--shadow-sm:0 2px 8px rgba(0,0,0,0.1);--shadow-md:0 4px 16px rgba(0,0,0,0.15);--shadow-lg:0 8px 32px rgba(0,0,0,0.2);--shadow-xl:0 12px 48px rgba(0,0,0,0.25)}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f6f8fa;color:var(--text-primary);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding-top:88px}header{background:var(--primary-dark);backdrop-filter:blur(20px);border-bottom:3px solid var(--accent-gold);position:fixed;top:0;left:0;right:0;width:100%;z-index:1002;box-shadow:var(--shadow-lg);transition:all 0.3s ease}.header-content{max-width:1280px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center}.logo{text-decoration:none;transition:transform 0.3s ease;display:flex;flex-direction:column;gap:2px}.logo:hover{transform:scale(1.02)}.logo-name{font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:#ffffff;letter-spacing:-0.5px;line-height:1;text-shadow:0 2px 8px rgba(0,0,0,0.3)}.logo-tagline{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;color:var(--accent-gold);opacity:1;letter-spacing:0.5px;text-transform:uppercase}nav{display:flex;gap:40px;align-items:center}nav a{color:rgba(255,255,255,0.9);text-decoration:none;font-size:15px;font-weight:600;position:relative;transition:all 0.3s ease;letter-spacing:0.3px}nav a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:3px;background:var(--accent-gold);transition:width 0.3s ease;box-shadow:0 0 8px var(--accent-gold)}nav a:hover{color:var(--accent-gold)}nav a:hover::after{width:100%}.mobile-menu-toggle{display:none;flex-direction:column;gap:6px;background:none;border:none;cursor:pointer;padding:8px;z-index:1003;touch-action:manipulation;-webkit-tap-highlight-color:transparent}.mobile-menu-toggle span{width:28px;height:3px;background:#ffffff;border-radius:2px;transition:transform 0.2s cubic-bezier(0.4,0,0.2,1),opacity 0.2s ease;will-change:transform,opacity}.mobile-menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(8px,8px);background:#000000}.mobile-menu-toggle.active span:nth-child(2){opacity:0}.mobile-menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(8px,-8px);background:#000000}.menu-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);opacity:0;visibility:hidden;transition:opacity 0.25s ease,visibility 0.25s ease;z-index:999}.menu-overlay.active{opacity:1;visibility:visible}.container{max-width:1280px;margin:0 auto;padding:80px 40px}.section{background:transparent;border-radius:0;padding:40px 0;transition:all 0.3s ease;position:relative;scroll-margin-top:100px}.section h2{font-family:'Playfair Display',serif;font-size:42px;font-weight:800;margin-bottom:40px;color:var(--primary-dark);padding-bottom:20px;border-bottom:4px solid var(--accent-gold);display:inline-block;letter-spacing:-0.5px;position:relative;box-shadow:0 4px 0 0 rgba(255,214,67,0.2)}.section h2::after{content:'';position:absolute;bottom:-4px;left:0;width:50%;height:4px;background:var(--accent-gold);box-shadow:0 0 10px var(--accent-gold)}.article-content{margin-top:32px;line-height:1.8}.article-content h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--primary-dark);margin:48px 0 24px;line-height:1.3;letter-spacing:-0.5px}.article-content h4{font-size:20px;font-weight:600;margin-top:36px;margin-bottom:16px;color:#1a1a1a}.article-content p{font-size:16px;color:var(--text-secondary);margin-bottom:20px;line-height:1.8}.article-content em{font-style:italic;color:var(--text-secondary)}.article-content strong{font-weight:700;color:var(--text-primary)}.article-content ul,.article-content ol{margin:20px 0;padding-left:28px;color:var(--text-secondary)}.article-content li{margin-bottom:12px;line-height:1.7}.article-date{font-size:12px;color:var(--accent-gold-dark);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(255,214,67,0.1);padding:6px 12px;border-radius:6px;display:inline-block;margin-bottom:24px}.read-more-btn{margin-top:16px;padding:12px 24px;font-size:14px;font-weight:600;color:#ffffff;background:var(--primary-dark);border:none;border-radius:8px;cursor:pointer;transition:all 0.3s ease;letter-spacing:0.3px;display:inline-block;text-decoration:none}.read-more-btn:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(10,22,40,0.2)}.read-more-btn.secondary{background:var(--accent-gold);color:var(--primary-dark)}.expert-quote{background:rgba(255,214,67,0.05);border-left:4px solid var(--accent-gold);padding:24px 28px;margin:32px 0;border-radius:0 8px 8px 0}.expert-quote p{margin-bottom:12px;font-size:15px;line-height:1.7}.expert-quote p:last-child{margin-bottom:0}footer{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--secondary-dark) 100%);color:rgba(255,255,255,0.9);padding:64px 40px;text-align:center;margin-top:100px;position:relative;overflow:hidden}footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent-gold);box-shadow:0 0 20px var(--accent-gold)}footer p{font-size:15px;letter-spacing:0.5px;opacity:0.85}@media (max-width:1024px){.container{padding:60px 32px}.section h2{font-size:36px}}@media (max-width:768px){body{padding-top:84px}.header-content{padding:20px 24px}.logo-name{font-size:24px}.logo-tagline{font-size:11px}.mobile-menu-toggle{display:flex}nav{position:fixed;top:0;right:0;width:280px;height:100vh;background:rgba(255,255,255,0.98);flex-direction:column;gap:0;padding:80px 24px 24px;box-shadow:-4px 0 24px rgba(0,0,0,0.1);transform:translateX(100%);transition:transform 0.25s cubic-bezier(0.4,0,0.2,1);will-change:transform;z-index:1001;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}nav.active{transform:translateX(0)}nav a{font-size:16px;padding:16px 0;border-bottom:1px solid var(--border-color);width:100%;color:var(--primary-dark)}nav a:hover{color:var(--accent-gold-dark)}nav a::after{display:none}.container{padding:48px 24px}.section h2{font-size:32px}footer{padding:48px 24px;margin-top:64px}}@media (max-width:520px){body{padding-top:72px}.header-content{padding:16px 20px}.logo-name{font-size:20px}.logo-tagline{font-size:10px}nav{width:260px}.container{padding:40px 20px}}</style>
+</head>
+<body>
+  <div class="menu-overlay"></div>
+  <header>
+    <div class="header-content">
+      <a href="/" class="logo">
+        <span class="logo-name">Дмитро Царенко</span>
+        <span class="logo-tagline">Теплові насоси · Енергоефективність</span>
+      </a>
+      <button class="mobile-menu-toggle" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <a href="/about/">Про автора</a>
+        <a href="/publications/">Наукові публікації</a>
+        <a href="/blog/">Блог</a>
+        <a href="/heat-pumps/">Теплові насоси</a>
+        <a href="/efficiency/">Енергоефективність</a>
+        <a href="/business/">Бізнес</a>
+        <a href="/contact/">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="section">
+      <h2>Роль програмування в сучасних теплових насосах</h2>
+      <span class="article-date">Січень 2026</span>
+
+      <div class="article-content">
+        <h3>Від обладнання до керованої енергосистеми будинку</h3>
+
+        <p>Ще 10–15 років тому ефективність систем опалення визначалася обладнанням: котел, теплові насоси, вентиляційна установка. Сьогодні центр ваги змістився.</p>
+
+        <p>На практиці роботи з приватними будинками, котеджними містечками та складними інженерними об'єктами стає очевидно:</p>
+
+        <p><strong>Сучасні теплові насоси — це вже не просто джерела тепла. Це програмні системи, які керують енергією будинку.</strong></p>
+
+        <p>І саме програмування визначає, чи буде тепловий насос працювати як "дорогий прилад", чи як непомітний, автономний і керований елемент енергосистеми будинку.</p>
+
+        <h3>1. Що означає програмування в сучасних теплових насосах</h3>
+
+        <p>Для більшості власників будинків програмування теплових насосів асоціюється з мобільним застосунком або сенсорним дисплеєм. Але це лише верхній рівень.</p>
+
+        <p>Насправді програмування в теплових насосах відповідає за:</p>
+
+        <ul>
+          <li>алгоритми запуску і зупинки компресора теплового насоса</li>
+          <li>погодозалежне керування системами опалення</li>
+          <li>пріоритети між опаленням, гарячим водопостачанням та охолодженням</li>
+          <li>антициклічні та захисні режими роботи теплових насосів</li>
+          <li>взаємодію теплового насоса з системами вентиляції</li>
+          <li>роботу з тепловою інерцією будівлі</li>
+          <li>оптимізацію споживання електроенергії тепловими насосами</li>
+        </ul>
+
+        <p>Фактично це мозок системи, який керує тепловим насосом і щосекунди приймає рішення замість людини.</p>
+
+        <h3>2. Наскільки глибоко програмування покриває інженерні процеси</h3>
+
+        <p>У добре побудованій системі теплові насоси працюють у логіці повного програмного циклу:</p>
+
+        <h4>Збір даних</h4>
+        <p>Температури, зовнішні умови, стан контурів теплового насоса, споживання електроенергії, робота фотоелектричних систем, тарифні зони.</p>
+
+        <h4>Аналіз і прогноз</h4>
+        <p>Погодні сценарії, теплове навантаження будівлі, теплова інерція конструкцій.</p>
+
+        <h4>Прийняття рішень</h4>
+        <p>Коли тепловому насосу гріти, коли чекати, що має пріоритет, як уникнути пікових навантажень.</p>
+
+        <h4>Оптимізація</h4>
+        <p>Комфорт ↔ економіка ↔ ресурс теплового насоса.</p>
+
+        <p>Коли цього рівня немає — тепловий насос працює як окремий пристрій. Коли він є — теплові насоси стають частиною енергетичного організму будинку.</p>
+
+        <h3>3. Який рівень програмування використовують сучасні теплові насоси</h3>
+
+        <p>Сучасні теплові насоси працюють на вбудованих системах керування реального часу. Для користувача важлива не мова програмування, а можливості логіки керування тепловим насосом та його інтеграції з іншими інженерними системами.</p>
+
+        <p>Типовий рівень галузі:</p>
+
+        <ul>
+          <li>локальна автоматика теплового насоса (працює навіть без інтернету)</li>
+          <li>погодозалежні алгоритми керування</li>
+          <li>системи самодіагностики обладнання</li>
+          <li>стандартні протоколи інтеграції з іншими системами автоматизації</li>
+          <li>хмарні сервіси для сервісного обслуговування та аналітики</li>
+        </ul>
+
+        <p>Теплові насоси європейського рівня вже давно працюють у цій парадигмі. Різниця між системами — у філософії програмування та глибині системної логіки.</p>
+
+        <h3>4. Дві філософії програмування теплових насосів</h3>
+
+        <h4>Тепловий насос як автономний агрегат</h4>
+        <ul>
+          <li>сильна локальна автоматика</li>
+          <li>фокус на стабільності роботи самого теплового насоса</li>
+          <li>інтеграція з іншими системами — вторинна</li>
+        </ul>
+
+        <h4>Тепловий насос як частина енергосистеми будинку</h4>
+        <ul>
+          <li>тепловий насос — один з керованих елементів</li>
+          <li>тісна інтеграція з фотоелектричними системами</li>
+          <li>робота з тарифними зонами</li>
+          <li>оптимізація не лише температури, а й споживання енергії</li>
+        </ul>
+
+        <p>Це не питання "краще–гірше". Це питання цілей власника і архітектури інженерної системи.</p>
+
+        <h3>5. Штучний інтелект у теплових насосах: де реальність, а де маркетинг</h3>
+
+        <p>У побутових інженерних системах штучний інтелект у теплових насосах — це не "штучний розум у компресорі".</p>
+
+        <p>На практиці це:</p>
+
+        <ul>
+          <li>прогнозування теплового навантаження будівлі</li>
+          <li>адаптація роботи теплового насоса до поведінки мешканців</li>
+          <li>оптимізація роботи теплових насосів разом із фотоелектричними системами</li>
+          <li>аналіз історичних даних експлуатації</li>
+          <li>робота з тарифними зонами електропостачання</li>
+        </ul>
+
+        <p><strong>Важливо: Штучний інтелект не виправляє поганий проєкт теплового насоса. Він лише підсилює правильно побудовану систему.</strong></p>
+
+        <h3>6. Покімнатний клімат: програмування на рівні комфорту</h3>
+
+        <p>Покімнатне керування — одна з найскладніших задач сучасної інженерії теплових насосів.</p>
+
+        <p>Програмування має враховувати:</p>
+
+        <ul>
+          <li>різну теплову інерцію окремих приміщень</li>
+          <li>різні сценарії використання кімнат</li>
+          <li>поєднання опалення, охолодження і вентиляції</li>
+          <li>баланс між швидкою реакцією та економією</li>
+        </ul>
+
+        <p>Саме тут стає очевидною різниця між <strong>керуванням температурою</strong> і <strong>керуванням комфортом</strong>.</p>
+
+        <h3>7. Заводські платформи чи незалежні системи керування</h3>
+
+        <h4>Заводські платформи</h4>
+        <ul>
+          <li>стабільність</li>
+          <li>відповідальність виробника</li>
+          <li>готові алгоритми</li>
+        </ul>
+
+        <h4>Незалежні системи керування та диспетчеризації</h4>
+        <ul>
+          <li>максимальна гнучкість</li>
+          <li>мультибрендовість</li>
+          <li>залежність від кваліфікації програміста</li>
+        </ul>
+
+        <p>Найкращі об'єкти — гібридні: базова логіка і безпека — на стороні виробника, сценарії та інтеграції — у незалежній системі.</p>
+
+        <h3>8. Фотоелектричні системи + теплові насоси + програмування: підготовка до динамічних тарифів</h3>
+
+        <p>Європа вже живе в реальності:</p>
+
+        <ul>
+          <li>погодинних тарифів</li>
+          <li>розумних лічильників</li>
+          <li>керування навантаженням у реальному часі</li>
+        </ul>
+
+        <p>Україна неминуче прийде до цього.</p>
+
+        <p><strong>Системи теплових насосів без програмної логіки оптимізації втратять актуальність.</strong></p>
+
+        <h3>Міжнародні експертні позиції</h3>
+
+        <div class="expert-quote">
+          <p><strong>Branislav B. Todorović</strong><br>професор механічної інженерії, експерт з енергоефективних будівель і HVAC, багаторічний редактор журналу Energy and Buildings</p>
+
+          <p><em>"Modern heating and cooling systems cannot reach high efficiency if they are treated as a collection of individual devices. Integrated control strategies and digital management are essential."</em></p>
+
+          <p><strong>Переклад:</strong><br>"Сучасні системи опалення та охолодження не можуть досягти високої ефективності, якщо їх розглядати як набір окремих пристроїв. Інтегровані стратегії керування та цифрове управління є критично необхідними."</p>
+
+          <p><strong>Про що:</strong> ефективність інженерних систем визначається не обладнанням окремо, а логікою їх взаємодії та керування.</p>
+
+          <p><strong>Джерело:</strong><br><a href="https://en.wikipedia.org/wiki/Branislav_Todorovi%C4%87" target="_blank" style="color: var(--accent-gold-dark);">https://en.wikipedia.org/wiki/Branislav_Todorović</a></p>
+        </div>
+
+        <div class="expert-quote">
+          <p><strong>REHVA — Federation of European Heating, Ventilation and Air Conditioning Associations</strong><br>(Європейська федерація асоціацій з опалення, вентиляції та кондиціонування)</p>
+
+          <p><em>"Increasing the energy flexibility of buildings and improving indoor climate requires HVAC systems to be smarter than they are today."</em></p>
+
+          <p><strong>Переклад:</strong><br>"Підвищення енергетичної гнучкості будівель і покращення внутрішнього мікроклімату вимагає, щоб HVAC-системи були розумнішими, ніж сьогодні."</p>
+
+          <p><strong>Про що:</strong> майбутнє інженерії будівель — за програмним керуванням, аналізом даних і адаптивною логікою.</p>
+
+          <p><strong>Джерело:</strong><br><a href="https://www.rehva.eu/rehva-journal/chapter/business-and-competitiveness-benefits-with-smart-systems" target="_blank" style="color: var(--accent-gold-dark);">https://www.rehva.eu/rehva-journal/chapter/business-and-competitiveness-benefits-with-smart-systems</a></p>
+        </div>
+
+        <h3>Практичний досвід автора</h3>
+
+        <p>Коли я вперше почув словосполучення "тепловий насос", воно сприймалося мною досить утилітарно — як черговий модний різновид котла, який просто працює і гріє будинок. Щоб зрозуміти реальну роль теплового насоса в будинку, мені знадобилось кілька років практичної роботи з різними об'єктами, системами та виробниками.</p>
+
+        <p>Саме програмування стало тим рівнем, який розділив системи на "обладнання" та "рішення". І саме програмна логіка виявилася найбільш критичним елементом, який визначає, чи буде система працювати як задум інженера, чи як набір непередбачуваних реакцій на зміну умов.</p>
+
+        <h3>Підсумок</h3>
+
+        <p>Програмування стало ядром сучасних теплових насосів. І саме воно визначає:</p>
+
+        <ul>
+          <li>комфорт</li>
+          <li>економіку</li>
+          <li>автономність</li>
+          <li>готовність до майбутніх змін енергетичного ринку</li>
+        </ul>
+
+        <p><strong>У цій реальності виграють не бренди, а системні інженерні рішення, і не просто інсталятори, а фахівці, які мислять кодом.</strong></p>
+
+        <div style="display: flex; gap: 16px; margin-top: 40px; flex-wrap: wrap;">
+          <a href="/blog/" class="read-more-btn secondary">Назад до блогу</a>
+          <a href="/" class="read-more-btn">На головну</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Дмитро Царенко. Всі права захищені.</p>
+  </footer>
+
+  <script>
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('nav');
+    const menuOverlay = document.querySelector('.menu-overlay');
+
+    function toggleMenu() {
+      const isActive = nav.classList.contains('active');
+      mobileMenuToggle.classList.toggle('active', !isActive);
+      nav.classList.toggle('active', !isActive);
+      menuOverlay.classList.toggle('active', !isActive);
+      document.body.style.overflow = !isActive ? 'hidden' : '';
+    }
+
+    mobileMenuToggle.addEventListener('click', toggleMenu);
+    menuOverlay.addEventListener('click', toggleMenu);
+  </script>
+</body>
+</html>
