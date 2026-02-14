@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <meta charset="UTF-8">
+  <title>Практичний досвід: чому головне — не тип насоса - Дмитро Царенко</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Реальний проєкт теплового насоса: практичний досвід, помилки монтажу, діагностика проблем, роль інженера-куратора. Чому результат залежить не від типу насоса.">
+  <meta property="og:title" content="Практичний досвід: чому головне — не тип насоса">
+  <meta property="og:description" content="Реальний проєкт теплового насоса: практичний досвід, помилки, роль інженера.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://dtsarenko.live/blog/heat-pump-practical-experience/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
+  <style>:root{--primary-dark:#0a1628;--accent-gold:#ffd643;--accent-gold-dark:#e6c135;--text-primary:#0f1419;--text-secondary:#536471;--bg-light:#f6f8fa;--shadow-lg:0 8px 32px rgba(0,0,0,0.2)}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Inter',sans-serif;background:#f6f8fa;color:var(--text-primary);line-height:1.7;font-size:16px;padding-top:88px}header{background:var(--primary-dark);border-bottom:3px solid var(--accent-gold);position:fixed;top:0;left:0;right:0;width:100%;z-index:1002;box-shadow:var(--shadow-lg)}.header-content{max-width:1280px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center}.logo{text-decoration:none;display:flex;flex-direction:column;gap:2px}.logo-name{font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:#ffffff}.logo-tagline{font-size:12px;font-weight:600;color:var(--accent-gold);text-transform:uppercase}nav{display:flex;gap:40px}nav a{color:rgba(255,255,255,0.9);text-decoration:none;font-size:15px;font-weight:600;transition:all 0.3s ease}nav a:hover{color:var(--accent-gold)}.container{max-width:1280px;margin:0 auto;padding:80px 40px}.section h2{font-family:'Playfair Display',serif;font-size:42px;font-weight:800;margin-bottom:40px;color:var(--primary-dark);padding-bottom:20px;border-bottom:4px solid var(--accent-gold);display:inline-block}.article-content{margin-top:32px;line-height:1.8}.article-content h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--primary-dark);margin:48px 0 24px}.article-content h4{font-size:20px;font-weight:600;margin-top:36px;margin-bottom:16px;color:#1a1a1a}.article-content p{font-size:16px;color:var(--text-secondary);margin-bottom:20px}.article-content strong{font-weight:700;color:var(--text-primary)}.article-content ul{margin:20px 0;padding-left:28px;color:var(--text-secondary)}.article-content li{margin-bottom:12px}.article-content blockquote{background:rgba(255,214,67,0.05);border-left:4px solid var(--accent-gold);padding:24px 28px;margin:32px 0;border-radius:0 8px 8px 0}.article-content a{color:var(--accent-gold-dark);text-decoration:underline}.article-date{font-size:12px;color:var(--accent-gold-dark);font-weight:700;text-transform:uppercase;background:rgba(255,214,67,0.1);padding:6px 12px;border-radius:6px;display:inline-block;margin-bottom:24px}.read-more-btn{margin-top:16px;padding:12px 24px;font-size:14px;font-weight:600;color:#ffffff;background:var(--primary-dark);border:none;border-radius:8px;transition:all 0.3s ease;display:inline-block;text-decoration:none}.read-more-btn:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(10,22,40,0.2)}.read-more-btn.secondary{background:var(--accent-gold);color:var(--primary-dark)}footer{background:linear-gradient(135deg,var(--primary-dark) 0%,#151922 100%);color:rgba(255,255,255,0.9);padding:64px 40px;text-align:center;margin-top:100px}footer p{font-size:15px;opacity:0.85}</style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <a href="/" class="logo">
+        <span class="logo-name">Дмитро Царенко</span>
+        <span class="logo-tagline">Теплові насоси · Енергоефективність</span>
+      </a>
+      <nav>
+        <a href="/about/">Про автора</a>
+        <a href="/publications/">Публікації</a>
+        <a href="/blog/">Блог</a>
+        <a href="/heat-pumps/">Теплові насоси</a>
+        <a href="/contact/">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="section">
+      <h2>Практичний досвід: чому головне — не тип насоса</h2>
+      <span class="article-date">Лютий 2026</span>
+
+      <div class="article-content">
+        <blockquote>
+          <p><strong>Частина 6 з 8</strong> гайду "<a href="/blog/teplovyi-nasos-povitrya-voda-chy-grunt-voda/">Тепловий насос повітря–вода чи ґрунт–вода: який кращий?</a>"</p>
+        </blockquote>
+
+        <p>Мій практичний досвід із тепловими насосами почався приблизно у 2017 році в Київській області — у час, коли на ринку вже було багато «готових відповідей», але значно менше системного інженерного підходу. Тоді я вперше чітко побачив, що клієнт зазвичай приходить не за обладнанням. Він приходить за відчуттям: «у моєму будинку має бути тепло, прогнозовано, економно і без сюрпризів». А вже потім — за рішенням, яке цей результат забезпечить.</p>
+
+        <p>Один із перших клієнтів, Віктор, звернувся з досить типовим запитом: у нього вже працював газовий котел, але він хотів додатково встановити тепловий насос. Причини були зрозумілі: бажання знизити витрати, отримати сучасну систему, мати альтернативу газу, стати більш незалежним і керованим у витратах. Він не був «фанатом технології» — він прагнув контролю та результату.</p>
+
+        <h3>Незалежність як основа довіри</h3>
+
+        <p>На той момент ринок був поляризований. Одні компанії продавали тільки повітря–вода і переконували, що геотермальна система «надто дорога і не потрібна». Інші пропонували лише ґрунт–вода і доводили, що повітря–вода «не працює в мороз». І майже всі говорили впевнено, але з однією проблемою: вони просували не рішення, а товар.</p>
+
+        <p>Мій підхід був іншим: я запропонував Віктору два повноцінні варіанти — і повітря–вода, і ґрунт–вода — з реальними плюсами, обмеженнями, вимогами до ділянки та електрики, сценаріями роботи в мороз, поведінкою на ГВП і можливостями кондиціонування. Для клієнта це було важливо психологічно: він побачив, що перед ним не продавець одного рішення, а інженер, який здатен відповідати за результат незалежно від типу системи.</p>
+
+        <p>Цей момент часто недооцінюють. Але саме він формує справжню довіру. Клієнт починає сприймати розмову не як «переконування», а як спільне проєктування.</p>
+
+        <h3>Перший поворот: проблема була не в котельні</h3>
+
+        <p>Коли ми почали заглиблюватись, з'ясувалось, що базова проблема — зовсім не джерело тепла. Віктор скаржився, що на другому поверсі прохолодно, частина приміщень гріється нерівномірно, а тепла підлога на першому поверсі «ніби працює, але не скрізь». Це якраз той випадок, коли людина інтуїтивно шукає «сильніший котел» або «дорожчий насос», але в реальності проблема лежить в іншому.</p>
+
+        <p>Ми почали з того, з чого завжди потрібно починати: з діагностики системи і причин теплового дискомфорту. І вже на цьому етапі стало очевидно, що:</p>
+
+        <ul>
+          <li>система розподілу тепла в будинку не була збалансована;</li>
+          <li>частина контурів працювала некоректно;</li>
+          <li>гідравліка була зібрана «як вийшло», без ясної логіки;</li>
+          <li>і найголовніше — ніхто ніколи не перевіряв, куди реально тікає тепло з будинку.</li>
+        </ul>
+
+        <h3>Тепловтрати: момент, який шокує власника</h3>
+
+        <p>Наступним кроком було залучення фахівців для аналізу тепловтрат і якості огороджувальних конструкцій. І висновок був дуже жорстким: основні втрати тепла йшли через дах. Причому не в межах «трохи піддуває», а так, що це фактично робило будь-яку модернізацію котельні половинчастою.</p>
+
+        <p>Це той момент, який психологічно ламає стандартне очікування власника. Бо людина зазвичай думає так: «я куплю сучасне обладнання — і стане краще». А тут виходить, що щоб стало краще, потрібно розбирати вже готову частину будинку, лізти в конструкції, знімати покриття, переробляти утеплення.</p>
+
+        <p>Рішення переутеплювати дах означало:</p>
+
+        <ul>
+          <li>демонтаж частини покрівлі/черепиці (залежно від зони);</li>
+          <li>відновлення паро- та вітрозахисту;</li>
+          <li>правильну роботу з вузлами примикань;</li>
+          <li>усунення містків холоду;</li>
+          <li>контроль герметичності шару (бо «утеплення» без герметичності — це лише матеріал, а не результат).</li>
+        </ul>
+
+        <p>Віктор прийняв це рішення. І це було ключовим: він не шукав «дешевий шлях». Він хотів правильний.</p>
+
+        <h3>Систему опалення довелося вилікувати в готовому будинку</h3>
+
+        <p>Паралельно ми зробили те, що багато хто намагається оминути, бо це складно і не дуже «продається»: ми перерахували тепловтрати по кожному приміщенню та перевірили, чи відповідає їм наявна система розподілу тепла.</p>
+
+        <p>І тут виявилась класика:</p>
+
+        <ul>
+          <li>десь не вистачало потужності приладів;</li>
+          <li>десь контури підлоги були завеликі або, навпаки, занадто «придушені»;</li>
+          <li>частина магістралей потребувала переробки, бо створювала зайві втрати тиску або перекоси по витратах.</li>
+        </ul>
+
+        <p>Складність полягала в тому, що будинок уже був з ремонтом. Тобто кожне втручання — це не «будівельний майданчик», а робота під відповідальність: акуратно, точково, з повагою до готових інтер'єрів і без «зараз розберемо — потім зробимо».</p>
+
+        <p>Ми налаштували теплу підлогу першого поверху на комфортний режим, вирівняли гідравліку, забезпечили правильні витрати. І лише тоді почали говорити про джерело тепла по-справжньому — коли стало зрозуміло, що будинок готовий прийняти правильну потужність, а не «підсилювати хаос у системі».</p>
+
+        <h3>Геотермія як наслідок, а не як ціль</h3>
+
+        <p>Паралельно з усіма роботами в будинку розпочалося проєктування геотермального поля зі свердловинами. Тут важливий принцип: геотермальне поле не проєктують «на око», і його не проєктують першим кроком. Спочатку потрібно:</p>
+
+        <ul>
+          <li>зрозуміти реальні тепловтрати будинку після усунення головних проблем;</li>
+          <li>визначити робочу температуру опалення;</li>
+          <li>закласти сценарії ГВП і, за потреби, кондиціонування;</li>
+          <li>і вже тоді рахувати геополе як частину системи.</li>
+        </ul>
+
+        <h3>Головний висновок: відповідь не повітря чи ґрунт</h3>
+
+        <p>Після цього проєкту я остаточно сформулював для себе просту істину: питання «що краще — ґрунт–вода чи повітря–вода» дуже часто є неправильним питанням. Правильне питання інше:</p>
+
+        <p><strong>Що потрібно зробити, щоб у конкретному будинку був гарантований комфорт, прогнозовані витрати та стабільна робота системи протягом років?</strong></p>
+
+        <p>Бо для одного об'єкта повітря–вода буде найкращим рішенням — через готовий ландшафт, адекватну електрику, можливість бівалентного догріву газом чи електрокотлом, або економічну недоцільність буріння. Для іншого — геотермія стане єдиним правильним шляхом через обмежений ввід електроенергії, бажання повної автономності, потребу в пасивному кондиціонуванні або довгострокову логіку інвестиції.</p>
+
+        <p>Є хороша метафора: «танцював-танцював, та не вклонився». У нашій сфері це виглядає так: можна змонтувати дорогий тепловий насос, але якщо не зробити інженерію правильно — клієнт не відчує результату. А якщо зробити правильно — клієнт не помічає систему, бо вона працює так, як має працювати: спокійно, прогнозовано, без факапів.</p>
+
+        <p>Саме тому роль інженера і професійного інсталятора — не «продати тепловий насос», а зняти з клієнта ризик і дати йому те, заради чого він звернувся: тепло, комфорт і впевненість.</p>
+
+        <div style="display: flex; gap: 16px; margin-top: 40px; flex-wrap: wrap;">
+          <a href="/blog/teplovyi-nasos-povitrya-voda-chy-grunt-voda/" class="read-more-btn secondary">← До головного гайду</a>
+          <a href="/blog/heat-pump-market-trends/" class="read-more-btn">Наступний розділ: Ринкові тенденції →</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Дмитро Царенко. Всі права захищені.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <meta charset="UTF-8">
+  <title>Підбір потужності і точка бівалентності для теплового насоса - Дмитро Царенко</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Що таке точка бівалентності теплового насоса, як правильно підібрати потужність, резервний догрів, інженерні наслідки збільшення потужності.">
+  <meta property="og:title" content="Підбір потужності і точка бівалентності для теплового насоса">
+  <meta property="og:description" content="Що таке точка бівалентності теплового насоса, як правильно підібрати потужність, резервний догрів.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://dtsarenko.live/blog/heat-pump-power-bivalence/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <style>:root{--primary-dark:#0a1628;--secondary-dark:#151922;--accent-gold:#ffd643;--accent-gold-dark:#e6c135;--text-primary:#0f1419;--text-secondary:#536471;--bg-light:#f6f8fa;--bg-white:#ffffff;--border-color:#30363d;--shadow-sm:0 2px 8px rgba(0,0,0,0.1);--shadow-md:0 4px 16px rgba(0,0,0,0.15);--shadow-lg:0 8px 32px rgba(0,0,0,0.2)}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f6f8fa;color:var(--text-primary);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;padding-top:88px}header{background:var(--primary-dark);backdrop-filter:blur(20px);border-bottom:3px solid var(--accent-gold);position:fixed;top:0;left:0;right:0;width:100%;z-index:1002;box-shadow:var(--shadow-lg)}.header-content{max-width:1280px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center}.logo{text-decoration:none;display:flex;flex-direction:column;gap:2px}.logo-name{font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:#ffffff;letter-spacing:-0.5px;text-shadow:0 2px 8px rgba(0,0,0,0.3)}.logo-tagline{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;color:var(--accent-gold);letter-spacing:0.5px;text-transform:uppercase}nav{display:flex;gap:40px;align-items:center}nav a{color:rgba(255,255,255,0.9);text-decoration:none;font-size:15px;font-weight:600;transition:all 0.3s ease}nav a:hover{color:var(--accent-gold)}.container{max-width:1280px;margin:0 auto;padding:80px 40px}.section{background:transparent;padding:40px 0}.section h2{font-family:'Playfair Display',serif;font-size:42px;font-weight:800;margin-bottom:40px;color:var(--primary-dark);padding-bottom:20px;border-bottom:4px solid var(--accent-gold);display:inline-block;letter-spacing:-0.5px}.article-content{margin-top:32px;line-height:1.8}.article-content h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--primary-dark);margin:48px 0 24px;letter-spacing:-0.5px}.article-content h4{font-size:20px;font-weight:600;margin-top:36px;margin-bottom:16px;color:#1a1a1a}.article-content p{font-size:16px;color:var(--text-secondary);margin-bottom:20px;line-height:1.8}.article-content strong{font-weight:700;color:var(--text-primary)}.article-content ul,.article-content ol{margin:20px 0;padding-left:28px;color:var(--text-secondary)}.article-content li{margin-bottom:12px;line-height:1.7}.article-content blockquote{background:rgba(255,214,67,0.05);border-left:4px solid var(--accent-gold);padding:24px 28px;margin:32px 0;border-radius:0 8px 8px 0}.article-content a{color:var(--accent-gold-dark);text-decoration:underline}.article-date{font-size:12px;color:var(--accent-gold-dark);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(255,214,67,0.1);padding:6px 12px;border-radius:6px;display:inline-block;margin-bottom:24px}.read-more-btn{margin-top:16px;padding:12px 24px;font-size:14px;font-weight:600;color:#ffffff;background:var(--primary-dark);border:none;border-radius:8px;transition:all 0.3s ease;display:inline-block;text-decoration:none}.read-more-btn:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(10,22,40,0.2)}.read-more-btn.secondary{background:var(--accent-gold);color:var(--primary-dark)}footer{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--secondary-dark) 100%);color:rgba(255,255,255,0.9);padding:64px 40px;text-align:center;margin-top:100px}footer p{font-size:15px;letter-spacing:0.5px;opacity:0.85}@media (max-width:768px){.header-content{padding:20px 24px}.logo-name{font-size:24px}.container{padding:48px 24px}.section h2{font-size:32px}}</style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <a href="/" class="logo">
+        <span class="logo-name">Дмитро Царенко</span>
+        <span class="logo-tagline">Теплові насоси · Енергоефективність</span>
+      </a>
+      <nav>
+        <a href="/about/">Про автора</a>
+        <a href="/publications/">Публікації</a>
+        <a href="/blog/">Блог</a>
+        <a href="/heat-pumps/">Теплові насоси</a>
+        <a href="/contact/">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="section">
+      <h2>Підбір потужності і точка бівалентності для теплового насоса</h2>
+      <span class="article-date">Лютий 2026</span>
+
+      <div class="article-content">
+        <blockquote>
+          <p><strong>Частина 3 з 8</strong> гайду "<a href="/blog/teplovyi-nasos-povitrya-voda-chy-grunt-voda/">Тепловий насос повітря–вода чи ґрунт–вода: який кращий?</a>"</p>
+        </blockquote>
+
+        <p>Одним із ключових понять при виборі теплового насоса типу повітря–вода є точка бівалентності. Саме вона визначає, наскільки автономною буде система, як вона поводитиметься в мороз і чи потребуватиме додаткових джерел тепла.</p>
+
+        <h3>Що таке точка бівалентності</h3>
+
+        <p>Точка бівалентності — це температура зовнішнього повітря, до якої тепловий насос здатен повністю покривати тепловтрати будівлі без залучення допоміжних джерел тепла (електричного котла, газового котла, ТЕНів тощо).</p>
+
+        <p>Інакше кажучи:</p>
+
+        <ul>
+          <li>вище цієї температури тепловий насос працює самостійно;</li>
+          <li>нижче — система переходить у бівалентний режим, де частину тепла забезпечує резервне джерело.</li>
+        </ul>
+
+        <p>Важливо розуміти, що точка бівалентності — це не фіксована величина, а результат поєднання:</p>
+
+        <ul>
+          <li>тепловтрат будівлі;</li>
+          <li>реальної теплопродуктивності теплового насоса при низьких температурах;</li>
+          <li>температурного режиму системи опалення.</li>
+        </ul>
+
+        <h3>Як формується точка бівалентності в системах повітря–вода</h3>
+
+        <p>У теплових насосах повітря–вода теплопродуктивність зменшується зі зниженням температури зовнішнього повітря. Це фізична особливість повітряного джерела, яку неможливо усунути, але можна інженерно компенсувати.</p>
+
+        <p>Точка бівалентності визначається перетином двох кривих:</p>
+
+        <ol>
+          <li><strong>Крива тепловтрат будівлі</strong> — зі зростанням морозу тепловтрати зростають.</li>
+          <li><strong>Крива теплопродуктивності теплового насоса</strong> — зі зростанням морозу продуктивність падає.</li>
+        </ol>
+
+        <p>Температура, у якій ці дві криві зрівнюються, і є точкою бівалентності.</p>
+
+        <h3>Чому номінальна потужність не дорівнює реальній</h3>
+
+        <p>Типова помилка — підбір теплового насоса за номінальною потужністю при +7 °C. На практиці ж важливо знати:</p>
+
+        <ul>
+          <li>яку потужність насос видає при 0 °C;</li>
+          <li>при –7 °C;</li>
+          <li>при –15 °C;</li>
+          <li>при –20 °C.</li>
+        </ul>
+
+        <p>Саме ці значення визначають, до якої температури система буде автономною.</p>
+
+        <p>Тепловий насос із номіналом, умовно, 10 кВт при +7 °C може:</p>
+
+        <ul>
+          <li>мати 7–8 кВт при –7 °C;</li>
+          <li>і лише 5–6 кВт при –15 °C.</li>
+        </ul>
+
+        <p>Якщо тепловтрати будинку при –15 °C становлять 8–9 кВт, точка бівалентності такої системи буде значно вищою, ніж очікує замовник.</p>
+
+        <h3>Зниження точки бівалентності: що це означає на практиці</h3>
+
+        <p>Бажання знизити точку бівалентності (тобто зробити систему автономною при нижчих температурах) завжди реалізується за рахунок збільшення потужності теплового насоса.</p>
+
+        <p>Це означає:</p>
+
+        <ul>
+          <li>більший компресор;</li>
+          <li>більший зовнішній блок;</li>
+          <li>більший випаровувач;</li>
+          <li>вищу встановлену електричну потужність.</li>
+        </ul>
+
+        <p>Технічно це дозволяє:</p>
+
+        <ul>
+          <li>мати запас теплопродуктивності при морозі;</li>
+          <li>зрушити точку бівалентності, наприклад, з –7 °C до –15 або –20 °C;</li>
+          <li>зменшити або повністю виключити потребу в догріві.</li>
+        </ul>
+
+        <h3>Інженерні наслідки збільшення потужності</h3>
+
+        <p>Збільшення потужності теплового насоса повітря–вода має чіткі інженерні та економічні наслідки, які необхідно усвідомлювати ще на етапі проєктування.</p>
+
+        <h4>1. Зростання вартості системи</h4>
+
+        <p>Потужніший тепловий насос — це не лінійне, а часто ступінчасте зростання ціни.</p>
+
+        <h4>2. Зростання вимог до електромережі</h4>
+
+        <p>Вищі пускові та робочі струми, більші вимоги до:</p>
+
+        <ul>
+          <li>вводу електроенергії;</li>
+          <li>трансформатора;</li>
+          <li>кабельних ліній.</li>
+        </ul>
+
+        <h4>3. Зміна режимів роботи в міжсезоння</h4>
+
+        <p>Надлишкова потужність може призводити до:</p>
+
+        <ul>
+          <li>частішої модуляції;</li>
+          <li>коротших циклів;</li>
+          <li>зниження ефективності при часткових навантаженнях, якщо система не оптимізована.</li>
+        </ul>
+
+        <p>Саме тому зниження точки бівалентності не завжди є оптимальним рішенням, навіть якщо воно технічно можливе.</p>
+
+        <h3>Точка бівалентності в геотермальних системах</h3>
+
+        <p>У геотермальних теплових насосах поняття точки бівалентності має інший сенс.</p>
+
+        <p>Оскільки температура ґрунту є стабільною, теплопродуктивність теплового насоса:</p>
+
+        <ul>
+          <li>практично не змінюється зі зміною зовнішньої температури;</li>
+          <li>не має різкого падіння в мороз.</li>
+        </ul>
+
+        <p>Тому геотермальний тепловий насос:</p>
+
+        <ul>
+          <li>зазвичай підбирається на повне покриття тепловтрат;</li>
+          <li>працює без класичного бівалентного режиму;</li>
+          <li>не потребує збільшення потужності для «страхування» морозів.</li>
+        </ul>
+
+        <p>У цьому випадку ключовим фактором стає правильний розрахунок геотермального поля, а не збільшення потужності компресора.</p>
+
+        <h3>Порівняльна інженерна логіка</h3>
+
+        <h4>Для повітря–вода:</h4>
+
+        <ul>
+          <li>точка бівалентності — ключовий параметр;</li>
+          <li>автономність досягається шляхом збільшення потужності;</li>
+          <li>зростає вартість і вимоги до мережі.</li>
+        </ul>
+
+        <h4>Для ґрунт–вода:</h4>
+
+        <ul>
+          <li>теплопродуктивність стабільна;</li>
+          <li>система підбирається одразу на повне навантаження;</li>
+          <li>автономність досягається не «з запасом», а стабільністю джерела.</li>
+        </ul>
+
+        <h3>Інженерний висновок</h3>
+
+        <p>Точка бівалентності — це не абстрактне поняття, а інструмент інженерного вибору. Для повітря–вода вона визначає баланс між автономністю, вартістю та енергетичними можливостями об'єкта. Для геотермальних систем вона практично зникає як обмеження, але замінюється вимогами до якості проєктування ґрунтового контуру.</p>
+
+        <p>Саме тому правильний підбір потужності теплового насоса починається не з каталогу обладнання, а з аналізу тепловтрат, сценаріїв експлуатації та реальних умов об'єкта.</p>
+
+        <div style="display: flex; gap: 16px; margin-top: 40px; flex-wrap: wrap;">
+          <a href="/blog/teplovyi-nasos-povitrya-voda-chy-grunt-voda/" class="read-more-btn secondary">← До головного гайду</a>
+          <a href="/blog/heat-pump-hot-water/" class="read-more-btn">Наступний розділ: ГВП →</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Дмитро Царенко. Всі права захищені.</p>
+  </footer>
+</body>
+</html>
