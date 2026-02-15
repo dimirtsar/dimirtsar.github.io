@@ -4,20 +4,21 @@
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <meta charset="UTF-8">
-  <title>Порівняння за принципом роботи теплових насосів повітря–вода та ґрунт–вода - Дмитро Царенко</title>
+  <title>Принцип роботи теплового насоса повітря–вода та ґрунт–вода</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Детальне порівняння принципів роботи теплових насосів повітря–вода та ґрунт–вода (геотермальних): джерела тепла, ефективність, режими відтайки, стабільність роботи.">
-  <meta property="og:title" content="Порівняння за принципом роботи теплових насосів повітря–вода та ґрунт–вода - Дмитро Царенко">
-  <meta property="og:description" content="Детальне порівняння принципів роботи теплових насосів повітря–вода та ґрунт–вода (геотермальних): джерела тепла, ефективність, режими відтайки, стабільність роботи.">
+  <meta name="description" content="Детальний розбір принципу роботи теплових насосів повітря–вода та ґрунт–вода: відтайка, геоконтур, ефективність і ключові відмінності.">
+  <meta property="og:title" content="Принцип роботи теплового насоса повітря–вода та ґрунт–вода">
+  <meta property="og:description" content="Детальний розбір принципу роботи теплових насосів повітря–вода та ґрунт–вода: відтайка, геоконтур, ефективність і ключові відмінності.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://dtsarenko.live/blog/heat-pump-principle-comparison/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"></noscript>
-  <style>:root{--primary-dark:#0a1628;--secondary-dark:#151922;--accent-gold:#ffd643;--accent-gold-dark:#e6c135;--text-primary:#0f1419;--text-secondary:#536471;--bg-light:#f6f8fa;--bg-white:#ffffff;--border-color:#30363d;--shadow-sm:0 2px 8px rgba(0,0,0,0.1);--shadow-md:0 4px 16px rgba(0,0,0,0.15);--shadow-lg:0 8px 32px rgba(0,0,0,0.2)}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f6f8fa;color:var(--text-primary);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;padding-top:88px}header{background:var(--primary-dark);backdrop-filter:blur(20px);border-bottom:3px solid var(--accent-gold);position:fixed;top:0;left:0;right:0;width:100%;z-index:1002;box-shadow:var(--shadow-lg)}.header-content{max-width:1280px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center}.logo{text-decoration:none;display:flex;flex-direction:column;gap:2px}.logo-name{font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:#ffffff;letter-spacing:-0.5px;text-shadow:0 2px 8px rgba(0,0,0,0.3)}.logo-tagline{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;color:var(--accent-gold);letter-spacing:0.5px;text-transform:uppercase}nav{display:flex;gap:40px;align-items:center}nav a{color:rgba(255,255,255,0.9);text-decoration:none;font-size:15px;font-weight:600;transition:all 0.3s ease;letter-spacing:0.3px}nav a:hover{color:var(--accent-gold)}.mobile-menu-toggle{display:none;flex-direction:column;gap:6px;background:none;border:none;cursor:pointer;padding:8px;z-index:1003}.mobile-menu-toggle span{width:28px;height:3px;background:#ffffff;border-radius:2px;transition:all 0.2s ease}.container{max-width:1280px;margin:0 auto;padding:80px 40px}.section{background:transparent;padding:40px 0}.section h2{font-family:'Playfair Display',serif;font-size:42px;font-weight:800;margin-bottom:40px;color:var(--primary-dark);padding-bottom:20px;border-bottom:4px solid var(--accent-gold);display:inline-block;letter-spacing:-0.5px}.article-content{margin-top:32px;line-height:1.8}.article-content h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--primary-dark);margin:48px 0 24px;letter-spacing:-0.5px}.article-content h4{font-size:20px;font-weight:600;margin-top:36px;margin-bottom:16px;color:#1a1a1a}.article-content p{font-size:16px;color:var(--text-secondary);margin-bottom:20px;line-height:1.8}.article-content strong{font-weight:700;color:var(--text-primary)}.article-content ul,.article-content ol{margin:20px 0;padding-left:28px;color:var(--text-secondary)}.article-content li{margin-bottom:12px;line-height:1.7}.article-content blockquote{background:rgba(255,214,67,0.05);border-left:4px solid var(--accent-gold);padding:24px 28px;margin:32px 0;border-radius:0 8px 8px 0}.article-content a{color:var(--accent-gold-dark);text-decoration:underline}.article-date{font-size:12px;color:var(--accent-gold-dark);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(255,214,67,0.1);padding:6px 12px;border-radius:6px;display:inline-block;margin-bottom:24px}.read-more-btn{margin-top:16px;padding:12px 24px;font-size:14px;font-weight:600;color:#ffffff;background:var(--primary-dark);border:none;border-radius:8px;transition:all 0.3s ease;display:inline-block;text-decoration:none}.read-more-btn:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(10,22,40,0.2)}.read-more-btn.secondary{background:var(--accent-gold);color:var(--primary-dark)}footer{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--secondary-dark) 100%);color:rgba(255,255,255,0.9);padding:64px 40px;text-align:center;margin-top:100px}footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent-gold)}footer p{font-size:15px;letter-spacing:0.5px;opacity:0.85}@media (max-width:768px){.header-content{padding:20px 24px}.logo-name{font-size:24px}.container{padding:48px 24px}.section h2{font-size:32px}}</style>
+  <style>:root{--primary-dark:#0a1628;--secondary-dark:#151922;--accent-gold:#ffd643;--accent-gold-dark:#e6c135;--text-primary:#0f1419;--text-secondary:#536471;--bg-light:#f6f8fa;--bg-white:#ffffff;--border-color:#30363d;--shadow-sm:0 2px 8px rgba(0,0,0,0.1);--shadow-md:0 4px 16px rgba(0,0,0,0.15);--shadow-lg:0 8px 32px rgba(0,0,0,0.2)}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f6f8fa;color:var(--text-primary);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;padding-top:88px}header{background:var(--primary-dark);backdrop-filter:blur(20px);border-bottom:3px solid var(--accent-gold);position:fixed;top:0;left:0;right:0;width:100%;z-index:1002;box-shadow:var(--shadow-lg)}.header-content{max-width:1280px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center}.logo{text-decoration:none;display:flex;flex-direction:column;gap:2px}.logo-name{font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:#ffffff;letter-spacing:-0.5px;text-shadow:0 2px 8px rgba(0,0,0,0.3)}.logo-tagline{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;color:var(--accent-gold);letter-spacing:0.5px;text-transform:uppercase}nav{display:flex;gap:40px;align-items:center}nav a{color:rgba(255,255,255,0.9);text-decoration:none;font-size:15px;font-weight:600;transition:all 0.3s ease;letter-spacing:0.3px}nav a:hover{color:var(--accent-gold)}.mobile-menu-toggle{display:none;flex-direction:column;gap:6px;background:none;border:none;cursor:pointer;padding:8px;z-index:1003;touch-action:manipulation}.mobile-menu-toggle span{width:28px;height:3px;background:#ffffff;border-radius:2px;transition:transform 0.2s cubic-bezier(0.4,0,0.2,1),opacity 0.2s ease;will-change:transform,opacity}.mobile-menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(8px,8px);background:#000000}.mobile-menu-toggle.active span:nth-child(2){opacity:0}.mobile-menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(8px,-8px);background:#000000}.menu-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);opacity:0;visibility:hidden;transition:opacity 0.25s ease,visibility 0.25s ease;z-index:999}.menu-overlay.active{opacity:1;visibility:visible}.container{max-width:1280px;margin:0 auto;padding:80px 40px}.section{background:transparent;padding:40px 0}.section h2{font-family:'Playfair Display',serif;font-size:42px;font-weight:800;margin-bottom:40px;color:var(--primary-dark);padding-bottom:20px;border-bottom:4px solid var(--accent-gold);display:inline-block;letter-spacing:-0.5px}.article-content{margin-top:32px;line-height:1.8}.article-content h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--primary-dark);margin:48px 0 24px;letter-spacing:-0.5px}.article-content h4{font-size:20px;font-weight:600;margin-top:36px;margin-bottom:16px;color:#1a1a1a}.article-content p{font-size:16px;color:var(--text-secondary);margin-bottom:20px;line-height:1.8}.article-content strong{font-weight:700;color:var(--text-primary)}.article-content ul,.article-content ol{margin:20px 0;padding-left:28px;color:var(--text-secondary)}.article-content li{margin-bottom:12px;line-height:1.7}.article-content blockquote{background:rgba(255,214,67,0.05);border-left:4px solid var(--accent-gold);padding:24px 28px;margin:32px 0;border-radius:0 8px 8px 0}.article-content a{color:var(--accent-gold-dark);text-decoration:underline}.article-date{font-size:12px;color:var(--accent-gold-dark);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(255,214,67,0.1);padding:6px 12px;border-radius:6px;display:inline-block;margin-bottom:24px}.read-more-btn{margin-top:16px;padding:12px 24px;font-size:14px;font-weight:600;color:#ffffff;background:var(--primary-dark);border:none;border-radius:8px;transition:all 0.3s ease;display:inline-block;text-decoration:none}.read-more-btn:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(10,22,40,0.2)}.read-more-btn.secondary{background:var(--accent-gold);color:var(--primary-dark)}footer{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--secondary-dark) 100%);color:rgba(255,255,255,0.9);padding:64px 40px;text-align:center;margin-top:100px}footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent-gold)}footer p{font-size:15px;letter-spacing:0.5px;opacity:0.85}@media (max-width:768px){body{padding-top:84px}.header-content{padding:20px 24px}.logo-name{font-size:24px}.mobile-menu-toggle{display:flex}nav{position:fixed;top:0;right:0;width:280px;height:100vh;background:rgba(255,255,255,0.98);flex-direction:column;gap:0;padding:80px 24px 24px;box-shadow:-4px 0 24px rgba(0,0,0,0.1);transform:translateX(100%);transition:transform 0.25s cubic-bezier(0.4,0,0.2,1);z-index:1001;overflow-y:auto}nav.active{transform:translateX(0)}nav a{font-size:16px;padding:16px 0;border-bottom:1px solid var(--border-light);width:100%;color:var(--primary-dark)}nav a:hover{color:var(--accent-gold-dark)}.container{padding:48px 24px}.section h1,.section h2{font-size:32px}.article-content h2{font-size:28px}.article-content h3{font-size:20px}}@media (max-width:520px){.section h1,.section h2{font-size:28px}.article-content h2{font-size:24px}.article-content h3{font-size:18px}}</style>
 </head>
 <body>
+  <div class="menu-overlay"></div>
   <header>
     <div class="header-content">
       <a href="/" class="logo">
@@ -38,79 +39,128 @@
 
   <div class="container">
     <section class="section">
-      <h2>Порівняння за принципом роботи теплових насосів повітря–вода та ґрунт–вода</h2>
+      <h1 style="font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 800; margin-bottom: 24px; color: var(--primary-dark); padding-bottom: 20px; border-bottom: 4px solid var(--accent-gold); line-height: 1.2; letter-spacing: -0.5px;">Принцип роботи теплового насоса повітря–вода та ґрунт–вода: детальне порівняння</h1>
       <span class="article-date">Лютий 2026</span>
 
       <div class="article-content">
         <blockquote>
-          <p><strong>Частина 1 з 8</strong> гайду "<a href="/blog/teplovyi-nasos-povitrya-voda-chy-grunt-voda/">Тепловий насос повітря–вода чи ґрунт–вода: який кращий?</a>"</p>
+          <p><strong>Частина 1 з 8</strong> повного гайду "<a href="/blog/teplovyi-nasos-povitrya-voda-chy-grunt-voda/">Тепловий насос повітря–вода чи ґрунт–вода: який кращий?</a>"</p>
         </blockquote>
 
-        <p>Вибір теплового насоса — це не вибір обладнання. Це вибір інженерної концепції, яка буде визначати комфорт, витрати та надійність будинку протягом десятків років. Помилка на цьому етапі не завжди проявляється одразу — часто вона стає відчутною через 2–5 років експлуатації, коли очікування власника не збігаються з реальністю.</p>
+        <p>Принцип роботи теплового насоса визначає не лише його енергоефективність, але й комфорт, експлуатаційні витрати та надійність системи на десятиліття вперед. Вибір між повітрям та ґрунтом як джерелом тепла — це вибір фізики процесів, а не просто маркетингових обіцянок. Щоб розібратися, як працює тепловий насос повітря–вода та чим відрізняється геотермальний тепловий насос, розглянемо детально обидва принципи роботи.</p>
 
-        <p>Саме тому порівняння систем повітря–вода та ґрунт–вода варто розглядати не з позиції ціни чи популярності технології, а з позиції фізики процесів, енергоефективності та сценаріїв життя власника.</p>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; margin: 56px 0 32px; color: var(--primary-dark); padding-bottom: 16px; border-bottom: 3px solid var(--accent-gold); letter-spacing: -0.5px;">Принцип роботи теплового насоса повітря–вода</h2>
 
-        <h3>Принцип роботи теплового насоса повітря–вода</h3>
-
-        <p>Тепловий насос типу повітря–вода працює за принципом відбору теплової енергії з навколишнього зовнішнього повітря та передачі її в систему опалення, гарячого водопостачання або кондиціонування будівлі. Докладніше про <a href="/blog/heat-pumps-article/">принцип роботи теплових насосів</a> можна прочитати в окремій статті. Джерелом енергії є атмосферне повітря, яке доступне в будь-якому місці та не потребує земляних робіт для його використання.</p>
+        <p>Тепловий насос типу повітря–вода працює за принципом відбору теплової енергії з навколишнього зовнішнього повітря та передачі її в систему опалення, гарячого водопостачання або кондиціонування будівлі. Джерелом енергії є атмосферне повітря, яке доступне в будь-якому місці та не потребує земляних робіт для його використання.</p>
 
         <p>Основним елементом системи є зовнішній блок із випаровувачем. Через нього вентилятором проганяється повітря, тепло з якого передається холодоагенту. Навіть за низьких температур повітря містить теплову енергію, яку холодоагент здатний відібрати завдяки своїм термодинамічним властивостям.</p>
 
-        <p>Після відбору тепла холодоагент переходить у газоподібний стан і стискається компресором. У процесі стискання його температура значно підвищується, що дозволяє передати цю енергію через конденсатор у водяний контур системи опалення або бойлера гарячої води. Далі холодоагент охолоджується, переходить у рідкий стан, і цикл повторюється.</p>
+        <h3 style="font-size: 24px; font-weight: 600; margin: 40px 0 20px; color: var(--primary-dark); letter-spacing: -0.3px;">Як відбирається тепло з повітря</h3>
 
-        <h4>Особливості роботи в холодний період</h4>
+        <p>У зовнішньому блоці розміщений випаровувач — теплообмінник з розвиненою поверхнею, через який циркулює холодоагент (найчастіше R32, R410A або R290). Температура кипіння холодоагенту при робочому тиску становить від –25°C до –15°C, що значно нижче температури зовнішнього повітря навіть у морозний день.</p>
 
-        <p>Робота теплового насоса повітря–вода напряму пов'язана з температурою та станом зовнішнього повітря. У холодний період на поверхні випаровувача може утворюватися іній або лід, тому система періодично переходить у режим відтайки. У цей момент частина виробленої теплової енергії використовується для очищення теплообмінника, що є штатним робочим процесом.</p>
+        <p>Коли повітря проходить через ламелі випаровувача, воно віддає свою теплову енергію холодоагенту. Холодоагент при цьому змінює агрегатний стан з рідкого на газоподібний — відбувається процес випаровування. Навіть при температурі зовнішнього повітря –20°C холодоагент здатний поглинути достатньо енергії для забезпечення опалення будинку.</p>
 
-        <p>Ефективність теплового насоса повітря–вода змінюється протягом року. Вона є вищою за помірних температур і поступово знижується зі зниженням температури зовнішнього повітря. Саме тому під час проєктування таких систем особливу увагу приділяють тепловтратам будівлі, температурному режиму системи опалення, сценаріям роботи в пікові зимові періоди, враховуючи <a href="/blog/heat-pump-power-bivalence/">точку бівалентності</a>.</p>
+        <p>Ефективність цього процесу залежить від площі теплообмінника, швидкості руху повітря через нього та різниці температур між повітрям і холодоагентом. Чим більша різниця температур, тим інтенсивніше відбувається теплообмін, але й тим нижча ефективність системи в цілому.</p>
 
-        <h3>Принцип роботи теплового насоса ґрунт–вода (геотермального)</h3>
+        <h3 style="font-size: 24px; font-weight: 600; margin: 40px 0 20px; color: var(--primary-dark); letter-spacing: -0.3px;">Роль компресора в системі</h3>
 
-        <p>Геотермальний тепловий насос працює за принципом використання теплової енергії ґрунту, температура якого на певній глибині залишається практично стабільною протягом року. Джерелом тепла є земля, що накопичує сонячну енергію та тепло надр, створюючи рівномірні умови для роботи системи незалежно від пори року.</p>
+        <p>Після відбору тепла холодоагент переходить у газоподібний стан із низькою температурою (близько –10°C) та низьким тиском (3-5 бар). У такому стані він не здатен передати тепло в систему опалення, де потрібна температура теплоносія 35-55°C.</p>
 
-        <p>Теплова енергія відбирається через геотермальний контур — систему трубопроводів, прокладених у ґрунті вертикально або горизонтально. Усередині цього контуру циркулює теплоносій, який передає енергію з ґрунту до теплового насоса. Температура теплоносія на вході в насос залишається стабільною навіть у зимовий період.</p>
+        <p>Компресор стискає газоподібний холодоагент, підвищуючи його тиск до 18-25 бар. Завдяки законам термодинаміки при стисканні газу його температура різко зростає до 65-85°C. Саме в такому стані холодоагент потрапляє в конденсатор — внутрішній теплообмінник, де віддає тепло у водяний контур системи опалення або бойлера гарячої води.</p>
 
-        <p>У тепловому насосі тепло від геотермального контуру передається холодоагенту, який випаровується та стискається компресором. У результаті стискання температура холодоагенту підвищується до рівня, достатнього для нагріву теплоносія системи опалення або гарячого водопостачання. Після передачі тепла холодоагент конденсується, охолоджується, і цикл повторюється.</p>
+        <p>Сучасні системи використовують інверторні компресори зі змінною швидкістю обертання. Це дозволяє плавно регулювати потужність від 20% до 120% номінальної, адаптуючись до реальних потреб будинку та підвищуючи загальну ефективність системи на 25-35% порівняно зі звичайними ON/OFF компресорами.</p>
 
-        <h4>Стабільність роботи</h4>
+        <p>Після передачі тепла в конденсаторі холодоагент охолоджується, конденсується і переходить у рідкий стан. Далі через терморегулювальний вентиль (ТРВ) або електронний розширювальний клапан (EEV) він знижує тиск до початкового рівня, і цикл повторюється знову.</p>
 
-        <p>Оскільки джерело тепла є стабільним, геотермальний тепловий насос працює в рівномірному режимі без різких змін навантаження. Відсутні процеси обмерзання теплообмінників і немає потреби в режимах відтайки, характерних для повітряних джерел. Важливо пам'ятати про <a href="/blog/geothermal-timing/">правильні терміни виконання геотермального буріння</a> під час будівництва.</p>
+        <h3 style="font-size: 24px; font-weight: 600; margin: 40px 0 20px; color: var(--primary-dark); letter-spacing: -0.3px;">Відтайка: необхідний процес</h3>
 
-        <p>Ефективність геотермального теплового насоса визначається показниками температури теплоносія на виході із землі, яка зазвичай стабільна незалежно від температури повітря на вулиці, та температурою подачі в систему опалення (ГВП). Також не менш важливою є якість проєктування: розрахунок тепловтрат приміщення, розрахунок геотермального поля, правильне гідравлічне балансування контурів та відповідність системи опалення низькотемпературному режиму. За умови коректного проєктування така система забезпечує стабільну, прогнозовану роботу з мінімальними навантаженнями на електромережу незалежно від температури зовнішнього повітря.</p>
+        <p>Робота теплового насоса повітря–вода напряму пов'язана з температурою та вологістю зовнішнього повітря. У холодний період, особливо при температурах від 0°C до –7°C та високій вологості повітря, на поверхні випаровувача може утворюватися іній або навіть лід.</p>
 
-        <h3>Ключові відмінності</h3>
+        <p>Це відбувається тому, що поверхня випаровувача має температуру нижчу за точку роси повітря. Волога з повітря конденсується на холодних ламелях і замерзає. Намерзання призводить до зменшення площі теплообмінника та блокування потоку повітря, що знижує ефективність системи.</p>
 
-        <h4>Джерело тепла</h4>
+        <p>Тому система періодично переходить у режим відтайки. У цей момент реверсується цикл роботи холодоагенту — гарячий газ направляється в зовнішній теплообмінник, щоб розтопити лід. Режим відтайки триває від 3 до 10 хвилин залежно від ступеня обмерзання.</p>
 
+        <p>Під час відтайки тепловий насос не виробляє тепло для опалення — частина енергії витрачається на очищення теплообмінника. Це штатний процес, але він знижує середню сезонну ефективність системи на 5-12% залежно від клімату та режиму експлуатації. Більш досконалі системи використовують алгоритми Smart Defrost, які запускають відтайку не за таймером, а за фактичним перепадом тиску або температури на випаровувачі.</p>
+
+        <p>Ефективність теплового насоса повітря–вода змінюється протягом року. Вона є найвищою за помірних температур (+7°C...+15°C) з коефіцієнтом COP 4.0-5.0 і поступово знижується зі зниженням температури зовнішнього повітря до COP 2.0-2.5 при –15°C. Саме тому під час проєктування таких систем особливу увагу приділяють тепловтратам будівлі, температурному режиму системи опалення, сценаріям роботи в пікові зимові періоди, враховуючи <a href="/blog/heat-pump-power-bivalence/">точку бівалентності</a>.</p>
+
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; margin: 56px 0 32px; color: var(--primary-dark); padding-bottom: 16px; border-bottom: 3px solid var(--accent-gold); letter-spacing: -0.5px;">Принцип роботи теплового насоса ґрунт–вода (геотермального)</h2>
+
+        <p>Геотермальний тепловий насос працює за принципом використання теплової енергії ґрунту, температура якого на певній глибині залишається практично стабільною протягом року. Джерелом тепла є земля, що накопичує сонячну енергію та частково — геотермальне тепло надр планети, створюючи рівномірні умови для роботи системи незалежно від пори року.</p>
+
+        <h3 style="font-size: 24px; font-weight: 600; margin: 40px 0 20px; color: var(--primary-dark); letter-spacing: -0.3px;">Геотермальний контур: як збирається енергія землі</h3>
+
+        <p>Теплова енергія відбирається через геотермальний контур — систему трубопроводів, прокладених у ґрунті вертикально (на глибині від 50 до 200 метрів) або горизонтально (на глибині 1.2-1.8 метрів). Вибір типу контуру залежить від площі ділянки, геологічних умов та бюджету проєкту.</p>
+
+        <p>Усередині геотермального контуру циркулює теплоносій — водний розчин пропіленгліколю або етиленгліколю з концентрацією 25-35%, що забезпечує захист від замерзання. Циркуляційний насос прокачує теплоносій через підземний контур, де він нагрівається за рахунок тепла землі.</p>
+
+        <p>Температура ґрунту на глибині понад 10 метрів практично не залежить від температури повітря і становить +8...+12°C цілий рік. Це критична перевага: джерело тепла є стабільним незалежно від погоди, часу доби чи пори року. Зимою ґрунт віддає накопичену влітку сонячну енергію, а влітку система може працювати в реверсивному режимі для пасивного кондиціонування, скидаючи тепло з будинку назад у землю.</p>
+
+        <p>Довжина вертикальних свердловин або площа горизонтального контуру розраховується індивідуально виходячи з теплового навантаження будинку, теплопровідності ґрунту та режиму експлуатації. Типово для будинку 150-200 м² потрібно 2-3 свердловини глибиною 80-100 метрів або горизонтальний контур площею 300-400 м².</p>
+
+        <h3 style="font-size: 24px; font-weight: 600; margin: 40px 0 20px; color: var(--primary-dark); letter-spacing: -0.3px;">Стабільність джерела тепла</h3>
+
+        <p>Температура теплоносія на вході в тепловий насос залишається стабільною навіть у найхолодніший зимовий період. Типово це +2...+6°C після проходження через геоконтур, залежно від інтенсивності відбору тепла. Така стабільність дозволяє тепловому насосу працювати в оптимальному режимі цілий рік.</p>
+
+        <p>У тепловому насосі тепло від геотермального контуру передається холодоагенту через випаровувач — теплообмінник типу "пластинчастий" або "коаксіальний". Холодоагент випаровується, стискається компресором, і далі цикл аналогічний до повітряного теплового насоса: в конденсаторі гаряча пара холодоагенту віддає тепло у водяний контур системи опалення чи гарячого водопостачання.</p>
+
+        <p>Ключова відмінність — на вході в насос температура завжди позитивна та стабільна. Компресор працює в рівномірному режимі без пікових навантажень. Відсутні процеси обмерзання теплообмінників і немає потреби в режимах відтайки, характерних для повітряних джерел. Система не витрачає жодного кіловата на боротьбу з обмерзанням — вся енергія йде виключно на опалення та ГВП.</p>
+
+        <p>Ефективність геотермального теплового насоса визначається температурою теплоносія на виході із землі (чим вища, тим краще), температурою подачі в систему опалення (чим нижча, тим краще), та якістю проєктування: розрахунок тепловтрат приміщення, розрахунок геотермального поля за методикою VDI 4640, правильне гідравлічне балансування контурів та відповідність системи опалення низькотемпературному режиму (теплі підлоги, фанкойли).</p>
+
+        <p>За умови коректного проєктування геотермальна система забезпечує стабільну, прогнозовану роботу з мінімальними навантаженнями на електромережу та коефіцієнтом COP 4.0-4.8 незалежно від температури зовнішнього повітря. Важливо пам'ятати про <a href="/blog/geothermal-timing/">правильні терміни виконання геотермального буріння</a> під час будівництва — свердловини треба робити до фундаменту або на етапі нульового циклу.</p>
+
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; margin: 56px 0 32px; color: var(--primary-dark); padding-bottom: 16px; border-bottom: 3px solid var(--accent-gold); letter-spacing: -0.5px;">Ключова різниця в принципі роботи</h2>
+
+        <p>Принципова різниця між тепловим насосом повітря–вода та ґрунт–вода полягає у природі та стабільності джерела теплової енергії. Ця різниця визначає всі інші характеристики систем — від режимів роботи до економічної доцільності.</p>
+
+        <h3 style="font-size: 24px; font-weight: 600; margin: 40px 0 20px; color: var(--primary-dark); letter-spacing: -0.3px;">Від чого залежить ефективність систем</h3>
+
+        <p><strong>Джерело тепла:</strong></p>
         <ul>
-          <li><strong>Повітря–вода:</strong> зовнішнє повітря з температурою від –20°C до +35°C і вище. Джерело нестабільне, змінюється щогодини.</li>
-          <li><strong>Ґрунт–вода:</strong> ґрунт на глибині 1–100 метрів з температурою +8...+12°C цілий рік. Джерело стабільне, прогнозоване.</li>
+          <li><strong>Повітря–вода:</strong> зовнішнє повітря з температурою від –25°C до +40°C залежно від сезону, часу доби та погоди. Джерело нестабільне, змінюється щогодини. У найхолодніші дні, коли потреба в теплі максимальна, ефективність падає до мінімуму.</li>
+          <li><strong>Ґрунт–вода:</strong> ґрунт на глибині від 10 до 200 метрів з температурою +8...+12°C цілий рік. Джерело стабільне, прогнозоване, не залежить від погодних умов. Саме тоді, коли на вулиці –20°C, земля на глибині все одно +10°C.</li>
         </ul>
 
-        <h4>Режим відтайки</h4>
-
+        <p><strong>Режим відтайки:</strong></p>
         <ul>
-          <li><strong>Повітря–вода:</strong> періодичні цикли відтайки за низьких температур та високої вологості. Частина енергії витрачається на очищення теплообмінника.</li>
-          <li><strong>Ґрунт–вода:</strong> відтайка відсутня. Система працює безперервно без переривань.</li>
+          <li><strong>Повітря–вода:</strong> періодичні цикли відтайки за температур від 0°C до –7°C та високій вологості. Частина виробленої енергії (5-12% сезонно) витрачається на очищення теплообмінника від льоду. Під час відтайки тепловий насос не обігріває будинок протягом 3-10 хвилин.</li>
+          <li><strong>Ґрунт–вода:</strong> відтайка повністю відсутня. Система працює безперервно без переривань. 100% виробленої енергії йде на опалення та ГВП.</li>
         </ul>
 
-        <h4>Ефективність взимку</h4>
-
+        <p><strong>Ефективність протягом року:</strong></p>
         <ul>
-          <li><strong>Повітря–вода:</strong> COP знижується зі зниженням температури повітря. За –15°C типовий COP становить 2.0–2.5.</li>
-          <li><strong>Ґрунт–вода:</strong> COP залишається стабільним цілий рік. Типовий COP становить 4.0–4.5 незалежно від зовнішньої температури.</li>
+          <li><strong>Повітря–вода:</strong> коефіцієнт COP змінюється від 5.0 влітку до 2.0-2.5 взимку. Сезонна ефективність (SCOP) становить 3.0-3.8 залежно від клімату. За температури –15°C типовий COP дорівнює 2.0-2.5.</li>
+          <li><strong>Ґрунт–вода:</strong> коефіцієнт COP залишається стабільним цілий рік на рівні 4.0-4.8. Сезонна ефективність (SCOP) становить 4.2-5.0. Взимку при –20°C на вулиці COP все одно 4.5, бо джерело тепла (земля) має +10°C.</li>
         </ul>
 
-        <h3>Інженерний висновок</h3>
-
-        <p>Принципова різниця між повітря–вода та ґрунт–вода полягає у <strong>стабільності джерела тепла</strong>:</p>
-
+        <p><strong>Робоче навантаження на компресор:</strong></p>
         <ul>
-          <li>Повітря–вода працює з нестабільним джерелом, що вимагає інженерних компромісів: резервний догрів, збільшення потужності, бівалентні режими.</li>
-          <li>Ґрунт–вода працює зі стабільним джерелом, що забезпечує прогнозовану роботу без пікових навантажень і компромісів у комфорті.</li>
+          <li><strong>Повітря–вода:</strong> високі пікові навантаження взимку через велику різницю між температурою джерела (–15°C) та температурою подачі (+45°C). Компресор працює під високим навантаженням у найхолодніші дні.</li>
+          <li><strong>Ґрунт–вода:</strong> рівномірне навантаження цілий рік. Різниця між джерелом (+5°C) та подачею (+45°C) залишається сталою. Компресор працює в комфортному режимі без екстремальних температурних перепадів.</li>
         </ul>
 
-        <p>Саме ця різниця визначає всі наступні аспекти вибору: від <a href="/blog/heat-pump-hot-water/">режиму ГВП</a> до можливостей <a href="/blog/heat-pump-cooling-active-passive/">пасивного кондиціонування</a>.</p>
+        <p>Саме ця різниця визначає, чому геотермальний тепловий насос забезпечує вищу ефективність та надійність, але вимагає значно більших інвестицій на етапі будівництва через необхідність буріння свердловин.</p>
+
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; margin: 56px 0 32px; color: var(--primary-dark); padding-bottom: 16px; border-bottom: 3px solid var(--accent-gold); letter-spacing: -0.5px;">Інженерний висновок</h2>
+
+        <p>Принцип роботи теплового насоса визначає його можливості та обмеження. Різниця між повітря–вода та ґрунт–вода — це не лише джерело енергії, а й філософія проєктування системи опалення:</p>
+
+        <ul>
+          <li><strong>Повітря–вода</strong> працює з нестабільним джерелом, що вимагає інженерних компромісів: резервний догрів електротенами або котлом, збільшення потужності обладнання на 20-30% для компенсації зниження ефективності взимку, бівалентні режими роботи з додатковими джерелами тепла, більша увага до теплоізоляції будівлі.</li>
+          <li><strong>Ґрунт–вода</strong> працює зі стабільним джерелом, що забезпечує прогнозовану роботу без пікових навантажень і компромісів у комфорті: повна моноенергетичність без резервних джерел, стабільні витрати електроенергії цілий рік, можливість використання меншої потужності обладнання, більша надійність через відсутність екстремальних режимів.</li>
+        </ul>
+
+        <p>Ця фундаментальна різниця в принципі роботи визначає всі наступні аспекти вибору: від <a href="/blog/heat-pump-hot-water/">режиму приготування гарячої води</a> до можливостей <a href="/blog/heat-pump-cooling-active-passive/">пасивного кондиціонування влітку</a>. Докладніше про <a href="/blog/heat-pumps-article/">загальний принцип роботи теплових насосів</a> та термодинамічні процеси можна прочитати в окремій статті.</p>
+
+        <p><strong>Правильне рішення залежить від:</strong> бюджету проєкту (початкових інвестицій та експлуатаційних витрат), кліматичної зони та середніх зимових температур, наявності земельної ділянки для геоконтуру, архітектурних обмежень (естетика зовнішнього блоку), пріоритетів власника (максимальна ефективність чи мінімальні стартові витрати).</p>
+
+        <div style="background: rgba(255, 214, 67, 0.08); border-left: 4px solid var(--accent-gold); padding: 28px 32px; margin: 48px 0; border-radius: 0 8px 8px 0;">
+          <p style="font-size: 17px; font-weight: 600; margin-bottom: 12px; color: var(--primary-dark);">📖 Ця стаття є частиною великого гайду:</p>
+          <p style="font-size: 16px; margin: 0;"><a href="/blog/teplovyi-nasos-povitrya-voda-chy-grunt-voda/" style="color: var(--accent-gold-dark); text-decoration: none; font-weight: 600; border-bottom: 2px solid var(--accent-gold);">Тепловий насос повітря–вода чи ґрунт–вода — повне порівняння</a></p>
+          <p style="font-size: 14px; margin-top: 12px; color: var(--text-secondary);">Детальний розбір усіх аспектів вибору: від принципу роботи до фінансового аналізу</p>
+        </div>
 
         <div style="display: flex; gap: 16px; margin-top: 40px; flex-wrap: wrap;">
           <a href="/blog/teplovyi-nasos-povitrya-voda-chy-grunt-voda/" class="read-more-btn secondary">← До головного гайду</a>
@@ -123,5 +173,31 @@
   <footer>
     <p>&copy; 2026 Дмитро Царенко. Всі права захищені.</p>
   </footer>
+
+  <script>
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('nav');
+    const overlay = document.querySelector('.menu-overlay');
+
+    toggle?.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      nav?.classList.toggle('active');
+      overlay?.classList.toggle('active');
+    });
+
+    overlay?.addEventListener('click', () => {
+      toggle?.classList.remove('active');
+      nav?.classList.remove('active');
+      overlay?.classList.remove('active');
+    });
+
+    nav?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggle?.classList.remove('active');
+        nav?.classList.remove('active');
+        overlay?.classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
