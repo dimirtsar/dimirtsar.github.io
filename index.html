@@ -216,8 +216,8 @@
         const heatPumpsStat = document.getElementById('stat-heat-pumps');
         const efficiencyStat = document.getElementById('stat-efficiency');
 
-        if (blogStat) blogStat.setAttribute('data-target', '26');
-        if (heatPumpsStat) heatPumpsStat.setAttribute('data-target', '15');
+        if (blogStat) blogStat.setAttribute('data-target', '30');
+        if (heatPumpsStat) heatPumpsStat.setAttribute('data-target', '16');
         if (efficiencyStat) efficiencyStat.setAttribute('data-target', '3');
       }
     }
@@ -273,6 +273,13 @@
 
     // Latest blog articles - ОНОВЛЮЙТЕ ЦЕЙ МАСИВ ПРИ ДОДАВАННІ НОВИХ СТАТЕЙ У blog.html
     const latestBlogArticles = [
+      {
+        title: 'Як зрозуміти реальну вартість рішень, які вам пропонують',
+        description: 'Коли стикаєтесь з інженерними рішеннями, завжди виникає питання: чому така ціна і чи вона виправдана? Історія з практики про те, як розуміти реальну вартість',
+        date: 'Березень 2026',
+        url: '/blog/understanding-real-value/',
+        tag: 'Бізнес'
+      },
       {
         title: 'Як віднайти прийнятну ціну для клієнта: стратегія для інженерного бізнесу',
         description: 'У сфері інженерії ціна — це не цифра в кошторисі. Це точка збігу технічного рішення, економіки проєкту, очікувань клієнта та рівня довіри. Як сформувати прийнятну ціну',
