@@ -22,7 +22,15 @@ class NewsletterSubscription {
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
     script.onload = () => {
-      this.supabase = window.supabase.createClient(this.supabaseUrl, this.supabaseKey);
+      this.supabase = window.supabase.createClient(this.supabaseUrl, this.supabaseKey, {
+        auth: {
+          persistSession: false,
+          autoRefreshToken: false
+        }
+      });
+    };
+    script.onerror = () => {
+      console.error('Failed to load Supabase client');
     };
     document.head.appendChild(script);
   }
@@ -53,14 +61,21 @@ class NewsletterSubscription {
     try {
       const { data, error } = await this.supabase
         .from('newsletter_subscriptions')
-        .insert([{ email: email.toLowerCase() }])
-        .select();
+        .insert({ email: email.toLowerCase() });
 
       if (error) {
+        console.error('Supabase error details:', {
+          message: error.message,
+          details: error.details,
+          hint: error.hint,
+          code: error.code
+        });
+
         if (error.code === '23505') {
           this.showMessage('Ця email адреса вже підписана на розсилку', 'error');
+        } else if (error.message && error.message.includes('permission')) {
+          this.showMessage('Помилка доступу. Спробуйте оновити сторінку.', 'error');
         } else {
-          console.error('Supabase error:', error);
           this.showMessage('Помилка при підписці. Спробуйте пізніше.', 'error');
         }
       } else {
