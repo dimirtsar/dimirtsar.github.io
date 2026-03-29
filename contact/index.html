@@ -57,7 +57,10 @@
           </article>
           <article class="article" style="cursor: text;">
             <h3>Соціальні мережі</h3>
-            <p>Професійні соціальні мережі</p>
+            <p style="display: flex; flex-direction: column; gap: 12px;">
+              <a href="https://www.linkedin.com/in/dmytro-tsarenko/" target="_blank" rel="noopener noreferrer" class="email-link">LinkedIn</a>
+              <a href="https://github.com/dtsarenko" target="_blank" rel="noopener noreferrer" class="email-link">GitHub</a>
+            </p>
           </article>
         </div>
 
@@ -96,6 +99,52 @@
   </footer>
 
   <script>
+    // Form validation
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const messageInput = document.getElementById('message');
+
+      // Clear previous error states
+      [nameInput, emailInput, messageInput].forEach(input => {
+        input.style.borderColor = '';
+      });
+
+      let isValid = true;
+
+      // Name validation (at least 2 characters)
+      if (nameInput.value.trim().length < 2) {
+        nameInput.style.borderColor = '#dc2626';
+        isValid = false;
+        setTimeout(() => {
+          nameInput.style.borderColor = '';
+        }, 3000);
+      }
+
+      // Email validation
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(emailInput.value.trim())) {
+        emailInput.style.borderColor = '#dc2626';
+        isValid = false;
+        setTimeout(() => {
+          emailInput.style.borderColor = '';
+        }, 3000);
+      }
+
+      // Message validation (at least 10 characters)
+      if (messageInput.value.trim().length < 10) {
+        messageInput.style.borderColor = '#dc2626';
+        isValid = false;
+        setTimeout(() => {
+          messageInput.style.borderColor = '';
+        }, 3000);
+      }
+
+      if (!isValid) {
+        e.preventDefault();
+      }
+    });
+
     function toggleArticle(articleId) {
       const article = document.getElementById(articleId);
       if (article.style.display === 'none' || article.style.display === '') {
