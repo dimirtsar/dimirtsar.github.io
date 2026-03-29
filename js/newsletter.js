@@ -7,11 +7,24 @@ class NewsletterSubscription {
     this.submitButton = this.form.querySelector('button[type="submit"]');
     this.messageContainer = this.form.querySelector('.newsletter-message');
 
+    this.supabaseUrl = 'https://iediedshsblyuxcrmaai.supabase.co';
+    this.supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImllZGllZHNoc2JseXV4Y3JtYWFpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgwNjM2NTMsImV4cCI6MjA4MzYzOTY1M30.oiZF4RFUisJALJtvPDfq1Ygc-JUoIof1RE172wBD98A';
+
     this.init();
   }
 
   init() {
+    this.loadSupabaseClient();
     this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+  }
+
+  loadSupabaseClient() {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+    script.onload = () => {
+      this.supabase = window.supabase.createClient(this.supabaseUrl, this.supabaseKey);
+    };
+    document.head.appendChild(script);
   }
 
   async handleSubmit(e) {
@@ -30,31 +43,29 @@ class NewsletterSubscription {
       return;
     }
 
+    if (!this.supabase) {
+      this.showMessage('Завантаження... Спробуйте ще раз.', 'error');
+      return;
+    }
+
     this.setLoading(true);
 
     try {
-      const supabaseUrl = 'https://iediedshsblyuxcrmaai.supabase.co';
-      const apiUrl = `${supabaseUrl}/functions/v1/newsletter-subscribe`;
+      const { data, error } = await this.supabase
+        .from('newsletter_subscriptions')
+        .insert([{ email: email.toLowerCase() }])
+        .select();
 
-      const anonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImllZGllZHNoc2JseXV4Y3JtYWFpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgwNjM2NTMsImV4cCI6MjA4MzYzOTY1M30.oiZF4RFUisJALJtvPDfq1Ygc-JUoIof1RE172wBD98A';
-
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${anonKey}`,
-          'apikey': anonKey,
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
+      if (error) {
+        if (error.code === '23505') {
+          this.showMessage('Ця email адреса вже підписана на розсилку', 'error');
+        } else {
+          console.error('Supabase error:', error);
+          this.showMessage('Помилка при підписці. Спробуйте пізніше.', 'error');
+        }
+      } else {
         this.showMessage('Дякуємо за підписку! Перевірте свою пошту.', 'success');
         this.emailInput.value = '';
-      } else {
-        this.showMessage(data.error || 'Помилка при підписці. Спробуйте пізніше.', 'error');
       }
     } catch (error) {
       console.error('Newsletter subscription error:', error);
