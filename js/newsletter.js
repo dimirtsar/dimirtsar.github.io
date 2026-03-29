@@ -36,11 +36,14 @@ class NewsletterSubscription {
       const supabaseUrl = 'https://iediedshsblyuxcrmaai.supabase.co';
       const apiUrl = `${supabaseUrl}/functions/v1/newsletter-subscribe`;
 
+      const anonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImllZGllZHNoc2JseXV4Y3JtYWFpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgwNjM2NTMsImV4cCI6MjA4MzYzOTY1M30.oiZF4RFUisJALJtvPDfq1Ygc-JUoIof1RE172wBD98A';
+
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImllZGllZHNoc2JseXV4Y3JtYWFpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgwNjM2NTMsImV4cCI6MjA4MzYzOTY1M30.oiZF4RFUisJALJtvPDfq1Ygc-JUoIof1RE172wBD98A',
+          'Authorization': `Bearer ${anonKey}`,
+          'apikey': anonKey,
         },
         body: JSON.stringify({ email }),
       });
