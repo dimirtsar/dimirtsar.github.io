@@ -20,27 +20,22 @@ class SearchUI {
     const header = document.querySelector('.header-content nav');
     if (!header) return;
 
+    if (this.searchButton) {
+      this.searchButton.remove();
+    }
+
     this.searchButton = document.createElement('button');
     this.searchButton.className = 'search-button';
     this.searchButton.setAttribute('aria-label', 'Пошук');
+    this.searchButton.innerHTML = `
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+      <span>Пошук</span>
+    `;
 
-    const isMobile = window.innerWidth <= 768;
-    if (isMobile) {
-      this.searchButton.innerHTML = `
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <path d="m21 21-4.35-4.35"></path>
-        </svg>
-        <span>Пошук</span>
-      `;
-    } else {
-      this.searchButton.innerHTML = `
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <path d="m21 21-4.35-4.35"></path>
-        </svg>
-      `;
-    }
+    this.searchButton.addEventListener('click', () => this.open());
 
     header.appendChild(this.searchButton);
   }
@@ -87,8 +82,6 @@ class SearchUI {
   }
 
   attachEventListeners() {
-    this.searchButton.addEventListener('click', () => this.open());
-
     this.searchOverlay.addEventListener('click', (e) => {
       if (e.target === this.searchOverlay) this.close();
     });
