@@ -128,12 +128,12 @@
         <div class="metric-label">Експертних матеріалів</div>
       </a>
       <a href="/heat-pumps/" class="metric-item">
-        <div class="metric-number" id="stat-heat-pumps" data-target="0">0</div>
+        <div class="metric-number" id="stat-heat-pumps" data-target="16">0</div>
         <div class="metric-label">Статей про теплові насоси</div>
       </a>
-      <a href="/efficiency/" class="metric-item">
-        <div class="metric-number" id="stat-efficiency" data-target="0">0</div>
-        <div class="metric-label">Статті про енергоефективність</div>
+      <a href="/business/" class="metric-item">
+        <div class="metric-number" id="stat-business" data-target="15">0</div>
+        <div class="metric-label">Статей про бізнес</div>
       </a>
     </div>
   </div>
@@ -193,32 +193,32 @@
         const heatPumpsDoc = heatPumpsParser.parseFromString(heatPumpsHtml, 'text/html');
         const heatPumpsCount = heatPumpsDoc.querySelectorAll('article.article').length;
 
-        // Count efficiency articles
-        const efficiencyResponse = await fetch('/efficiency/');
-        const efficiencyHtml = await efficiencyResponse.text();
-        const efficiencyParser = new DOMParser();
-        const efficiencyDoc = efficiencyParser.parseFromString(efficiencyHtml, 'text/html');
-        const efficiencyCount = efficiencyDoc.querySelectorAll('article.article').length;
+        // Count business articles
+        const businessResponse = await fetch('/business/');
+        const businessHtml = await businessResponse.text();
+        const businessParser = new DOMParser();
+        const businessDoc = businessParser.parseFromString(businessHtml, 'text/html');
+        const businessCount = businessDoc.querySelectorAll('article.article').length;
 
         // Update data-target attributes
         const blogStat = document.getElementById('stat-blog');
         const heatPumpsStat = document.getElementById('stat-heat-pumps');
-        const efficiencyStat = document.getElementById('stat-efficiency');
+        const businessStat = document.getElementById('stat-business');
 
         if (blogStat) blogStat.setAttribute('data-target', blogCount);
         if (heatPumpsStat) heatPumpsStat.setAttribute('data-target', heatPumpsCount);
-        if (efficiencyStat) efficiencyStat.setAttribute('data-target', efficiencyCount);
+        if (businessStat) businessStat.setAttribute('data-target', businessCount);
 
       } catch (error) {
         console.error('Error counting articles:', error);
         // Fallback to manual counts if fetch fails
         const blogStat = document.getElementById('stat-blog');
         const heatPumpsStat = document.getElementById('stat-heat-pumps');
-        const efficiencyStat = document.getElementById('stat-efficiency');
+        const businessStat = document.getElementById('stat-business');
 
-        if (blogStat) blogStat.setAttribute('data-target', '30');
+        if (blogStat) blogStat.setAttribute('data-target', '32');
         if (heatPumpsStat) heatPumpsStat.setAttribute('data-target', '16');
-        if (efficiencyStat) efficiencyStat.setAttribute('data-target', '3');
+        if (businessStat) businessStat.setAttribute('data-target', '15');
       }
     }
 
