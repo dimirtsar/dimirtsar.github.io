@@ -23,26 +23,32 @@ async function sendEmailViaResend(
   }
 
   try {
+    const emailPayload = {
+      from: 'dtsarenko.com <noreply@dtsarenko.com>',
+      to: [toEmail],
+      subject: subject,
+      html: htmlContent,
+    };
+
+    console.log('Sending email to:', toEmail);
+
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${resendApiKey}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        from: 'dtsarenko.com <dtsarenko@outlook.com>',
-        to: [toEmail],
-        subject: subject,
-        html: htmlContent,
-      }),
+      body: JSON.stringify(emailPayload),
     });
 
+    const responseData = await response.text();
+
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error('Resend API error:', response.status, errorText);
+      console.error('Resend API error:', response.status, responseData);
       return false;
     }
 
+    console.log('Email sent successfully:', responseData);
     return true;
   } catch (error) {
     console.error('Error sending email via Resend:', error);
