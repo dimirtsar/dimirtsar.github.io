@@ -159,7 +159,7 @@ Deno.serve(async (req: Request) => {
         subscriberEmail
       ),
       sendEmailViaResend(
-        'tsarenko.da@gmail.com',
+        'dtsarenko@outlook.com',
         'Нова підписка на розсилку',
         adminEmail
       ),
