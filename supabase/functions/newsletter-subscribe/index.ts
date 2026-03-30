@@ -30,7 +30,7 @@ async function sendEmailViaResend(
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'dtsarenko.com <noreply@dtsarenko.com>',
+        from: 'dtsarenko.com <dtsarenko@outlook.com>',
         to: [toEmail],
         subject: subject,
         html: htmlContent,
